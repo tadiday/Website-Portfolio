@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = ({ refProp }) => {
+const Project = ({ refProp }) => {
   return (
     <div ref={refProp} className="bg-blue-100 h-[58rem] rounded-[12px]">
-      <div>About</div>
+      <div>Projects</div>
     </div>
   );
 };
 
-export default About;
+export default Project;

@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     extend: {
       height: {
-        '240': '64rem',
+        
+      },
+      fontFamily: {
+        custom: ['Roboto-Condensed', 'sans-serif'], // 'Roboto' is the imported font
       },
     }
   },
