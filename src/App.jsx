@@ -32,9 +32,9 @@ function App() {
   };
 
   return (
-    <div className="relative pt-10 pb-5">
+    <div className="relative">
       <div className="fixed top-0 left-0 w-full z-50" ref={headerRef}>
-        <Header scrollToSection={scrollToSection} />
+        <Header className = "h-1/4" scrollToSection={scrollToSection} />
       </div>
       <div className=" px-2 grid gap-4">
         <Home className =" " refProp={homeRef} />
