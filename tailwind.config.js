@@ -9,7 +9,8 @@ module.exports = {
         
       },
       fontFamily: {
-        custom: ['Roboto-Condensed', 'sans-serif'], // 'Roboto' is the imported font
+        display: ["Agbalumo", "cursive"],
+        display2: ["Rubik Doodle Shadow", "cursive"],
       },
     }
   },
