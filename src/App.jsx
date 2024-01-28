@@ -25,6 +25,8 @@ function App() {
     };
     const offset = headerRef.current ? headerRef.current.offsetHeight : 0;
     const scrollOptions = { behavior: 'smooth', block: 'start' };
+    console.log(offset);
+    console.log(refs[section].current.offsetTop);
   
     window.scrollTo({
       top: refs[section].current.offsetTop - offset - 4, ...scrollOptions,
@@ -33,11 +35,11 @@ function App() {
 
   return (
     <div className="relative">
-      <div className="fixed top-0 left-0 w-full z-50" ref={headerRef}>
-        <Header className = "h-1/4" scrollToSection={scrollToSection} />
+      <div className="fixed z-50 flex items-center justify-center w-full my-2" ref={headerRef}>
+        <Header className = "" scrollToSection={scrollToSection} />
       </div>
-      <div className=" px-2 grid gap-4">
-        <Home className =" " refProp={homeRef} />
+      <div className="grid gap-4 px-2 ">
+        <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} />
         <About refProp={aboutRef} />
         <Project refProp={projectRef} />
         <Experience refProp={experienceRef} />
