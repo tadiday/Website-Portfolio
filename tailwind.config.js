@@ -12,6 +12,11 @@ module.exports = {
         display: ["Agbalumo", "cursive"],
         display2: ["Rubik Doodle Shadow", "cursive"],
       },
+
+      gridTemplateColumns: {
+        '25': 'repeat(25, 1fr)',
+      },
+
     }
   },
   plugins: [],
