@@ -2,7 +2,7 @@ import React from 'react';
 
 const Project = ({ refProp }) => {
   return (
-    <div ref={refProp} className="bg-slate-400 h-full rounded-[12px] p-4">
+    <div ref={refProp} className="h-full rounded-[12px] p-4">
       <div className='flex justify-center item-center font-display text-[50px] mb-5'>Projects</div>
       <ul className='grid md:gap-10 lg:gap-42'>
         <li className='bg-blue-100 rounded-[12px] p-11'>

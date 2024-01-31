@@ -34,11 +34,11 @@ function App() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-[#14213d] text-white">
       <div className="fixed z-50 flex items-center justify-center w-full" ref={headerRef}>
         <Header className = "" scrollToSection={scrollToSection} />
       </div>
-      <div className="grid gap-4">
+      <div className="grid gap-4 font-title text-[#e0e1dd]">
         <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} />
         <About refProp={aboutRef} />
         <Project refProp={projectRef} />

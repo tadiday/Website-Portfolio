@@ -1,40 +1,81 @@
 import React from 'react';
+import cardIsle from '../assets/cardisle.png';
+import VT from '../assets/VT.jpeg';
+
 
 const Experience = ({ refProp }) => {
   return (
-    <div ref={refProp} className="bg-blue-100 h-[58rem] rounded-[12px]">
-      <div>Works</div>
-      <div className='flex flex-col gap-5'>
-      <p> 
-        Rural Trash Collection Research Jan 2024 - Present
-        Virginia Tech Blacksburg, VA
-        • Developing an automated trash collection robot, allowing the monitor/operator to work remotely.
-        • Selecting and installing sensors necessary for autonomous navigation and trash collection.
-        • Identifying and reviewing algorithms to govern path planning, obstacle avoidance, safety, and trash collection.</p>
+    <div ref={refProp} className="h-full rounded-[12px] justify-center item-center">
+      <div className='flex justify-center item-center'>Works</div>
+      <div className='flex justify-center items-center flex-col gap-5 p-4 '>
+        <div className='bg-white flex rounded-[12px] w-[70%]'>
+          <img className= 'w-[32%] rounded-[12px] object-contain' src={VT} alt = 'Card Isle'/>
+          <div className= 'p-4 flex flex-col gap-5'>
+            <div className='grid grid-cols-2 text-[18px]'>
+              <h1 className=''>Virginia Tech IDPro</h1>
+              <h2 className='text-right'>Jan 2024 - Present</h2>
+              <h2 className=''>Rural Trash Collection Research</h2>
+              <h2 className='text-right'>Blacksburg, VA</h2>
+            </div>
+            <ul className='flex flex-col gap-2 list-disc pl-4'>
+              <li> Developing an automated trash collection robot, allowing the monitor/operator to work remotely.</li>
+              <li> Selecting and installing sensors necessary for autonomous navigation and trash collection.</li>
+              <li> Identifying and reviewing algorithms to govern path planning, obstacle avoidance, safety, and trash collection. </li>
+            </ul>
+          </div>
+        </div>
 
-      <p>
-      Undergraduate Teaching Assistant May 2023 - Present
-      Virginia Tech Blacksburg, VA
-      • Courses: CS 2505 & CS 2506 - Computer Organization I & II
-      • Conducted office hours, providing troubleshooting support and answering questions to enhance students’ understanding.
-      • Actively guided and monitored online forums and lab sessions to provide interactive learning experiences.
-      </p>
+        <div className='bg-white flex rounded-[12px] w-[70%]'>
+          <img className= 'w-[32%] rounded-[12px] object-contain' src={VT} alt = 'Card Isle'/>
+          <div className= 'p-4 flex flex-col gap-5'>
+            <div className='grid grid-cols-2 text-[18px]'>
+              <h1 className=''>Virginia Tech Computer Science</h1>
+              <h2 className='text-right'>May 2023 - Present</h2>
+              <h2 className=''>Undergraduate Teaching Assistant</h2>
+              <h2 className='text-right'>Blacksburg, VA</h2>
+            </div>
+            <ul className='flex flex-col gap-2 list-disc pl-4'>
+              <li> Courses: CS 2505 & CS 2506 - Computer Organization I & II.</li>
+              <li> Conducted office hours, providing troubleshooting support and answering questions to enhance students' understanding.</li>
+              <li> Actively guided and monitored online forums and lab sessions to provide interactive learning experiences. </li>
+            </ul>
+          </div>
+        </div>
 
-      <p>
-      SMART Research Aug 2023 - Dec 2023
-      Virginia Tech Blacksburg, VA
-      • Conducted research and successfully designed a Software Managed Arduino-based Residential Toolkit (SMART).
-      • Integrated Raspberry Pi to facilitate connectivity and optimized system functionality for an enhanced user experience.
-      • Engineered a user-friendly mobile application using Swift, enabling remote control and monitoring of smart devices.
-      Card Isle Sep 2023 - Nov 2023 
-      </p>
+        <div className='bg-white flex rounded-[12px] w-[70%]'>
+          <img className= 'w-[32%] rounded-[12px] object-contain' src={VT} alt = 'Card Isle'/>
+          <div className= 'p-4 flex flex-col gap-5'>
+            <div className='grid grid-cols-2 text-[18px]'>
+              <h1 className=''>Virginia Tech IDPro</h1>
+              <h2 className='text-right'>Sep 2023 - Nov 2023</h2>
+              <h2 className=''>SMART Research</h2>
+              <h2 className='text-right'>Blacksburg, VA</h2>
+            </div>
+            <ul className='flex flex-col gap-2 list-disc pl-4'>
+              <li> Conducted research and successfully designed a Software Managed Arduino-based Residential Toolkit (SMART).</li>
+              <li> Integrated Raspberry Pi to facilitate connectivity and optimized system functionality for an enhanced user experience.</li>
+              <li> Engineered a user-friendly mobile application using Swift, enabling remote control and monitoring of smart devices.</li>    
+            </ul>
+          </div>
+        </div>
 
-      <p>
-      Software Engineer Intern
-      • Collaborated as a front-end development and testing intern, actively contributing to client projects.
-      • Utilized Alpine.js to craft dynamic and responsive web interfaces, enhancing user interactions and experiences.
-      • Implemented Playwright testing for a demo website to ensure functionality within a single-page layout. 
-      </p>
+        <div className='bg-white flex rounded-[12px] w-[70%]'>
+          <img className= 'w-[32%] rounded-[12px] object-contain' src={cardIsle} alt = 'Card Isle'/>
+          <div className= 'p-4 flex flex-col gap-5'>
+            <div className='grid grid-cols-2 text-[18px]'>
+              <h1 className=''>Card Isle</h1>
+              <h2 className='text-right'>Sep 2023 - Nov 2023</h2>
+              <h2 className=''> Software Engineer Intern</h2>
+              <h2 className='text-right'>Blacksburg, VA</h2>
+            </div>
+            <ul className='flex flex-col gap-2 list-disc pl-4'>
+              <li> Collaborated as a front-end development and testing intern, actively contributing to client projects.</li>
+              <li> Utilized Alpine.js to craft dynamic and responsive web interfaces, enhancing user interactions and experiences.</li>
+              <li> Implemented Playwright testing for a demo website to ensure functionality within a single-page layout. </li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   );

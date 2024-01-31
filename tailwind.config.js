@@ -5,20 +5,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      
       height: {
         
       },
       fontFamily: {
-        display: ["Agbalumo", "cursive"],
-        display2: ["Rubik Doodle Shadow", "cursive"],
+        title: ["Fjalla One", "sans-serif"]
       },
 
       gridTemplateColumns: {
         '25': 'repeat(25, 1fr)',
       },
-
     }
   },
   plugins: [],
 }
+
 
