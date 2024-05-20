@@ -41,7 +41,7 @@ function App() {
       <div className="grid gap-4 font-title text-[#e0e1dd]">
         <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} />
         <About refProp={aboutRef} />
-        <Project refProp={projectRef} />
+        {/* <Project refProp={projectRef} /> */}
         <Experience refProp={experienceRef} />
         <Contact refProp={contactRef} />
       </div> 
