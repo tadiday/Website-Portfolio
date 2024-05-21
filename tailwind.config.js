@@ -10,7 +10,9 @@ module.exports = {
         
       },
       fontFamily: {
-        title: ["Fjalla One", "sans-serif"]
+        title: ["Major Mono Display" ,"Montserrat Subrayada", "Fjalla One", "sans-serif"],
+        header: ["Montserrat Subrayada", "Fjalla One", "sans-serif"],
+        rale: ["Raleway", "sans-serif"]
       },
 
       gridTemplateColumns: {
