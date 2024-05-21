@@ -5,7 +5,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Header from './components/Header';
-import Project from './components/Projects';
+// import Project from './components/Projects';
 
 function App() {
   const headerRef = useRef(null);
@@ -39,7 +39,7 @@ function App() {
         <Header className = "" scrollToSection={scrollToSection} />
       </div>
       <div className="grid gap-4 font-title text-[#e0e1dd]">
-        <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} />
+        {/* <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} /> */}
         <About refProp={aboutRef} />
         {/* <Project refProp={projectRef} /> */}
         <Experience refProp={experienceRef} />
