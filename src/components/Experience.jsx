@@ -76,7 +76,7 @@ const Experience = ({ refProp }) => {
       },
       {
         title: 'Card Isle',
-        date: 'Sep 2023 - Nove 2023',
+        date: 'Sep 2023 - Nov 2023',
         role: 'Software Engineer Intern',
         location: 'Blacksburg, VA',
         description: [
@@ -109,7 +109,7 @@ const renderExperiences = (category) => {
           <div className={`flex flex-col w-[45%] min-w-[600px] min-h-[250px] ${isEven ? 'ml-auto pr-[5%]' : 'pl-[5%]'}`}>
             <div className="bg-white flex rounded-[12px] w-full relative p-4 shadow-lg">
               <div className='flex flex-col gap-5 text-black w-full'>
-                <div className='grid grid-cols-2 text-[16px] '>
+                <div className='grid grid-cols-2 text-[16px] font-bold'>
                   <h1>{exp.title}</h1>
                   <h2 className='text-right'>{exp.date}</h2>
                   <h2>{exp.role}</h2>
@@ -130,24 +130,26 @@ const renderExperiences = (category) => {
 
 
   return (
-    <div ref={refProp} className="h-full min-h-[1000px] rounded-[12px] justify-center item-center">
+    <div id="body-exp" ref={refProp} className="h-full -mt-[20px] min-h-[1000px] bg-black rounded-[20px] justify-center item-center z-10"
+    
+    >
       {/* <div className='flex justify-center item-center text-[36px]'>Works</div> */}
-      <div className='flex justify-center items-center text-[36px] my-10 pb-10'>
-        <div className='w-[60%]  min-w-[750px] flex bg-black rounded-[10px] overflow-hidden'>
+      <div className='flex justify-center items-centeuur text-[36px] my-10 pb-10'>
+        <div className='w-[60%]  min-w-[750px] flex bg-[#e0e1dd] rounded-[10px] overflow-hidden text-black font-rale'>
           <button
-            className={`w-[40%] px-10 mx-0 ${activeButton === 'personal' ? 'bg-yellow-500' : ''}`}
+            className={`w-[40%] px-10 mx-0 ${activeButton === 'personal' ? 'bg-[#1b263b]  ' : ''}`}
             onClick={() => handleButtonClick('personal')}
           >
             Personal
           </button>
           <button
-            className={`w-[40%] px-10 mx-0 ${activeButton === 'professional' ? 'bg-yellow-500' : ''}`}
+            className={`w-[40%] px-10 mx-0 ${activeButton === 'professional' ? 'bbg-[#1b263b]' : ''}`}
             onClick={() => handleButtonClick('professional')}
           >
             Professional
           </button>
           <button
-            className={`w-[34%] px-10 mx-0 ${activeButton === 'academic' ? 'bg-yellow-500' : ''}`}
+            className={`w-[34%] px-10 mx-0 ${activeButton === 'academic' ? 'bg-[#1b263b]' : ''}`}
             onClick={() => handleButtonClick('academic')}
           >
             Academic

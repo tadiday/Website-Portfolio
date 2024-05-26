@@ -6,26 +6,26 @@ import  cloud from '../assets/cloud.avif'; // Import the background image
 
 const About = ({ refProp }) => {
   return (
-    <section ref={refProp} className="rounded-[10px] min-h-[950px] text-black relative px-[10%] pb-20" 
+    <section ref={refProp} className="min-h-[950px] text-black relative px-[10%] pb-20" 
     style={{
       backgroundImage: `url(${cloud})`, 
       backgroundSize: 'cover', 
       backgroundPosition: 'center'
-    }}>
+    }}
+    >
       <div className='h-[20%] '></div>
       <div className="font-header text-[20px] bg-red">
               <div className="font-rale bg-red">An upcoming Software Engineer</div>
       </div>
-      <div className='flex flex-col gapy-5 w-full'>
-      <h1 className="font-rale flex justify-center h-[70%] sm:text-[100px] md:text-[150px] lg:text-[200px] font-thin">PETER CAO</h1>
-
+      <div className='flex flex-col w-full'>
         {/* <div className='pt-[3rem] pb-[3rem] grid grid-cols-25 grid-flow-row-dense'>  */}
           {/* <h2 className=' text-[30px] text-[#fca311] col-start-11 col-span-10'>An Upcoming Software Engineer</h2>  */}
           {/* <FaRegLightbulb className='flex justify-center item-center text-[30px] text-[#fca311] '></FaRegLightbulb> */}
         {/* </div> */}
         <div className=''>
-          <div id="about" class="absolute grid grid-cols-25 grid-flow-row-dense z-10">
-            <div className="font-title text-[20px] col-start-3 col-span-5">
+        <h1 className="font-rale flex justify-center w-[100%] h-[70%] sm:text-[100px] md:text-[150px] lg:text-[200px] font-thin">PETER CAO</h1>
+          <div id="about" class="absolute grid grid-cols-25 grid-flow-row-dense">
+            <div className="font-title text-[20px] col-start-3 col-span-8">
               <p>38.7439° N, 77.2405° W</p>
               <p>Fairfax, <span className="font-rale font-[300]">V</span>irginia</p>
             </div>

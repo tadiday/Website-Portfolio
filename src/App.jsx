@@ -34,11 +34,11 @@ function App() {
   };
 
   return (
-    <div className="relative bg-[#14213d] text-white font-[]">
+    <div className="relative text-white font-[]">
       <div className="fixed z-50 flex items-center justify-center w-full" ref={headerRef}>
         <Header className = "font-['Montserrat Subrayada']" scrollToSection={scrollToSection} />
       </div>
-      <div className="grid gap-4 text-[#e0e1dd]">
+      <div className="grid text-[#e0e1dd]">
         {/* <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} /> */}
         <About refProp={aboutRef} />
         {/* <Project refProp={projectRef} /> */}
