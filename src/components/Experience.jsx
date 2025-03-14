@@ -134,10 +134,10 @@ const Experience = ({ refProp }) => {
 
 
   return (
-    <div id="body-exp" ref={refProp} className="h-full -mt-[20px] min-h-[500px] bg-black rounded-[20px] flex flex-col items-center z-10">
+    <div id="body-exp" ref={refProp} className="h-full -mt-[20px] min-h-[500px] bg-black rounded-[25px] flex flex-col items-center z-10">
 
       {/* Button Group */}
-      <div className="flex justify-center items-center text-[36px] my-10 pb-10">
+      {/* <div className="flex justify-center items-center text-[36px] my-10 pb-10">
         <div className="w-[60%] min-w-[750px] flex bg-[#e0e1dd] rounded-[10px] overflow-hidden text-black font-rale">
           <button
             className={`w-[40%] px-10 mx-0 ${activeButton === 'personal' ? 'bg-[#1b263b]' : ''}`}
@@ -158,7 +158,7 @@ const Experience = ({ refProp }) => {
             Academic
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Render Experiences */}
       {/* <div className="p-4">
@@ -166,79 +166,100 @@ const Experience = ({ refProp }) => {
       </div> */}
 
       {/* Sticky Section */}
+      <div className="flex w-full flex-col gap-y-space-lg md:gap-y-space-2xl" >
+        <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
+          <h2 className='col-span-7 col-start-2 text-[100px] font-semibold'>
+            Experience
+          </h2>
+        </div>
+      </div>
+
+
       <div className="relative z-20 w-full bg-secondary-400 overflow-x-clip">
         <section className="p-[5%] rounded-t-3xl min-h-[2000px]">
-          <div className="w-full pt-space-lg"> {/* Ensure enough scroll space */}
+          <div className="w-full pt-16">
+            <div className="mt-12 flex flex-col justify-between gap-y-16">
 
-            {/* Sticky Element */}
-            <div className='flex flex-col justify-between mt-12 gap-y-16'>
-              <div class="sticky top-[calc(20vh+0em)] mb-[17.25em]">
-                <div className="border-t border-t-secondary-300">
-
-                  {/* Title */}
-                  <h3 className="font-semibold text-heading-2 text-accent-400 text-[30px]">
-                    Peraton, Aug 2024 - Dec 2024
-                  </h3>
-
-                  {/* Description */}
-                  <ul className="flex flex-col gap-2 pl-4 list-disc ">
-                    <li>Contributed to a cyber-threat intelligence platform for detecting attacks, managing malware, and mitigating risks.</li>
-                    <li>Optimized the CI/CD pipeline by updating Docker Compose configurations, reducing deployment time by 20%.</li>
-                    <li>Diagnosed and resolved Maven build issues and Java test failures, increasing pipeline reliability by 25%.</li>
-                    <li>Strengthened system performance by addressing over 100+ security vulnerabilities through dependency updates.</li>
-                    <li>Collaborated using Agile methodologies and GitLab to document and resolve 20+ functionality issues.</li>
-                  </ul>
-
-
+              {/* Web Development Service */}
+              <div className="sticky top-0 border-t border-300 bg-black" style={{ top: 'calc(20vh + 0em)', marginBottom: '23em' }}>
+                <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
+                  <span className="col-span-5">May 2023 - Present</span>
+                  <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Virginia Tech - Undergraduate Teaching Assistant</h3>
+                </div>
+                <div className="grid gap-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                      <li>Guided over 100 students by hosting office hours, troubleshooting issues, and providing tailored academic support.</li>
+                      <li>Facilitated interactive discussions through online forums, achieving a 90%+ student satisfaction rate.</li>
+                      <li>Supported instruction for Computer Organization, Computer Systems, and Comparative Languages, focusing on C, x86, RISC-V, operating systems concepts, and multi-language paradigms.</li>
+                    </ul>
+                    <div className="flex flex-col divide-y divide-gray-700">
+                      {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
+                      <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                        Technical:
+                        <span className="font-mono text-base font-medium leading-[200%] text-gray-300">C, x86, RISC-V, Prolog, Rust, Haskell, Ruby</span>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="sticky top-[calc(20vh+5.75em)] mb-[11.25em] bg-black">
-                <div className="border-t border-t-secondary-300">
 
-                  {/* Title */}
-                  <h3 className="font-semibold text-heading-2 text-accent-400 text-[30px]">
-                    Card Isle, Aug 2024 - Dec 2024
-                  </h3>
-
-                  {/* Description */}
-                  <ul className="flex flex-col gap-2 pl-4 list-disc">
-                    <li>experiences.</li>
-                    <li>Optimized the CI/CD pipeline by updating Docker Compose configurations, reducing deployment time by 20%.</li>
-                    <li>Diagnosed and resolved Maven build issues and Java test failures, increasing pipeline reliability by 25%.</li>
-                    <li>Strengthened system performance by addressing over 100+ security vulnerabilities through dependency updates.</li>
-                    <li>Collaborated using Agile methodologies and GitLab to document and resolve 20+ functionality issues.</li>
-                  </ul>
-
-
+              {/* Web Design Service */}
+              <div className="sticky top-0 border-t border-gray-300 bg-black" style={{ top: 'calc(20vh + 5.75em)', marginBottom: '17.25em' }}>
+                <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
+                  <span className="col-span-5">Aug 2024 - Dec 2024</span>
+                  <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">Peraton - Software Engineer Co-op</h3>
+                </div>
+                <div className="grid gap-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                      <li>Contributed to a cyber-threat intelligence platform for detecting attacks, managing malware, and mitigating risks.</li>
+                      <li>Optimized the CI/CD pipeline by updating Docker Compose configurations, reducing deployment time by 20%.</li>
+                      <li>Diagnosed and resolved Maven build issues and Java test failures, increasing pipeline reliability by 25%.</li>
+                      <li>Strengthened system performance by addressing over 100+ security vulnerabilities through dependency updates.</li>
+                      <li>Collaborated using Agile methodologies and GitLab to document and resolve 20+ functionality issues.</li>
+                    </ul>
+                    <div className="flex flex-col divide-y divide-gray-700">
+                      {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
+                      <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                        Technical:
+                        <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="sticky top-[calc(20vh+11.5em)] mb-[5.75em] bg-secondary-400 p-5 shadow-lg z-[50] bg-black">
-                <div className="border-t border-t-secondary-300">
 
-                  {/* Title */}
-                  <h3 className="font-semibold text-heading-2 text-accent-400">
-                    Card Isle, Aug 2024 - Dec 2024
-                  </h3>
-
-                  {/* Description */}
-                  <ul className="flex flex-col gap-2 list-disc pl-4 text-[14px]">
-                    <li>experiences.</li>
-                    <li>Optimized the CI/CD pipeline by updating Docker Compose configurations, reducing deployment time by 20%.</li>
-                    <li>Diagnosed and resolved Maven build issues and Java test failures, increasing pipeline reliability by 25%.</li>
-                    <li>Strengthened system performance by addressing over 100+ security vulnerabilities through dependency updates.</li>
-                    <li>Collaborated using Agile methodologies and GitLab to document and resolve 20+ functionality issues.</li>
-                  </ul>
+              {/* Card Isle Service */}
+              <div className="sticky top-0 border-t border-gray-300 bg-black" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11em' }}>
+                <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
+                  <span className="col-span-5">Sep 2023 - Nov 2023</span>
+                  <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">Card Isle - Front-end Developer Intern</h3>
+                </div>
+                <div className="grid gap-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+                    {/* max-w-[40ch] text-base font-medium text-gray-200 */}
+                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                      <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
+                      <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
+                      <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
+                    </ul>
+                    <div className="flex flex-col divide-y divide-gray-700">
+                      {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
+                      <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                        Technical:
+                        <span className="font-mono text-base font-medium leading-[200%] text-gray-300">JavaScript, Alpine.js, Playwright, Node.js, GitHub</span>
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+              {/* Card Isle Service */}
+
+
             </div>
-
-
           </div>
-        </section>
-
-        <section className="p-[5%] rounded-t-3xl min-h-[2000px]">
-
-
         </section>
       </div>
 
@@ -249,3 +270,5 @@ const Experience = ({ refProp }) => {
 };
 
 export default Experience;
+
+

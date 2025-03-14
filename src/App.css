@@ -1,0 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-y: scroll; /* Ensures there's always a scrollbar to prevent layout shifts */
+  }

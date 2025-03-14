@@ -15,6 +15,31 @@ function App() {
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
 
+  
+  // Custom scroll function with controllable duration
+  const smoothScrollTo = (targetPosition, duration = 1500) => {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+      
+      // Easing function for smoother acceleration/deceleration
+      const ease = t => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      
+      window.scrollTo(0, startPosition + distance * ease(progress));
+      
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+    
+    requestAnimationFrame(animation);
+  };
+
   const scrollToSection = (section) => {
     const refs = {
       home: homeRef,
@@ -23,14 +48,21 @@ function App() {
       experience: experienceRef,
       contact: contactRef,
     };
+    
     const offset = headerRef.current ? headerRef.current.offsetHeight : 0;
-    const scrollOptions = { behavior: 'smooth', block: 'start' };
-    console.log(offset);
-    console.log(refs[section].current.offsetTop);
-  
-    window.scrollTo({
-      top: refs[section].current.offsetTop - offset - 4, ...scrollOptions,
-    });
+    
+    if (refs[section] && refs[section].current) {
+      const targetPosition = refs[section].current.offsetTop - offset - 4;
+      
+      // Use our custom scroll function instead of the native scrollTo
+      smoothScrollTo(targetPosition);
+      
+      // Uncomment if you want to revert to native behavior
+      // window.scrollTo({
+      //   top: targetPosition,
+      //   behavior: 'smooth'
+      // });
+    }
   };
 
   return (
