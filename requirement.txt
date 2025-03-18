@@ -1,3 +1,4 @@
 yarn add react-intersection-observer
 yarn add gsap
 npm install motion
+npm install lucide-react

@@ -81,13 +81,13 @@ const Project = ({ refProp }) => {
             <div className="mt-12 flex flex-col justify-between gap-y-16">
 
               {/*Virginia Tech */}
-              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[15em]" style={{ top: 'calc(20vh + 0em)' }}>
-                <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-8">
+              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[15em]" style={{ top: 'calc(15vh + 0em)' }}>
+                <div className="flex items-center justify-start gap-x-2 text-left text-[40px]  font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-8">
                   <span className="col-span-5">(1)</span>
                   <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Personal-Porfolio</h3>
                 </div>
                 <div className="grid gap-x-8 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
-                  <img className="col-span-5 col-start-0 rounded-2xl w-full object-cover border-4 border-gray-700 shadow-md" src={WB} alt="Virginia Tech" ></img>
+                  <img className="col-span-5 col-start-0 rounded-2xl w-full aspect-[2/1] object-cover border-4 border-gray-700 shadow-md" src={WB} alt="Virginia Tech" ></img>
                   <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
                     <span className="col-span-7 col-start-6">
                       <span className="flex items-center gap-x-2 font-bold"> Description: </span>
@@ -121,13 +121,13 @@ const Project = ({ refProp }) => {
               </div>
 
               {/* Food Swipe */}
-              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[10em]" style={{ top: 'calc(20vh + 5.5em)' }}>
+              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[10em]" style={{ top: 'calc(15vh + 5.5em)' }}>
                 <div className="flex items-center justify-start gap-x-8 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-8">
                   <span className="col-span-5">(2)</span>
                   <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Food Swipe</h3>
                 </div>
                 <div className="grid gap-x-8 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
-                  <img className="col-span-5 col-start-0 rounded-2xl w-full object-cover border-4 border-gray-700 shadow-md" src={FS} alt="SimPliSplit" ></img>
+                  <img className="col-span-5 col-start-0 rounded-2xl w-full aspect-[2/1] object-cover border-4 border-gray-700 shadow-md" src={FS} alt="SimPliSplit" ></img>
                   <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
 
                     <span className="col-span-7 col-start-6">
@@ -161,7 +161,7 @@ const Project = ({ refProp }) => {
 
 
               {/* Card Isle Service */}
-              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[5em]" style={{ top: 'calc(20vh + 11em)' }}>
+              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[5em]" style={{ top: 'calc(15vh + 11em)' }}>
                 <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
                   <span className="col-span-5">(3)</span>
                   <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Simplisplit</h3>

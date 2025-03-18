@@ -268,6 +268,99 @@ const Experience = ({ refProp }) => {
         </section>
       </div>
 
+      <div>
+        <div className="sticky top-0 border-t border-gray-700 bg-[#232323]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
+          <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-800/50">
+            <span className="col-span-5">Sep 2023 — Nov 2023</span>
+            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+              <span>
+                Front-end Developer Intern ·
+                <span class="inline-block">Card Isle </span>
+              </span>
+            </h3>
+            <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base ">
+                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
+                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
+                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
+              </ul>
+            </div>
+            <div className="col-span-7 col-start-6 flex flex-col divide-y divide-gray-700 border-gray-700 pt-4">
+                {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
+                <span className="flex items-start text-xl gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                  Technical:
+                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
+                </span>
+              </div>
+          </div>
+          <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-800/50">
+            <span className="col-span-5">Sep 2023 — Nov 2023</span>
+            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+              <span>
+                Front-end Developer Intern ·
+                <span class="inline-block">Card Isle </span>
+              </span>
+            </h3>
+            <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base ">
+                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
+                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
+                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
+              </ul>
+            </div>
+            <div className="col-span-7 col-start-6 flex flex-col divide-y divide-gray-700 border-gray-700 pt-4">
+                {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
+                <span className="flex items-start text-xl gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                  Technical:
+                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
+                </span>
+              </div>
+          </div>
+
+          <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-600/30 hover:rounded-xl">
+            <span className="col-span-5">Sep 2023 — Nov 2023</span>
+            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+              <span>
+                Front-end Developer Intern ·
+                <span class="inline-block">Card Isle </span>
+              </span>
+            </h3>
+            <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base ">
+                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
+                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
+                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
+              </ul>
+            </div>
+            <div className="col-span-7 col-start-6 flex flex-col divide-y divide-gray-700 border-gray-700 pt-4">
+                {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
+                <span className="flex items-start text-xl gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                  Technical:
+                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
+                </span>
+              </div>
+          </div>
+
+          <div className="grid gap-x-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+            {/* <span className="col-span-7 col-start-6 text-lg text-gray-300">Front-end Developer Intern</span> */}
+            {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
+            {/* <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
+                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
+                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
+              </ul>
+              <div className="flex flex-col divide-y divide-gray-700 border-t border-gray-700 pt-4">
+                <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                  Technical:
+                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
+                </span>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </div>
+
     </div>
 
 
