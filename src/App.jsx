@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import './App.css';
-import Home from './components/Home';
+// import Home from './components/Home';
 import About from './components/About';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Header from './components/Header';
-// import Project from './components/Projects';
+import Project from './components/Projects';
 
 function App() {
   const headerRef = useRef(null);
@@ -17,7 +17,7 @@ function App() {
 
   
   // Custom scroll function with controllable duration
-  const smoothScrollTo = (targetPosition, duration = 1500) => {
+  const smoothScrollTo = (targetPosition, duration = 800) => {
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     let startTime = null;
@@ -70,10 +70,10 @@ function App() {
       <div className="fixed z-50 flex items-center justify-center w-full" ref={headerRef}>
         <Header className = "font-['Montserrat Subrayada']" scrollToSection={scrollToSection} />
       </div>
-      <div className="grid text-[#e0e1dd]">
+      <div className="grid">
         {/* <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} /> */}
         <About refProp={aboutRef} />
-        {/* <Project refProp={projectRef} /> */}
+        <Project refProp={projectRef} />
         <Experience refProp={experienceRef} />
         <Contact refProp={contactRef} />
       </div> 

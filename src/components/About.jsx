@@ -21,11 +21,9 @@ const About = ({ refProp }) => {
   return (
     <section
       ref={refProp}
-      className="min-h-[950px] sticky top-0 text-black px-[10%] pb-20 bg-[#fdf0d5]"
+      className="h-screen sticky top-0 text-black px-[10%] pb-20 bg-[#fdf0d5]"
       style={{
-        // backgroundImage: `url(${cloud})`,
-        // backgroundSize: 'cover',
-        // backgroundPosition: 'center'
+
         
       }}
     >

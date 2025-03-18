@@ -135,7 +135,7 @@ const Experience = ({ refProp }) => {
 
 
   return (
-    <div id="body-exp" ref={refProp} className="h-full -mt-[20px] min-h-[500px] bg-[#232323] rounded-[25px] flex flex-col items-center z-10">
+    <div id="body-exp" ref={refProp} className="h-full min-h-[500px] bg-[#232323] rounded-[25px] flex flex-col items-center z-10">
       {/* Button Group */}
       {/* <div className="flex justify-center items-center text-[36px] my-10 pb-10">
         <div className="w-[60%] min-w-[750px] flex bg-[#e0e1dd] rounded-[10px] overflow-hidden text-black font-rale">
@@ -263,11 +263,6 @@ const Experience = ({ refProp }) => {
                   </div>
                 </div>
               </div>
-
-
-              {/* Card Isle Service */}
-
-
             </div>
           </div>
         </section>
