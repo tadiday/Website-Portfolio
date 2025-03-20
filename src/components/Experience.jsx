@@ -135,7 +135,7 @@ const Experience = ({ refProp }) => {
 
 
   return (
-    <div id="body-exp" ref={refProp} className="h-full min-h-[500px] bg-[#232323] rounded-[25px] flex flex-col items-center z-10">
+    <div id="body-exp" ref={refProp} className="h-full min-h-[500px] bg-[#080807] rounded-[25px] flex flex-col items-center z-10">
       {/* Button Group */}
       {/* <div className="flex justify-center items-center text-[36px] my-10 pb-10">
         <div className="w-[60%] min-w-[750px] flex bg-[#e0e1dd] rounded-[10px] overflow-hidden text-black font-rale">
@@ -263,101 +263,107 @@ const Experience = ({ refProp }) => {
       </div>
 
       {/* DIFFERENT LAYOUT */}
-      <div className='pr-[10%] pb-[5%] pl-[10%] rounded-t-3xl min-h-[2000px]'>
-        <div className="sticky top-0 border-t border-gray-700 bg-[#232323] " style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
-          <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-800/50">
-            <span className="col-span-5">Sep 2023 — Nov 2023</span>
+      <div className='pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]'>
+        <div className="top-0 border-t border-gray-700 bg-[#080807] pr-[3%] pb-[10%] pl-[3%]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
+          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/15 hover:rounded-xl hover:shadow-md">
+            <span className="col-span-5 ">2023 - Present</span>
             <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-              <span>
-                Front-end Developer Intern ·
-                <span class="inline-block">Card Isle </span>
+              <span className='space-x-2'>
+                <span>Undergraduate TA  @</span>
+                <span class="inline-block">Virginia Tech</span>
               </span>
             </h3>
-            <div className="flex flex-col w-full col-span-6 col-start-6 pt-4 text-lg gap-y-4">
-              {/* <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc ">
-                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
-                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
-                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
-              </ul> */}
-              <p>
-              Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience. 
-              Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability. 
-              Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.
-              </p>
-            </div>
-            <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                <span className="flex items-start py-1 text-xl font-bold gap-x-3 xl:gap-x-4 xl:py-2">
-                  Technical:
-                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
-                </span>
-              </div>
-          </div>
-          <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-800/50">
-            <span className="col-span-5">Sep 2023 — Nov 2023</span>
-            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-              <span>
-                Front-end Developer Intern ·
-                <span class="inline-block">Card Isle </span>
-              </span>
-            </h3>
-            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-              <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc ">
-                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
-                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
-                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
-              </ul>
-            </div>
-            <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                <span className="flex items-start py-1 text-xl font-bold gap-x-3 xl:gap-x-4 xl:py-2">
-                  Technical:
-                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
-                </span>
-              </div>
-          </div>
-
-          <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-600/30 hover:rounded-xl">
-            <span className="col-span-5">Sep 2023 — Nov 2023</span>
-            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-              <span>
-                Front-end Developer Intern ·
-                <span class="inline-block">Card Isle </span>
-              </span>
-            </h3>
-            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-              <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc ">
-                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
-                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
-                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
-              </ul>
-            </div>
-            <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                <span className="flex items-start py-1 text-xl font-bold gap-x-3 xl:gap-x-4 xl:py-2">
-                  Technical:
-                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
-                </span>
-              </div>
-          </div>
-
-          <div className="grid gap-x-4 relative min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
-            {/* <span className="col-span-7 col-start-6 text-lg text-gray-300">Front-end Developer Intern</span> */}
             {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
-            {/* <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-              <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc">
-                <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
-                <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
-                <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
-              </ul>
-              <div className="flex flex-col pt-4 border-t border-gray-700 divide-y divide-gray-700">
-                <span className="flex items-start py-1 font-bold gap-x-3 xl:gap-x-4 xl:py-2">
-                  Technical:
-                  <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
-                </span>
+
+            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+              <p>
+              Provide academic support to students by hosting office hours, troubleshooting technical issues, and offering personalized guidance. 
+              Facilitate interactive discussions through online forums to enhance student engagement. 
+              Assist in teaching Computer Organization, Computer Systems, and Comparative Languages.
+              </p>
+              <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
+                <div className="flex flex-col items-start gap-x-6">
+                  <span className="flex items-center">
+                    <div class="flex items-end gap-x-[10px] tracking-base">
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">C</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">x86</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">RISC-V</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Rust</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Haskell</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Prolog</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Ruby</span>
+                      
+                    </div>
+                  </span>
+                </div>
+
               </div>
-            </div> */}
+            </div>
           </div>
+          
+          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
+            <span className="col-span-5">Fall 2024</span>
+            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+              <span className='space-x-2'>
+                <span>Software Engineer Co-op @</span>
+                <span class="inline-block">Peraton</span>
+              </span>
+            </h3>
+            {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
+
+            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+              <p>
+                Contributed to the development and maintenance of a cyber-threat intelligence platform.
+                Improved system performance by enhancing build processes, resolving issues, and updating dependencies.
+                Collaborated with cross-functional teams to document and address functionality improvements, ensuring a more secure and reliable platform.
+              </p>
+              <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
+                <div className="flex flex-col items-start gap-x-6">
+                  <span className="flex items-center">
+                    <div class="flex items-end gap-x-[10px] tracking-base">
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Maven</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Java</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Junit</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Docker</span>
+                    </div>
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/15 hover:rounded-xl hover:shadow-md">
+            <span className="col-span-5 ">Fall 2023</span>
+            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+              <span className='space-x-2'>
+                <span>Front-end Developer Intern @</span>
+                <span class="inline-block">Card Isle </span>
+              </span>
+            </h3>
+            {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
+
+            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+              <p>
+                Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience.
+                Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability.
+                Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.
+              </p>
+              <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
+                <div className="flex flex-col items-start gap-x-6">
+                  <span className="flex items-center">
+                    <div class="flex items-end gap-x-[10px] tracking-base">
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Alpine.js</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Playwright</span>
+                    </div>
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </div>
 
