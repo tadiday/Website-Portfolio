@@ -135,7 +135,7 @@ const Experience = ({ refProp }) => {
 
 
   return (
-    <div id="body-exp" ref={refProp} className="h-full min-h-[500px] bg-[#080807] rounded-[25px] flex flex-col items-center z-10">
+    <div id="body-exp" ref={refProp} className="h-full min-h-[500px] bg-[#080807] rounded-b-[25px] flex flex-col items-center z-10">
       {/* Button Group */}
       {/* <div className="flex justify-center items-center text-[36px] my-10 pb-10">
         <div className="w-[60%] min-w-[750px] flex bg-[#e0e1dd] rounded-[10px] overflow-hidden text-black font-rale">
@@ -263,9 +263,9 @@ const Experience = ({ refProp }) => {
       </div>
 
       {/* DIFFERENT LAYOUT */}
-      <div className='pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]'>
+      <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-[2000px]'>
         <div className="top-0 border-t border-gray-700 bg-[#080807] pr-[3%] pb-[10%] pl-[3%]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
-          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/15 hover:rounded-xl hover:shadow-md">
+          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
             <span className="col-span-5 ">2023 - Present</span>
             <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
               <span className='space-x-2'>
@@ -333,7 +333,7 @@ const Experience = ({ refProp }) => {
             </div>
           </div>
 
-          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/15 hover:rounded-xl hover:shadow-md">
+          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
             <span className="col-span-5 ">Fall 2023</span>
             <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
               <span className='space-x-2'>
