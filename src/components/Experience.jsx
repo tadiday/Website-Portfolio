@@ -170,18 +170,17 @@ const Experience = ({ refProp }) => {
 
 
       <div className="relative z-20 w-full bg-secondary-400 overflow-x-clip">
-        <div className="flex w-full flex-col gap-y-space-lg md:gap-y-space-2xl" >
+        <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
             <h2 className='col-span-7 col-start-2 text-[100px] font-semibold'>
               Experience
             </h2>
           </div>
         </div>
-        <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
+        {/* <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
           <div className="w-full pt-16">
-            <div className="mt-12 flex flex-col justify-between gap-y-16">
+            <div className="flex flex-col justify-between mt-12 gap-y-16">
 
-              {/*Virginia Tech */}
               <div className="sticky top-0 border-t border-gray-700 bg-[#232323]" style={{ top: 'calc(20vh + 0em)', marginBottom: '23em' }}>
                 <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
                   <span className="col-span-5">May 2023 - Present</span>
@@ -189,19 +188,18 @@ const Experience = ({ refProp }) => {
 
                 </div>
 
-                <div className="grid gap-x-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                <div className="grid gap-x-4 relative min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
                   <span className="col-span-7 col-start-6">Undergraduate Teaching Assistant</span>
                   <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={VT} alt="Virginia Tech" ></img>
-                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                  <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+                    <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc">
                       <li>Guided over 100 students by hosting office hours, troubleshooting issues, and providing tailored academic support.</li>
                       <li>Facilitated interactive discussions through online forums, achieving a 90%+ student satisfaction rate.</li>
                       <li>Supported instruction for Computer Organization, Computer Systems, and Comparative Languages, focusing on C, x86, RISC-V, operating systems concepts, and multi-language paradigms.</li>
                     </ul>
 
-                    <div className="flex flex-col divide-y divide-gray-700 border-t border-gray-700 pt-4">
-                      {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                      <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                    <div className="flex flex-col pt-4 border-t border-gray-700 divide-y divide-gray-700">
+                      <span className="flex items-start py-1 font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                         Technical:
                         <span className="font-mono text-base font-medium leading-[200%] text-gray-300">C, x86, RISC-V, Prolog, Rust, Haskell, Ruby</span>
                       </span>
@@ -210,26 +208,24 @@ const Experience = ({ refProp }) => {
                 </div>
               </div>
 
-              {/* Peraton */}
               <div className="sticky top-0 border-t border-gray-700 bg-[#232323]" style={{ top: 'calc(20vh + 5.75em)', marginBottom: '17.25em' }}>
                 <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
                   <span className="col-span-5">Aug 2024 - Dec 2024</span>
                   <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">Peraton</h3>
                 </div>
-                <div className="grid gap-x-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                <div className="grid gap-x-4 relative  min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
                   <span className="col-span-7 col-start-6 text-lg text-gray-300">Software Engineer Co-op</span>
                   <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={Peraton} alt="Peraton" ></img>
-                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                  <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+                    <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc">
                       <li>Contributed to a cyber-threat intelligence platform for detecting attacks, managing malware, and mitigating risks.</li>
                       <li>Optimized the CI/CD pipeline by updating Docker Compose configurations, reducing deployment time by 20%.</li>
                       <li>Diagnosed and resolved Maven build issues and Java test failures, increasing pipeline reliability by 25%.</li>
                       <li>Strengthened system performance by addressing over 100+ security vulnerabilities through dependency updates.</li>
                       <li>Collaborated using Agile methodologies and GitLab to document and resolve 20+ functionality issues.</li>
                     </ul>
-                    <div className="flex flex-col divide-y divide-gray-700 border-t border-gray-700 pt-4">
-                      {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                      <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                    <div className="flex flex-col pt-4 border-t border-gray-700 divide-y divide-gray-700">
+                      <span className="flex items-start py-1 font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                         Technical:
                         <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
                       </span>
@@ -238,24 +234,22 @@ const Experience = ({ refProp }) => {
                 </div>
               </div>
 
-              {/* Card Isle Service */}
               <div className="sticky top-0 border-t border-gray-700 bg-[#232323]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
                 <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
                   <span className="col-span-5">Sep 2023 - Nov 2023</span>
                   <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">Card Isle</h3>
                 </div>
-                <div className="grid gap-x-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                <div className="grid gap-x-4 relative min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
                   <span className="col-span-7 col-start-6 text-lg text-gray-300">Front-end Developer Intern</span>
                   <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img>
-                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+                  <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+                    <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc">
                       <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
                       <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
                       <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
                     </ul>
-                    <div className="flex flex-col divide-y divide-gray-700 border-t border-gray-700 pt-4">
-                      {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                      <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                    <div className="flex flex-col pt-4 border-t border-gray-700 divide-y divide-gray-700">
+                      <span className="flex items-start py-1 font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                         Technical:
                         <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
                       </span>
@@ -265,11 +259,12 @@ const Experience = ({ refProp }) => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
 
-      <div>
-        <div className="sticky top-0 border-t border-gray-700 bg-[#232323]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
+      {/* DIFFERENT LAYOUT */}
+      <div className='pr-[10%] pb-[5%] pl-[10%] rounded-t-3xl min-h-[2000px]'>
+        <div className="sticky top-0 border-t border-gray-700 bg-[#232323] " style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
           <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4 hover:bg-gray-800/50">
             <span className="col-span-5">Sep 2023 — Nov 2023</span>
             <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
@@ -278,16 +273,21 @@ const Experience = ({ refProp }) => {
                 <span class="inline-block">Card Isle </span>
               </span>
             </h3>
-            <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base ">
+            <div className="flex flex-col w-full col-span-6 col-start-6 pt-4 text-lg gap-y-4">
+              {/* <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc ">
                 <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
                 <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
                 <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
-              </ul>
+              </ul> */}
+              <p>
+              Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience. 
+              Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability. 
+              Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.
+              </p>
             </div>
-            <div className="col-span-7 col-start-6 flex flex-col divide-y divide-gray-700 border-gray-700 pt-4">
+            <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
                 {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                <span className="flex items-start text-xl gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                <span className="flex items-start py-1 text-xl font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                   Technical:
                   <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
                 </span>
@@ -301,16 +301,16 @@ const Experience = ({ refProp }) => {
                 <span class="inline-block">Card Isle </span>
               </span>
             </h3>
-            <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base ">
+            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+              <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc ">
                 <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
                 <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
                 <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
               </ul>
             </div>
-            <div className="col-span-7 col-start-6 flex flex-col divide-y divide-gray-700 border-gray-700 pt-4">
+            <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
                 {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                <span className="flex items-start text-xl gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                <span className="flex items-start py-1 text-xl font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                   Technical:
                   <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
                 </span>
@@ -325,33 +325,33 @@ const Experience = ({ refProp }) => {
                 <span class="inline-block">Card Isle </span>
               </span>
             </h3>
-            <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base ">
+            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+              <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc ">
                 <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
                 <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
                 <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
               </ul>
             </div>
-            <div className="col-span-7 col-start-6 flex flex-col divide-y divide-gray-700 border-gray-700 pt-4">
+            <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
                 {/* font-mono text-base font-medium leading-[200%] text-gray-300 */}
-                <span className="flex items-start text-xl gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+                <span className="flex items-start py-1 text-xl font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                   Technical:
                   <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
                 </span>
               </div>
           </div>
 
-          <div className="grid gap-x-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+          <div className="grid gap-x-4 relative min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
             {/* <span className="col-span-7 col-start-6 text-lg text-gray-300">Front-end Developer Intern</span> */}
             {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
-            {/* <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-              <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
+            {/* <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+              <ul className="flex flex-col gap-2 pl-4 text-base font-medium list-disc">
                 <li>Upgraded the company’s website by adding new features and improving layouts to enhance user engagement.</li>
                 <li>Redesigned UI elements like search bars, buttons, and layouts using Alpine.js, boosting usability by 30%.</li>
                 <li>Conducted testing using Playwright, achieving 90%+ test coverage and reducing functionality bugs by 20%.</li>
               </ul>
-              <div className="flex flex-col divide-y divide-gray-700 border-t border-gray-700 pt-4">
-                <span className="flex items-start gap-x-3 py-1 font-bold xl:gap-x-4 xl:py-2">
+              <div className="flex flex-col pt-4 border-t border-gray-700 divide-y divide-gray-700">
+                <span className="flex items-start py-1 font-bold gap-x-3 xl:gap-x-4 xl:py-2">
                   Technical:
                   <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Java, Maven, Junit, Docker, GitLab</span>
                 </span>

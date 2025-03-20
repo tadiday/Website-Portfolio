@@ -14,7 +14,7 @@ const Home = ({ refProp }) => {
           <div>
             Under construction.
           </div>
-        </div>
+        </div> 
       </div>
       
     </div>

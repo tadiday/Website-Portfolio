@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cardIsle from '../assets/cardisle.png';
-import VT from '../assets/VT.jpg';
-import WB from '../assets/web-port.png';
-import SPS from '../assets/simplisplit.webp';
-import FS from '../assets/foodSwipe.png';
+import VirginiaTech from '../assets/VT.jpg';
+import WebPortfolio from '../assets/web-port.png';
+import SimPliSplit from '../assets/simplisplit.webp';
+import FoodSwipe from '../assets/foodSwipe.png';
+import Background2 from '../assets/background2.avif';
+import Background1 from '../assets/background4.webp';
+import Background3 from '../assets/background1.jpg';
+import SimPliSplitGif from '../assets/gif/scan.gif';
+import NoiseTexture from '../assets/noise.jpg';
 
 
 const Project = ({ refProp }) => {
+
+
   const experiences = {
     projects: [
       {
@@ -25,7 +32,7 @@ const Project = ({ refProp }) => {
           'Conducted office hours, providing troubleshooting support and answering questions to enhance students\' understanding.',
           'Actively guided and monitored online forums and lab sessions to provide interactive learning experiences.'
         ],
-        image: VT
+        image: FoodSwipe
       },
       {
         title: 'Simplisplit',
@@ -43,7 +50,7 @@ const Project = ({ refProp }) => {
           'Conducted office hours, providing troubleshooting support and answering questions to enhance students\' understanding.',
           'Actively guided and monitored online forums and lab sessions to provide interactive learning experiences.'
         ],
-        image: VT
+        image: SimPliSplit
       },
       {
         title: 'Web-Portfolio',
@@ -61,15 +68,28 @@ const Project = ({ refProp }) => {
           'Conducted office hours, providing troubleshooting support and answering questions to enhance students\' understanding.',
           'Actively guided and monitored online forums and lab sessions to provide interactive learning experiences.'
         ],
-        image: VT
+        image: WebPortfolio
       }
     ],
   };
+  const [, setScrollPosition] = useState(0);
+  const [opacity, setOpacity] = useState(1); // State for opacity
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+      setOpacity(Math.max(0, 1 - position / 1)); // Adjust divisor for opacity change speed
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div ref={refProp} className="h-full rounded-[25px] bg-[#232323] p-4 z-30">
+    <div ref={refProp} className="h-full rounded-[25px] bg-[#080807] p-4 z-30">
       <div className="relative z-20 w-full bg-secondary-400 overflow-x-clip">
-        <div className="flex w-full flex-col gap-y-space-lg md:gap-y-space-2xl" >
+        <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
             <h2 className='col-span-10 col-start-2 text-[100px] font-semibold'>
               Selected Projects
@@ -78,121 +98,141 @@ const Project = ({ refProp }) => {
         </div>
         <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
           <div className="w-full pt-16">
-            <div className="mt-12 flex flex-col justify-between gap-y-16">
+            <div className="flex flex-col justify-between mt-12 gap-y-16">
+              {/* Portfolio */}
+              <div className="sticky top-0 border-t border-[#524D47] bg-[#080807] pb-[10em] pl-[5em] pr-[5em]" style={{ top: 'calc(10vh + 0em)', }}>
 
-              {/*Virginia Tech */}
-              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[15em]" style={{ top: 'calc(15vh + 0em)' }}>
-                <div className="flex items-center justify-start gap-x-2 text-left text-[40px]  font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-8">
-                  <span className="col-span-5">(1)</span>
-                  <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Personal-Porfolio</h3>
-                </div>
-                <div className="grid gap-x-8 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
-                  <img className="col-span-5 col-start-0 rounded-2xl w-full aspect-[2/1] object-cover border-4 border-gray-700 shadow-md" src={WB} alt="Virginia Tech" ></img>
-                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-                    <span className="col-span-7 col-start-6">
-                      <span className="flex items-center gap-x-2 font-bold"> Description: </span>
-                      Developing a personal website using React.js, Next.js, and Tailwind CSS to
-                      showcase projects, experiences, and research. The site will feature a clean,
-                      responsive design with smooth navigation and optimized performance.
-                      Hosting will be managed via Google Domains for a professional web presence.
-                    </span>
-                    {/* <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
-                      <li>Guided over 100 students by hosting office hours, troubleshooting issues, and providing tailored academic support.</li>
-                      <li>Facilitated interactive discussions through online forums, achieving a 90%+ student satisfaction rate.</li>
-                      <li>Supported instruction for Computer Organization, Computer Systems, and Comparative Languages, focusing on C, x86, RISC-V, operating systems concepts, and multi-language paradigms.</li>
-                    </ul> */}
+                <div className="grid gap-x-8 relative min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                  <h3 className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem]">Portfolio</h3>
+                  <div className="flex flex-col w-full col-span-5 col-start-1 pt-4 gap-y-4 text-heading">
+                    <p className="font-thin text-balance text-[1.25rem] ">
+                      Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.
+                    </p>
 
-                    <div className="border-t border-gray-700 pt-4">
+                    <div className="pt-4 border-t border-[#524D47]">
                       <div className="flex flex-col items-start gap-x-6">
-                        <span className="flex items-center gap-x-2 font-bold">
-                          Technology:
-                          <span className="font-mono text-base font-medium leading-[200%] text-gray-300">
-                            React.js, Tailwind CSS, Next.js
-                          </span>
-                        </span>
-                        <span className="flex items-center gap-x-2 font-bold">
-                          Github:
-                          <span className="font-mono text-base font-medium leading-[200%] text-gray-300">link</span>
+                        <span className="flex items-center">
+                          <div class="flex items-end gap-x-[10px] tracking-base">
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">React.js</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Tailwind</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Next.js</span>
+                          </div>
                         </span>
                       </div>
                     </div>
                   </div>
+
+                  <div className='relative top-0 flex items-center justify-center w-full col-span-7 col-start-6 marker:rounded-md aspect-square overflow-clip max-h-[600px]'>
+                    <img className="absolute object-cover w-full h-full aspect-4/3 rounded-xl brightness-75 contrast-125"
+                      src={Background3}
+                      alt="background2" >
+                    </img>
+                    <div className='z-10 w-5/6 space-y-4 rounded-lg aspect-4/3 overflow-clip'>
+                      <img className="border-4 border-gray-700 rounded-lg shadow-md"
+                        src={WebPortfolio}
+                        alt="WebPortfolio" >
+                      </img>
+                    </div>
+
+                  </div>
+                  <div class="flex items-end gap-x-[10px] col-span-5 col-start-6 pt-5">
+                    <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">Web-App</span>
+                    <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">GitHub</span>
+                    <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">2025</span>
+                  </div>
+                </div>
+              </div>
+              {/* Simplisplit */}
+              <div className="sticky top-0 border-t border-[#524D47] bg-[#080807] pb-[10em] pl-[5em] pr-[5em]" style={{ top: 'calc(10vh + 0em)' }}>
+                <div className="flex items-center justify-start font-semibold text-left gap-x-8 text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-8">
+                  <h3 className="col-span-5 py-4 2xl:py-3 text-[3.5rem]">Simplisplit</h3>
+                </div>
+                <div className="grid gap-x-8 relative min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                  <div className="flex flex-col w-full col-span-5 pt-4 col-start-0 gap-y-4 text-heading">
+                    <p className="font-thin text-balance text-[1.25rem] ">
+                      A mobile application that allows user to scan their bills
+                      and split the cost with their friends seamlessly. Available through the App Store.
+
+                    </p>
+
+                    <div className="pt-4 border-t border-[#524D47]">
+                      <div className="flex flex-col items-start gap-x-6">
+                        <span className="flex items-center">
+                          <div class="flex items-end gap-x-[10px] tracking-base">
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">React-native</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">TypeScript</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Tailwind</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Python</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Flask</span>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className='relative top-0 flex items-center justify-center w-full col-span-7 col-start-6 marker:rounded-md aspect-square overflow-clip max-h-[600px]'>
+                    <img className="absolute object-cover w-full h-full aspect-4/3 rounded-xl brightness-75 contrast-125"
+                      src={Background3}
+                      alt="background2" >
+                    </img>
+                    <div className='z-10 border-4 border-[#524D47] shadow-xl w-[30%] rounded-xl object-fit overflow-clip'>
+                      <img className=""
+                        src={SimPliSplitGif}
+                        alt="SimPliSplit" >
+                      </img>
+                    </div>
+                  </div>
+                  <div class="flex items-end gap-x-[10px] col-span-5 col-start-6 pt-5">
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">Mobile</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">GitHub</span>
+                      <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">2022</span>
+                    </div>
                 </div>
               </div>
 
               {/* Food Swipe */}
-              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[10em]" style={{ top: 'calc(15vh + 5.5em)' }}>
-                <div className="flex items-center justify-start gap-x-8 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-8">
-                  <span className="col-span-5">(2)</span>
-                  <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Food Swipe</h3>
-                </div>
-                <div className="grid gap-x-8 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
-                  <img className="col-span-5 col-start-0 rounded-2xl w-full aspect-[2/1] object-cover border-4 border-gray-700 shadow-md" src={FS} alt="SimPliSplit" ></img>
-                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
+              <div className="sticky top-0 border-t border-[#524D47] bg-[#080807] pb-[10em] pl-[5em] pr-[5em]" style={{ top: 'calc(10vh + 0em)', }}>
 
-                    <span className="col-span-7 col-start-6">
-                      <span className="flex items-center gap-x-2 font-bold">Description: </span>
-                      Built a Tinder-inspired restaurant discovery app allowing users to swipe right for
-                      more details on local dining options based on their location.
-                    </span>
-                    <ul className="flex flex-col gap-2 pl-4 list-disc font-medium text-base">
-                      <li>Integrated the Google Places API to fetch and display restaurant information.</li>
-                      <li>Utilized the Google Geolocation API to determine user location for personalized search results.</li>
-                      <li>Implemented a responsive and interactive UI using React.js and TypeScript.</li>
-                    </ul>
+                <div className="grid gap-x-8 relative font-semibold min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+                  <h3 className="col-span-5 col-start-1 py-4 2xl:py-3 text-[3.5rem]">FoodSwipe</h3>
+                  <div className="flex flex-col w-full col-span-5 col-start-1 pt-4 gap-y-4 text-heading">
+                    <p className="font-thin text-balance text-[1.25rem] ">
+                      Developed a Tinder-inspired restaurant discovery app designed to help users find the perfect dining spot.
+                      The app allows users to swipe right for more details on local restaurants tailored to their location.
+                    </p>
 
-                    <div className="border-t border-gray-700 pt-4">
+                    <div className="pt-4 border-t border-[#524D47]">
                       <div className="flex flex-col items-start gap-x-6">
-                        <span className="flex items-center gap-x-2 font-bold">
-                          Technology:
-                          <span className="font-mono text-base font-medium leading-[200%] text-gray-300">
-                            React.js, TypeScript, Tailwind CSS, Next.js, Google APIs
-                          </span>
-                        </span>
-                        <span className="flex items-center gap-x-2 font-bold">
-                          Github:
-                          <span className="font-mono text-base font-medium leading-[200%] text-gray-300">link</span>
+                        <span className="flex items-center">
+                          <div class="flex items-end gap-x-[10px] tracking-base">
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">React.js</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">TypeScript</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Tailwind</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Next.js</span>
+                            <span class="border rounded-full border-[#524D47] flex px-3 py-1">Google APIs </span>
+                          </div>
                         </span>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
 
-
-              {/* Card Isle Service */}
-              <div className="sticky top-0 border-t border-gray-700 bg-[#232323] pb-[5em]" style={{ top: 'calc(15vh + 11em)' }}>
-                <div className="flex items-center justify-start gap-x-2 text-left text-[40px] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4">
-                  <span className="col-span-5">(3)</span>
-                  <h3 className="col-span-7 col-start-6 py-4 2xl:py-3">Simplisplit</h3>
-                </div>
-                <div className="grid gap-x-4 relative flex min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12 text-[35px]">
-                  <img className="col-span-5 col-start-0 rounded-2xl w-full aspect-[2/1] object-cover border-4 border-gray-700 shadow-md " src={SPS} alt="SimPliSplit" ></img>
-                  <div className="col-span-7 col-start-6 flex w-full flex-col gap-y-4 pt-4 text-lg">
-                    <span className="col-span-7 col-start-6">
-                      <span className="flex items-center gap-x-2 font-bold">Description: </span>
-                      A fully functional mobile application that allows user to scan their bills
-                      and split the cost with their friends seamlessly. Available through the App Store.
-                    </span>
-                    <ul className="flex flex-col gap-2 pl-4 list-disc">
-                      <li>Integrated the Veryfi OCR API to extract receipt data and manage orders through a Flask server.</li>
-                      <li>Implemented the Venmo API to automate payment requests via phone numbers and SMS.</li>
-                    </ul>
-
-                    <div className="border-t border-gray-700 pt-4">
-                      <div className="flex flex-col items-start gap-x-6">
-                        <span className="flex items-center gap-x-2 font-bold">
-                          Technology:
-                          <span className="font-mono leading-[200%] text-gray-300">
-                            React-Native, Tailwind CSS, Next.js, Python, Flask
-                          </span>
-                        </span>
-                        <span className="flex items-center gap-x-2 font-bold">
-                          Github:
-                          <span className="font-mono text-base font-medium leading-[200%] text-gray-300">Private</span>
-                        </span>
-                      </div>
+                  <div className='relative top-0 flex items-center justify-center w-full col-span-7 col-start-6 marker:rounded-md aspect-square overflow-clip max-h-[600px]'>
+                    <img className="absolute object-cover w-full h-full aspect-4/3 rounded-xl brightness-75 contrast-125"
+                      src={Background3}
+                      alt="background2" >
+                    </img>
+                    <div className='z-10 w-5/6 space-y-4 rounded-lg aspect-4/3 overflow-clip'>
+                      <img className="border-4 border-gray-700 rounded-lg shadow-md"
+                        src={FoodSwipe}
+                        alt="FoodSwipe" >
+                      </img>
                     </div>
+
+                  </div>
+                  <div class="flex items-end gap-x-[10px] col-span-5 col-start-6 pt-5">
+                    <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">Web-App</span>
+                    <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">GitHub</span>
+                    <span class="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">2022</span>
                   </div>
                 </div>
               </div>
