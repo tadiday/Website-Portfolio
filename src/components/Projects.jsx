@@ -17,7 +17,7 @@ const Project = ({ refProp }) => {
   const experiences = {
     projects: [
       {
-        title: 'Food Swipe',
+        title: 'Food Swipe hi',
         date: 'Nov 2022',
         tech: ['React-Native', 'Tailwind CSS'],
         gitHub: 'link',
