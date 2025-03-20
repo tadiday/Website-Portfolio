@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import WebPortfolio from '../assets/web-port.gif';
 import SimPliSplit from '../assets/simplisplit.webp';
 import FoodSwipe from '../assets/foodSwipe.png';
-import Background2 from '../assets/background2.avif';
+import Background2 from '../assets/background2-bw.jpeg';
 import Background1 from '../assets/background3.jpg';
-import Background3 from '../assets/background1.jpg';
+import Background3 from '../assets/background1-bw.jpg';
 import SimPliSplitGif from '../assets/gif/scan.gif';
 import NoiseTexture from '../assets/noise.jpg';
+import { motion, AnimatePresence } from "framer-motion";
 
 
 const Project = ({ refProp }) => {
@@ -60,7 +61,7 @@ const Project = ({ refProp }) => {
     );
   };
 
-  const { title, description, tech, image, tags } = projects[currentIndex];
+  const { title, description, tech, image, tags, backg } = projects[currentIndex];
   console.log(tech)
 
 
@@ -76,6 +77,7 @@ const Project = ({ refProp }) => {
           </div>
         </div>
 
+        {/* Without Motion/= */}
         <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between mt-12 gap-y-16">
@@ -132,18 +134,10 @@ const Project = ({ refProp }) => {
                     </div>
                   </div>
 
-
-
-
-
-
-
-
-
                   <div className='relative top-0 flex items-center justify-center w-full col-span-7 col-start-6 marker:rounded-md aspect-square overflow-clip max-h-[600px]'>
                     <img className="absolute object-cover w-full h-full aspect-4/3 rounded-xl brightness-75 contrast-125"
-                      src={Background3}
-                      alt="background2" >
+                      src={backg}
+                      alt="backg" >
                     </img>
 
 
@@ -170,8 +164,119 @@ const Project = ({ refProp }) => {
 
 
 
+        {/* With Motion and Button*/}
+        <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
+          <div className="w-full pt-16">
+            <div className="flex flex-col justify-between mt-12 gap-y-16">
+              {/* Portfolio */}
+              <div className="sticky top-0 border-t border-[#524D47] bg-[#080807] pb-[10em]" style={{ top: "calc(10vh + 0em)" }}>
+                <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
+
+                  {/* Title (Animated) */}
+                  <AnimatePresence mode="wait">
+                    <motion.h3
+                      key={title}
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -40 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem]"
+                    >
+                      {title}
+                    </motion.h3>
+                  </AnimatePresence>
+
+                  {/* Tags (Static) */}
+                  <div className="flex items-center gap-x-[10px] col-span-5 col-start-6 h-full text-[20px] ">
+                    <span className="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">Web-App</span>
+                    <span className="border rounded-full border-[#524D47] flex px-3 py-1 bg-[#080807]">GitHub</span>
+                    <span className="border rounded-full border-[#443e37] flex px-3 py-1 bg-[#080807]">2025</span>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="flex flex-col w-full h-full col-span-5 col-start-1 text-heading gap-y-4">
+
+                    {/* Animated Description */}
+                    <AnimatePresence mode="wait">
+                      <motion.p
+                        key={description}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -40 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="font-thin text-balance text-[1.25rem] pt-4 "
+                      >
+                        {description}
+                      </motion.p>
+                    </AnimatePresence>
+
+                    {/* Animated Tech Stack */}
+                    <motion.div className="pt-4 border-t border-[#524D47] relative"
+                      key={tech.join(",")}
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -40 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}>
+                      <div
+
+                        className="flex flex-wrap gap-x-3"
+                      >
+                        {tech.map((item, index) => (
+                          <span className="border rounded-full border-[#524D47] flex px-3 py-1" key={index}>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+
+                    {/* Buttons Positioned Bottom-Left */}
+                    <div className="flex items-end justify-start h-full mt-auto gap-x-3">
+                      <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={handlePrevious}
+                        className="border rounded-full border-[#524D47] text-[18px] flex px-7 py-1 bg-[#080807]"
+                      >
+                        Prev
+                      </motion.button>
+                      <motion.button
+                        whileHover={{ scale: 1.1, backgroundColor: "#1a1a1a" }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={handleNext}
+                        className="border rounded-full border-[#524D47] text-[18px] flex px-7 py-1 bg-[#080807]"
+                      >
+                        Next
+                      </motion.button>
+                    </div>
+                  </div>
+
+                  {/* Image Section */}
+                  <div className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]">
+v
+                    <motion.div
+                      key={title}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.75 }}
+                      className={`z-10 w-5/6 space-y-4 rounded-lg aspect-4/3 overflow-clip 
+                      ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] rounded-xl object-fit' : ''}`}
+                    >
+                      <img className="border-gray-700 rounded-lg shadow-md"
+                        src={image}
+                        alt={title}
+                      />
+                    </motion.div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
+        {/* Sticky */}
         <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between mt-12 gap-y-16">

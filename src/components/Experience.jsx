@@ -265,7 +265,8 @@ const Experience = ({ refProp }) => {
 
       {/* DIFFERENT LAYOUT */}
       <section className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-[2000px]'>
-        <div className="w-full pt-16 mt-12">
+        <div className="w-full pt-16">
+
           <div className="top-0  bg-[#080807] pr-[3%] pb-[10%] pl-[3%]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
             <div className="flex items-center border-t border-[#524D47] justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
               <span className="col-span-5 ">2023 - Present</span>
