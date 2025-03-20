@@ -172,11 +172,12 @@ const Experience = ({ refProp }) => {
       <div className="relative z-20 w-full bg-secondary-400 overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
-            <h2 className='col-span-7 col-start-2 text-[100px] font-semibold'>
+            <h2 className='col-span-10 col-start-2 text-[100px] font-semibold'>
               Experience
             </h2>
           </div>
         </div>
+
         {/* <section className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-[2000px]">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between mt-12 gap-y-16">
@@ -263,109 +264,111 @@ const Experience = ({ refProp }) => {
       </div>
 
       {/* DIFFERENT LAYOUT */}
-      <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-[2000px]'>
-        <div className="top-0 border-t border-gray-700 bg-[#080807] pr-[3%] pb-[10%] pl-[3%]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
-          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
-            <span className="col-span-5 ">2023 - Present</span>
-            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-              <span className='space-x-2'>
-                <span>Undergraduate TA  @</span>
-                <span class="inline-block">Virginia Tech</span>
-              </span>
-            </h3>
-            {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
+      <section className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-[2000px]'>
+        <div className="w-full pt-16 mt-12">
+          <div className="top-0  bg-[#080807] pr-[3%] pb-[10%] pl-[3%]" style={{ top: 'calc(20vh + 11.5em)', marginBottom: '11.5em' }}>
+            <div className="flex items-center border-t border-[#524D47] justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
+              <span className="col-span-5 ">2023 - Present</span>
+              <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+                <span className='space-x-2'>
+                  <span>Undergraduate TA  @</span>
+                  <span class="inline-block">Virginia Tech</span>
+                </span>
+              </h3>
+              {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
 
-            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-              <p>
-              Provide academic support to students by hosting office hours, troubleshooting technical issues, and offering personalized guidance. 
-              Facilitate interactive discussions through online forums to enhance student engagement. 
-              Assist in teaching Computer Organization, Computer Systems, and Comparative Languages.
-              </p>
-              <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                <div className="flex flex-col items-start gap-x-6">
-                  <span className="flex items-center">
-                    <div class="flex items-end gap-x-[10px] tracking-base">
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">C</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">x86</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">RISC-V</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Rust</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Haskell</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Prolog</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Ruby</span>
-                      
-                    </div>
-                  </span>
+              <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+                <p>
+                  Provide academic support to students by hosting office hours, troubleshooting technical issues, and offering personalized guidance.
+                  Facilitate interactive discussions through online forums to enhance student engagement.
+                  Assist in teaching Computer Organization, Computer Systems, and Comparative Languages.
+                </p>
+                <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
+                  <div className="flex flex-col items-start gap-x-6">
+                    <span className="flex items-center">
+                      <div class="flex items-end gap-x-[10px] tracking-base">
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">C</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">x86</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">RISC-V</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Rust</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Haskell</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Prolog</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Ruby</span>
+
+                      </div>
+                    </span>
+                  </div>
+
                 </div>
-
               </div>
             </div>
-          </div>
-          
-          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
-            <span className="col-span-5">Fall 2024</span>
-            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-              <span className='space-x-2'>
-                <span>Software Engineer Co-op @</span>
-                <span class="inline-block">Peraton</span>
-              </span>
-            </h3>
-            {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
 
-            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-              <p>
-                Contributed to the development and maintenance of a cyber-threat intelligence platform.
-                Improved system performance by enhancing build processes, resolving issues, and updating dependencies.
-                Collaborated with cross-functional teams to document and address functionality improvements, ensuring a more secure and reliable platform.
-              </p>
-              <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                <div className="flex flex-col items-start gap-x-6">
-                  <span className="flex items-center">
-                    <div class="flex items-end gap-x-[10px] tracking-base">
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Maven</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Java</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Junit</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Docker</span>
-                    </div>
-                  </span>
+            <div className="flex items-center justify-start gap-x-2 text-left border-t border-[#524D47] text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
+              <span className="col-span-5">Fall 2024</span>
+              <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+                <span className='space-x-2'>
+                  <span>Software Engineer Co-op @</span>
+                  <span class="inline-block">Peraton</span>
+                </span>
+              </h3>
+              {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
+
+              <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+                <p>
+                  Contributed to the development and maintenance of a cyber-threat intelligence platform.
+                  Improved system performance by enhancing build processes, resolving issues, and updating dependencies.
+                  Collaborated with cross-functional teams to document and address functionality improvements, ensuring a more secure and reliable platform.
+                </p>
+                <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
+                  <div className="flex flex-col items-start gap-x-6">
+                    <span className="flex items-center">
+                      <div class="flex items-end gap-x-[10px] tracking-base">
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Maven</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Java</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Junit</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Docker</span>
+                      </div>
+                    </span>
+                  </div>
+
                 </div>
-
               </div>
             </div>
-          </div>
 
-          <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
-            <span className="col-span-5 ">Fall 2023</span>
-            <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-              <span className='space-x-2'>
-                <span>Front-end Developer Intern @</span>
-                <span class="inline-block">Card Isle </span>
-              </span>
-            </h3>
-            {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
+            <div className="flex items-center justify-start gap-x-2 text-left text-[35px] p-[2%] border-t border-[#524D47] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
+              <span className="col-span-5 ">Fall 2023</span>
+              <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
+                <span className='space-x-2'>
+                  <span>Front-end Developer Intern @</span>
+                  <span class="inline-block">Card Isle </span>
+                </span>
+              </h3>
+              {/* <img className="col-span-5 col-start-0 rounded-2xl w-full max-w-[450px] aspect-[16/9] object-cover border-4 border-gray-700 shadow-md" src={cardIsle} alt="Card Isle" ></img> */}
 
-            <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-              <p>
-                Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience.
-                Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability.
-                Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.
-              </p>
-              <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                <div className="flex flex-col items-start gap-x-6">
-                  <span className="flex items-center">
-                    <div class="flex items-end gap-x-[10px] tracking-base">
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Alpine.js</span>
-                      <span class="border rounded-full border-[#524D47] flex px-3 py-1">Playwright</span>
-                    </div>
-                  </span>
+              <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
+                <p>
+                  Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience.
+                  Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability.
+                  Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.
+                </p>
+                <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
+                  <div className="flex flex-col items-start gap-x-6">
+                    <span className="flex items-center">
+                      <div class="flex items-end gap-x-[10px] tracking-base">
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Alpine.js</span>
+                        <span class="border rounded-full border-[#524D47] flex px-3 py-1">Playwright</span>
+                      </div>
+                    </span>
+                  </div>
+
                 </div>
-
               </div>
             </div>
-          </div>
 
-          
+
+          </div>
         </div>
-      </div>
+      </section>
 
     </div>
 
