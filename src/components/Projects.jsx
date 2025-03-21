@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import WebPortfolio from '../assets/gif/web-port.gif';
 import FoodSwipe from '../assets/gif/foodSwipe.gif';
 import Background2 from '../assets/background/background2-bw.jpeg';
@@ -58,8 +58,8 @@ const Project = ({ refProp }) => {
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1
     );
   };
-
-  const { title, description, tech, image, gitHub, tags, backg } = projects[currentIndex];
+  const projectData = useMemo(() => projects[currentIndex], [currentIndex]);
+  const { title, description, tech, image, gitHub, tags, backg } = projectData;
   console.log(tech)
 
 
@@ -76,7 +76,7 @@ const Project = ({ refProp }) => {
         </div>
 
         {/* With Motion and Button*/}
-        <section className="pr-[5%] pb-[20%] pl-[5%] rounded-t-3xl min-h-screen">
+        <section className="pr-[5%] pb-[20%] pl-[5%] rounded-t-3xl min-h-screen text-[#FFFFE0]">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between mt-12 gap-y-16">
               {/* Portfolio */}
@@ -115,14 +115,14 @@ const Project = ({ refProp }) => {
                             href={gitHub}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="border rounded-full border-[#524D47] flex px-3 py-1 transition-transform duration-250 ease-in-out hover:scale-110 active:scale-90 hover:bg-[#524D47]"
+                            className="border rounded-full border-[#524D47] bg-[#524D47] flex px-3 py-1 transition-transform duration-250 ease-in-out hover:scale-110 active:scale-90 hover:bg-[#847A6F]"
                           >
                             {tag}
                           </a>
                         ) : (
                           <span
                             key={index}
-                            className="border rounded-full border-[#524D47] flex px-3 py-1"
+                            className="border rounded-full bg-[#524D47] border-[#524D47] flex px-3 py-1 justify-center items-center"
                           >
                             {tag}
                           </span>
@@ -156,11 +156,11 @@ const Project = ({ refProp }) => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }} // Keep exit y-movement smaller
                         transition={{ duration: 0.75, ease: "easeInOut" }} // Make it faster for a smoother effect
-                        className="pt-4 border-t border-[#524D47] relative min-h-[50px]" // Stabilize height
+                        className="pt-4  border-t border-[#524D47] relative min-h-[50px]" // Stabilize height
                       >
-                        <div className="flex flex-wrap gap-x-3">
+                        <div className="flex flex-wrap gap-x-3 gap-y-3">
                           {tech.map((item, index) => (
-                            <span className="border rounded-full border-[#524D47] flex px-3 py-1" key={index}>
+                            <span className="border rounded-full border-[#524D47] bg-[#524D47] flex px-3 py-1" key={index}>
                               {item}
                             </span>
                           ))}
@@ -172,11 +172,20 @@ const Project = ({ refProp }) => {
                     <div className="flex items-end justify-between h-full mt-auto gap-x-3">
 
                       <div className="flex items-end justify-start h-full mt-auto gap-x-3">
-                        <button onClick={handlePrevious} className='border border-[#524D47] text-[18px] flex px-7 py-1 bg-[#080807] rounded-full shadow-md transition-transform duration-[0.25s] ease-in-out hover:scale-110 active:scale-90 hover:bg-[#524D47]'>
-                          Prev
+                        <button
+                          onClick={handlePrevious}
+                          className='relative border border-[#524D47] bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md 
+                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
+                          before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 active:scale-90 overflow-hidden'>
+                          <span className='relative z-10'>Prev</span>
                         </button>
-                        <button onClick={handleNext} className='border border-[#524D47] text-[18px] flex px-7 py-1 bg-[#080807] rounded-full shadow-md transition-transform duration-[0.25s] ease-in-out hover:scale-110 active:scale-90 hover:bg-[#524D47]'>
-                          Next
+                        <button
+                          onClick={handleNext}
+                          className="relative border border-[#524D47] bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md 
+                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
+                          before:scale-x-0 before:origin-right before:transition-transform before:duration-[0.35s] hover:before:scale-x-100 active:scale-90 overflow-hidden"
+                        >
+                          <span className="relative z-10">Next</span>
                         </button>
                       </div>
                       <div className='relative flex items-center order-first h-fit gap-x-2 overflow-clip text-[18px] text-heading-4 leading-tighter'>
@@ -213,7 +222,7 @@ const Project = ({ refProp }) => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 2 }}>
-                    <img className="absolute object-cover w-full h-full aspect-4/3 rounded-xl brightness-75 contrast-125"
+                    <img className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125"
                       src={backg}
                       alt="backg" >
                     </img>
@@ -225,10 +234,10 @@ const Project = ({ refProp }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 1 }}
-                      className={`z-10 w-5/6 space-y-4 rounded-lg aspect-4/3 overflow-clip 
+                      className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip 
                       ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit' : ''}`}
                     >
-                      <img className="border-gray-700 rounded-lg shadow-md"
+                      <img className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
                         src={image}
                         alt={title}
                       />
