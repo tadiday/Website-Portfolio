@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import cardIsle from '../assets/cardisle.png';
-import VT from '../assets/VT.jpg';
-import Peraton from '../assets/peraton1.jpg';
-import pattern from '../assets/p6.webp';
+import cardIsle from '../assets/company/cardisle.png';
+import VT from '../assets/company/VT.jpg';
+import Peraton from '../assets/company/peraton1.jpg';
 
 
 const Experience = ({ refProp }) => {
@@ -173,7 +172,7 @@ const Experience = ({ refProp }) => {
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
             <h2 className='col-span-10 col-start-2 text-[100px] font-semibold'>
-              Experience
+              EXPERIENCE
             </h2>
           </div>
         </div>
