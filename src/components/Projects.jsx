@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import WebPortfolio from '../assets/gif/web-port.gif';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import WebPortfolioMP4 from '../assets/gif/web-port2.mp4';
 import FoodSwipe from '../assets/gif/foodSwipe.gif';
 import Background2 from '../assets/background/background2-bw.jpeg';
 import Background1 from '../assets/background/background3-bw.jpg';
@@ -18,7 +18,7 @@ const Project = ({ refProp }) => {
       gitHub: 'https://github.com/tadiday/Website-Portfolio',
       description: `
           Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
-      image: WebPortfolio,
+      image: WebPortfolioMP4,
       tags: ['Web-App', 'GitHub', '2025'],
       backg: Background1,
     },
@@ -58,9 +58,11 @@ const Project = ({ refProp }) => {
       prevIndex === 0 ? projects.length - 1 : prevIndex - 1
     );
   };
-  const projectData = useMemo(() => projects[currentIndex], [currentIndex]);
-  const { title, description, tech, image, gitHub, tags, backg } = projectData;
-  console.log(tech)
+
+
+  const { title, description, tech, image, gitHub, tags, backg } = useMemo(() => projects[currentIndex], [currentIndex]);
+
+
 
 
 
@@ -141,7 +143,7 @@ const Project = ({ refProp }) => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        transition={{ duration: 0.75, ease: "easeInOut" }}
                         className="font-thin text-balance text-[1.25rem] pt-4 "
                       >
                         {description}
@@ -155,7 +157,7 @@ const Project = ({ refProp }) => {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }} // Keep exit y-movement smaller
-                        transition={{ duration: 0.75, ease: "easeInOut" }} // Make it faster for a smoother effect
+                        transition={{ duration: 1, ease: "easeInOut" }} // Make it faster for a smoother effect
                         className="pt-4  border-t border-[#524D47] relative min-h-[50px]" // Stabilize height
                       >
                         <div className="flex flex-wrap gap-x-3 gap-y-3">
@@ -237,10 +239,24 @@ const Project = ({ refProp }) => {
                       className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip 
                       ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit' : ''}`}
                     >
-                      <img className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
-                        src={image}
-                        alt={title}
-                      />
+                      {title === 'Web-Portfolio' ?
+                        <video
+                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                          src={image}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                        />
+                        :
+                        <img
+                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                          src={image}
+                          alt={title} />
+                      }
+
+
+
                     </motion.div>
                   </motion.div>
 
