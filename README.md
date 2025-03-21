@@ -10,3 +10,6 @@ In the project directory, you can run:
 git config --global core.autocrlf input
 ## Window
 git config --global core.autocrlf true
+
+## Download requirments in the requirement 
+Located in the requirement.txt

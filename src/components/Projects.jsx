@@ -212,7 +212,7 @@ const Project = ({ refProp }) => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 1 }}>
+                    transition={{ duration: 2 }}>
                     <img className="absolute object-cover w-full h-full aspect-4/3 rounded-xl brightness-75 contrast-125"
                       src={backg}
                       alt="backg" >
@@ -226,7 +226,7 @@ const Project = ({ refProp }) => {
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 1 }}
                       className={`z-10 w-5/6 space-y-4 rounded-lg aspect-4/3 overflow-clip 
-                      ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] rounded-xl object-fit' : ''}`}
+                      ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit' : ''}`}
                     >
                       <img className="border-gray-700 rounded-lg shadow-md"
                         src={image}
@@ -234,7 +234,6 @@ const Project = ({ refProp }) => {
                       />
                     </motion.div>
                   </motion.div>
-                  {/* </div> */}
 
                 </div>
               </div>

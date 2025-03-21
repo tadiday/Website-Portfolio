@@ -3,3 +3,4 @@ yarn add gsap
 npm install motion
 npm install lucide-react
 npm update react-scripts
+npm install framer-motion
