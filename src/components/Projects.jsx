@@ -67,7 +67,7 @@ const Project = ({ refProp }) => {
 
 
   return (
-    <div ref={refProp} className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30">
+    <div ref={refProp} className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#FFFFE0]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
@@ -78,7 +78,7 @@ const Project = ({ refProp }) => {
         </div>
 
         {/* With Motion and Button*/}
-        <section className="pr-[5%] pb-[20%] pl-[5%] rounded-t-3xl min-h-screen text-[#FFFFE0]">
+        <section className="pr-[5%] pb-[20%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between mt-12 gap-y-16">
               {/* Portfolio */}
@@ -255,8 +255,6 @@ const Project = ({ refProp }) => {
                           alt={title} />
                       }
 
-
-
                     </motion.div>
                   </motion.div>
 
@@ -269,13 +267,16 @@ const Project = ({ refProp }) => {
               <div className='font-semibold text-[50px] '>
                 Checkout More Projects
               </div>
+              <div></div>
               <a
                 href="https://github.com/tadiday"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[35px] col-span-7 col-start-5 inline-block px-4 py-2 mt-4 font-semibold bg-[#524D47] rounded-full shadow-md transition-transform duration-200 ease-in-out hover:scale-110 active:scale-90"
+                className="relative text-[35px] col-span-7 col-start-5 inline-block px-4 py-2 mt-4 font-semibold bg-[#524D47] rounded-full shadow-md
+                    transition-transform duration-[0.55s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
+                    before:scale-y-0 before:origin-top before:transition-transform before:duration-[0.55s] hover:before:scale-y-100 active:scale-90 overflow-hidden"
               >
-                GitHub
+                <span className='relative z-10'>GitHub</span>
               </a>
             </div>
           </div>
