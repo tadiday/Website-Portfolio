@@ -71,7 +71,7 @@ const Project = ({ refProp }) => {
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
-            <h2 className='col-span-12 col-start-2 text-[100px] font-semibold'>
+            <h2 className='col-span-12 col-start-2 text-[100px] font-semibold  '>
               SELECTED PROJECTS
             </h2>
           </div>
@@ -93,7 +93,7 @@ const Project = ({ refProp }) => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.75, ease: "easeOut" }}
-                      className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem]"
+                      className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem] "
                     >
                       {title}
                     </motion.h3>
