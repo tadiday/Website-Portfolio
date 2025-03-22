@@ -191,12 +191,12 @@ const Experience = ({ refProp }) => {
           </div>
         </div>
         {/* Using the data */}
-        <section className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-[2000px]'>
+        <section className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-[2000px] '>
           <div className="w-full pt-16 ">
 
-            <div className="top-0 flex flex-col bg-[#080807] pr-[3%] pb-[10%] pl-[3%] gap-y-4">
+            <div className="top-0 flex flex-col bg-[#080807] border-t border-[#524D47] pr-[3%] pb-[10%] pl-[3%] gap-y-4">
               {experiences.professional.map((job, index) => (
-                <div className="flex items-center border-[#524D47] justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
+                <div className="flex items-center border-[#524D47]  justify-start gap-x-2 text-left text-[35px] p-[2%] font-semibold text-white-400 md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
                   <span className="col-span-3 col-start-3">{job.date}</span>
                   <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
                     <span className='space-x-2'>

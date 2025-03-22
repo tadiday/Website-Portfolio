@@ -68,9 +68,9 @@ function App() {
   return (
     <>
       <div id="noise-overlay"></div>
-      <div className="relative text-white font-[]">
-        <div className="fixed z-50 flex items-center justify-center w-full" ref={headerRef}>
-          <Header className="font-['Montserrat Subrayada']" scrollToSection={scrollToSection} />
+      <div className="relative w-full text-white">
+        <div className="fixed top-0 right-0 z-40 flex flex-col items-end justify-center w-[10%] max-w-[60px] h-full" ref={headerRef}>
+          <Header className="flex flex-col font-['Montserrat Subrayada']" scrollToSection={scrollToSection} />
         </div>
         <div className="grid" >
           {/* <Home className ="h-[58rem] rounded-[12px] bg-red-100" refProp={homeRef} /> */}
