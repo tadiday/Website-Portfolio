@@ -40,26 +40,27 @@ const Experience = ({ refProp }) => {
       },
       {
         title: 'Virginia Tech IDPro',
-        date: 'Jan 2024 - May 2024',
+        date: 'Jan - Dec 2024',
         role: 'Rural Trash Collection Research',
         location: 'Blacksburg, VA',
-        description: [
-          'Developing an automated trash collection robot, allowing the monitor/operator to work remotely.',
-          'Selecting and installing sensors necessary for autonomous navigation and trash collection.',
-          'Identifying and reviewing algorithms to govern path planning, obstacle avoidance, safety, and trash collection.'
-        ],
+        description: `
+          Developed an automated trash collection robot enabling remote monitoring and operation, 
+          integrating essential sensors for autonomous navigation and efficient waste collection. 
+          Researched and implemented algorithms for path planning, obstacle avoidance, safety measures, 
+          and optimized trash collection to enhance functionality and reliability.`,
+        skills: ['Python', 'ROS', 'OpenCV', 'Raspberry Pi'],
         image: VT
       },
       {
         title: 'Virginia Tech IDPro',
-        date: 'Sep 2023 - Nov 2023',
+        date: 'Sep - Nov 2023',
         role: 'SMART Research',
         location: 'Blacksburg, VA',
-        description: [
-          'Conducted research and successfully designed a Software Managed Arduino-based Residential Toolkit (SMART).',
-          'Integrated Raspberry Pi to facilitate connectivity and optimized system functionality for an enhanced user experience.',
-          'Engineered a user-friendly mobile application using Swift, enabling remote control and monitoring of smart devices.'
-        ],
+        description: `
+          Designed and developed a Software Managed Arduino-based Residential Toolkit (SMART) to enhance home automation, 
+          integrating a Raspberry Pi for improved connectivity and optimized system performance. 
+          Built a Swift-based mobile application to enable remote control and real-time monitoring of smart devices, ensuring a seamless and user-friendly experience.`,
+        skills: ['Swift', 'Arduino', 'Raspberry Pi', 'Xcode'],
         image: VT
       }
     ],
@@ -88,6 +89,31 @@ const Experience = ({ refProp }) => {
           Collaborated with cross-functional teams to document and address functionality improvements, ensuring a more secure and reliable platform.`,
         skills: ['Maven', 'Java', 'Junit', 'Docker'],
         image: Peraton
+      },
+      {
+        title: 'Virginia Tech IDPro',
+        date: 'Jan - Dec 2024',
+        role: 'Rural Trash Collection Research',
+        location: 'Blacksburg, VA',
+        description: `
+          Developed an automated trash collection robot enabling remote monitoring and operation, 
+          integrating essential sensors for autonomous navigation and efficient waste collection. 
+          Researched and implemented algorithms for path planning, obstacle avoidance, safety measures, 
+          and optimized trash collection to enhance functionality and reliability.`,
+        skills: ['Python', 'ROS', 'OpenCV', 'Raspberry Pi'],
+        image: VT
+      },
+      {
+        title: 'Virginia Tech IDPro',
+        date: 'Sep - Nov 2023',
+        role: 'SMART Research',
+        location: 'Blacksburg, VA',
+        description: `
+          Designed and developed a Software Managed Arduino-based Residential Toolkit (SMART) to enhance home automation, 
+          integrating a Raspberry Pi for improved connectivity and optimized system performance. 
+          Built a Swift-based mobile application to enable remote control and real-time monitoring of smart devices, ensuring a seamless and user-friendly experience.`,
+        skills: ['Swift', 'Arduino', 'Raspberry Pi', 'Xcode'],
+        image: VT
       },
       {
         title: 'Card Isle',
@@ -211,7 +237,7 @@ const Experience = ({ refProp }) => {
                       {job.description}
                     </p>
                     <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-                      
+
                       <div className="flex flex-wrap items-center gap-3">
                         {job.skills.map((tech, index) => (
                           <span key={index} className="flex justify-center rounded-full bg-[#524D47] px-3 py-1 min-w-[3em]">

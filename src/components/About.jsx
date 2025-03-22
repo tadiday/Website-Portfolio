@@ -21,7 +21,7 @@ const About = ({ refProp }) => {
   return (
     <section
       ref={refProp}
-      className="h-screen sticky top-0 text-black px-[10%] pb-20 bg-[#fdf0d5]"
+      className="h-screen sticky top-0 text-home px-[10%] pb-20 bg-home bg-cover bg-center bg-no-repeat"
       style={{
 
         
@@ -32,7 +32,7 @@ const About = ({ refProp }) => {
       <div className="flex flex-col w-full">
         <div>
           <h1
-            className="font-rale flex justify-center w-full h-[70%] sm:text-[100px] md:text-[150px] lg:text-[200px] font-thin"
+            className="flex justify-center w-full h-[70%] sm:text-[100px] md:text-[150px] lg:text-[200px]"
             style={{ opacity }} // Apply opacity here
           >
             PETER CAO

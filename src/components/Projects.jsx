@@ -82,7 +82,7 @@ const Project = ({ refProp }) => {
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between mt-12 gap-y-16">
               {/* Portfolio */}
-              <div className="sticky top-0 border-t border-[#524D47] bg-[#080807] pb-[10em]" style={{ top: "calc(10vh + 0em)" }}>
+              <div className="sticky top-0 bg-line bg-[#080807] pb-[10em]" style={{ top: "calc(10vh + 0em)" }}>
                 <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
 
                   {/* Title (Animated) */}
@@ -117,14 +117,14 @@ const Project = ({ refProp }) => {
                             href={gitHub}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="border rounded-full border-[#524D47] bg-[#524D47] flex px-3 py-1 transition-transform duration-250 ease-in-out hover:scale-110 active:scale-90 hover:bg-[#847A6F]"
+                            className="border rounded-full border-[#524D47] bg-button flex px-3 py-1 transition-transform duration-250 ease-in-out hover:scale-110 active:scale-90 hover:bg-[#847A6F]"
                           >
                             {tag}
                           </a>
                         ) : (
                           <span
                             key={index}
-                            className="border rounded-full bg-[#524D47] border-[#524D47] flex px-3 py-1 justify-center items-center"
+                            className="border rounded-full bg-button border-[#524D47] flex px-3 py-1 justify-center items-center"
                           >
                             {tag}
                           </span>
@@ -158,11 +158,11 @@ const Project = ({ refProp }) => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 50 }} // Keep exit y-movement smaller
                         transition={{ duration: 1, ease: "easeInOut" }} // Make it faster for a smoother effect
-                        className="pt-4  border-t border-[#524D47] relative min-h-[50px]" // Stabilize height
+                        className="pt-4  bg-line relative min-h-[50px]" // Stabilize height
                       >
                         <div className="flex flex-wrap gap-x-3 gap-y-3">
                           {tech.map((item, index) => (
-                            <span className="border rounded-full border-[#524D47] bg-[#524D47] flex px-3 py-1" key={index}>
+                            <span className="flex px-3 py-1 rounded-full bg-border bg-button" key={index}>
                               {item}
                             </span>
                           ))}
@@ -176,14 +176,14 @@ const Project = ({ refProp }) => {
                       <div className="flex items-end justify-start h-full mt-auto gap-x-3">
                         <button
                           onClick={handlePrevious}
-                          className='relative border border-[#524D47] bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md 
+                          className='relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md 
                           transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
                           before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 active:scale-90 overflow-hidden'>
                           <span className='relative z-10'>Prev</span>
                         </button>
                         <button
                           onClick={handleNext}
-                          className="relative border border-[#524D47] bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md 
+                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md 
                           transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
                           before:scale-x-0 before:origin-right before:transition-transform before:duration-[0.35s] hover:before:scale-x-100 active:scale-90 overflow-hidden"
                         >
@@ -192,7 +192,7 @@ const Project = ({ refProp }) => {
                       </div>
                       <div className='relative flex items-center order-first h-fit gap-x-2 overflow-clip text-[18px] text-heading-4 leading-tighter'>
                         Page
-                        <span className='h-[2px] w-6 rounded-full bg-[#524D47]'></span>
+                        <span className='h-[2px] w-6 rounded-full bg-button'></span>
                         <AnimatePresence mode="wait">
                           <span className="relative block h-[24px] w-[24px]"> {/* Ensure stable layout */}
                             <motion.span
@@ -272,7 +272,7 @@ const Project = ({ refProp }) => {
                 href="https://github.com/tadiday"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative text-[35px] col-span-7 col-start-5 inline-block px-4 py-2 mt-4 font-semibold bg-[#524D47] rounded-full shadow-md
+                className="relative text-[35px] col-span-7 col-start-5 inline-block px-4 py-2 mt-4 font-semibold bg-button rounded-full shadow-md
                     transition-transform duration-[0.55s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
                     before:scale-y-0 before:origin-top before:transition-transform before:duration-[0.55s] hover:before:scale-y-100 active:scale-90 overflow-hidden"
               >
