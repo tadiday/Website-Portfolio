@@ -1,0 +1,28 @@
+/* About.css */
+
+@keyframes rain {
+    0% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .rainfall span {
+    display: inline-block;
+    animation: rain 1s linear infinite;
+    opacity: 0;
+  }
+  
+  .rainfall span:nth-child(1) { animation-delay: 0.1s; }
+  .rainfall span:nth-child(2) { animation-delay: 0.2s; }
+  .rainfall span:nth-child(3) { animation-delay: 0.3s; }
+  .rainfall span:nth-child(4) { animation-delay: 0.4s; }
+  /* Add more delays as needed */
+  
