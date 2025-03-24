@@ -6,7 +6,7 @@ interface AboutProps {
 }
 
 // Convert to TypeScript and use forwardRef
-const About = forwardRef<HTMLDivElement, {}>((_, ref) => {
+const About = (() => {
   const [, setScrollPosition] = useState<number>(0);
   const [opacity, setOpacity] = useState<number>(1);
 
@@ -23,7 +23,7 @@ const About = forwardRef<HTMLDivElement, {}>((_, ref) => {
 
   return (
     <section
-      ref={ref}
+      id="about"
       className="h-screen sticky top-0 text-home px-[10%] pb-20 bg-home bg-cover bg-center bg-no-repeat"
     >
       <div className="h-[20%]"></div>

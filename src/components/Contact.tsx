@@ -1,11 +1,11 @@
 import {forwardRef } from "react";
 
 
-const Contact = forwardRef<HTMLDivElement, {}>((_, ref) => {
+const Contact = (() => {
     return (
-      <div ref={ref} className="bg-blue-100 h-[58rem] rounded-[12px]">
+      <section id='contact' className="bg-blue-100 h-[58rem] min-h-screen rounded-[12px]">
         <div>Contact</div>
-      </div>
+      </section>
     );
   });
   

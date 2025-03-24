@@ -11,7 +11,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 
 
-const Project = forwardRef<HTMLDivElement, {}>((_, ref) => {
+const Project = (() => {
 
 
   const projects = [
@@ -71,7 +71,7 @@ const Project = forwardRef<HTMLDivElement, {}>((_, ref) => {
 
 
   return (
-    <div ref={ref} className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#FFFFE0]">
+    <div id='projects' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#FFFFE0]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >

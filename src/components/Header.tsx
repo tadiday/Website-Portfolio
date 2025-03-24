@@ -6,9 +6,11 @@ import { MdWorkOutline } from "react-icons/md";
 import { MdOutlineMailOutline } from "react-icons/md";
 
 
+interface HeaderProps {
+  scrollToSection: (section: "home" | "about" | "projects" | "experience" | "contact") => void;
+}
 
-
-const Header = ({ scrollToSection }) => {
+const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   return (
     <header className="z-10 flex items-center justify-center w-full shadow-lg rounded-tr-2xl rounded-br-2xl bg-bar">
        <nav className = "flex flex-col items-center my-4">
