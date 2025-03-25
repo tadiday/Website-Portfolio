@@ -280,7 +280,7 @@ const Experience = (() => {
       < div className="relative z-20 w-full bg-secondary-400 overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
-            <h2 className='col-span-10 col-start-2 text-[100px] font-semibold text-home'>
+            <h2 className='col-span-20 col-start-2 text-[100px] font-semibold text-home'>
               MY JOURNEY
             </h2>
           </div>
@@ -294,12 +294,8 @@ const Experience = (() => {
             </h3> */}
             <div className="top-0 flex py-5 flex-col bg-[#080807] border-t border-b border-[#524D47] gap-y-4 group">
               {experiences.professional.map((job, index) => (
-                <a
-                  key={'profession' + index}
-                  href={job.link}
-                  target="_blank"
-                  className="">
-
+                <div key={'profession' + index}
+                    className="">
 
                   <div className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%] 
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
@@ -323,13 +319,16 @@ const Experience = (() => {
                       viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                       transition={{ duration: 1, ease: "easeOut" }}
                       className="col-span-7 col-start-4 py-4 pl-10">
-                      <span className='space-x-2 group/link group/title hover:cursor-pointer'>
-                        <span className="inline-block group-hover/title:text-[#967A54]">{job.title}</span>
+                      <a 
+                        className='space-x-2 group/link group/title'
+                        href={job.link}
+                        target="_blank">
+                        <span className="inline-block group-hover/title:text-[#967A54] ">{job.title}</span>
                         <span className="inline-block group-hover/title:text-[#967A54]">@</span>
                         <span className="inline-block  group-hover/title:text-[#967A54]">{job.company}</span>
                         <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
                           transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1' />
-                      </span>
+                      </a>
                       <div className="flex flex-col w-full col-span-6 col-start-6 text-lg gap-y-4">
                         <p className="font-thin">{job.description}</p>
                         <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
@@ -363,7 +362,7 @@ const Experience = (() => {
                     >
                     </motion.div>
                   </div>
-                </a>
+                </div>
               ))}
             </div>
           </div>
