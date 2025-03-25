@@ -71,7 +71,7 @@ const Project = (() => {
 
 
   return (
-    <div id='projects' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#FFFFE0]">
+    <div id='projects' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
@@ -99,7 +99,7 @@ const Project = (() => {
                       transition={{ duration: 0.75, ease: "easeOut" }}
                       className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem] "
                     >
-                      {title}<GoArrowUpRight className='inline-block text-[#644f3e]'/>
+                      {title}<GoArrowUpRight className='inline-block text-[#644f3e]' />
                     </motion.h3>
                   </AnimatePresence>
 
@@ -180,14 +180,14 @@ const Project = (() => {
                       <div className="flex items-end justify-start h-full mt-auto gap-x-3">
                         <button
                           onClick={handlePrevious}
-                          className='relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md 
+                          className='relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
                           transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
                           before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 active:scale-90 overflow-hidden'>
                           <span className='relative z-10'>Prev</span>
                         </button>
                         <button
                           onClick={handleNext}
-                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md 
+                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
                           transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
                           before:scale-x-0 before:origin-right before:transition-transform before:duration-[0.35s] hover:before:scale-x-100 active:scale-90 overflow-hidden"
                         >

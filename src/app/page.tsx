@@ -24,7 +24,8 @@ export default function Home() {
 
  
   return (
-    <div className="relative w-full text-white">
+    <div className="relative w-full text-white ">
+      <div id="noise-overlay"></div>
       {/* Header */}
       <div className="fixed top-0 left-0 z-40 flex flex-col items-end justify-center w-[10%] max-w-[60px] h-full">
         <Header scrollToSection={scrollToSection} />
