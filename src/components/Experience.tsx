@@ -279,10 +279,57 @@ const Experience = (() => {
       {/* NO BUTTON */}
       < div className="relative z-20 w-full bg-secondary-400 overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
-          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20' >
-            <h2 className='col-span-20 col-start-2 text-[100px] font-semibold text-home'>
-              MY JOURNEY
+          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
+            <h2 className='col-span-14 col-start-2 text-[120px] font-semibold text-home'>
+              CAREER ADVENTURE
             </h2>
+            <h2 className='col-span-1 col-start-16 text-[120px] font-semibold'>
+              (2)
+            </h2>
+
+            <motion.span
+              className="text-[25px] font-thin text-home col-span-6 col-start-9"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 1, delay: 0 }}
+            >
+              "Innovating through collaboration and growths."
+            </motion.span>
+            <div className="h-full flex col-span-3 col-start-15 w-full items-center"
+            >
+              <div className="h-[1px] bg-[#524D47] w-full"></div>
+            </div>
+            <div className="h-full flex col-span-3 col-start-9 w-full items-center">
+              <div className="h-[1px] bg-[#524D47] w-full"></div>
+            </div>
+            <motion.span
+              className="flex text-[25px] font-thin text-home col-span-7 col-start-12"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 1, delay: 1 }}
+            >
+              "Transforming challenges into impactful solutions."
+            </motion.span>
+
+
+            <div className="h-full flex col-span-2 col-start-9 w-full items-center">
+              <div className="h-[1px] bg-[#524D47] w-full"></div>
+            </div>
+            <motion.span
+              className="flex text-[25px] font-thin text-home col-span-4 col-start-11 justify-center"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 1, delay: 2 }}
+            >
+              "Working smarter, not harder."
+            </motion.span>
+
+            <div className="h-full flex col-span-3 col-start-15 w-full items-center">
+              <div className="h-[1px] bg-[#524D47] w-full"></div>
+            </div>
           </div>
         </div>
 
