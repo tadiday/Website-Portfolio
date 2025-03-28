@@ -1,4 +1,4 @@
-import { useState, useMemo, forwardRef } from "react";
+import { useState, useEffect, useMemo } from "react";
 // import WebPortfolioMP4 from '../assets/gif/web-port2.mp4';
 // import FoodSwipe from '../assets/gif/foodSwipe.gif';
 // import Background2 from '../assets/background/background2-bw.jpeg';
@@ -19,13 +19,13 @@ const Project = (() => {
     {
       title: 'Web-Portfolio',
       date: '2025',
-      tech: ['React.js', 'Tailwind', 'Next.js'],
+      tech: ['React.js', 'TypeScript', 'Tailwind', 'Next.js', 'Framer Motion'],
       gitHub: 'https://github.com/tadiday/Website-Portfolio',
       description: `
           Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
       image: '../assets/gif/web-port2.mp4',
       tags: ['Web-App', 'GitHub', '2025'],
-      backg: '../assets/background/background1-bw.jpg',
+      backg: '../assets/background/background1.jpg',
     },
     {
       title: 'Simplisplit',
@@ -37,7 +37,7 @@ const Project = (() => {
           Available through the App Store.`,
       image: '../assets/gif/scan.gif',
       tags: ['Mobile', 'Private', '2023'],
-      backg: '../assets/background/background3-bw.jpg',
+      backg: '../assets/background/background3.jpg',
     },
     {
       title: 'Food Swipe',
@@ -68,119 +68,131 @@ const Project = (() => {
   const { title, description, tech, image, gitHub, tags, backg } = useMemo(() => projects[currentIndex], [currentIndex]);
 
 
+  // Simulate the quote process (async function)
+  function processQuote() {
+    return new Promise((resolve) => {
+      console.log("Starting the quote process...");
+      setTimeout(() => {
+        console.log("Quote process finished.");
+        resolve("Quote complete");
+      }, 3000); // Simulate 3 seconds delay for the quote process
+    });
+  }
 
 
 
   return (
-    <div id='projects' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
-      <div className="relative z-20 w-full overflow-x-clip">
+    <section id='projects' className="h-full bg-[#080807] p-4 z-30  text-[#bebebe]">
+      < div className="relative z-20 w-full bg-secondary-400 overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
-          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home'>
-            <h2 className='col-span-15 col-start-2 text-[120px] font-semibold'>
+          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
+            <h2 className='col-span-15 col-start-2 text-[120px] font-semibold text-home'>
               SELECTED PROJECTS
             </h2>
             <h2 className='col-span-1 col-start-17 text-[120px] font-semibold'>
               (1)
             </h2>
 
-            {/* <motion.span
-              className="text-[25px] font-thin text-home col-span-6 col-start-7 py-1"
-              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
-              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 1, delay: 0 }}
-            >
-              "Innovative solutions, where every detail matters."
-            </motion.span>
-            <div className="h-full flex col-span-5 col-start-13 w-full items-center"
-            >
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
-            </div>
-            <div className="h-full flex col-span-5 col-start-7 w-full items-center">
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
-            </div>
-            <motion.span
-              className="flex text-[25px] font-thin text-home col-span-6 col-start-12 justify-center py-1"
-              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
-              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 1, delay: 1 }}
-            >
-              "Designing with purpose, creating with passion."
-            </motion.span>
-
-
-            <div className="h-full flex col-span-2 col-start-7 w-full items-center">
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
-            </div>
-            <motion.span
-              className="flex text-[25px] font-thin text-home col-span-7 col-start-9 justify-center py-1"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 2 }}
-            >
-              "Each project is a step forward in my journey of growth."
-            </motion.span>
-
-            <div className="h-full flex col-span-2 col-start-16 w-full items-center">
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
-            </div> */}
 
             <motion.span
               className="text-[25px] font-thin text-home col-span-6 col-start-9"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 1, delay: 0 }}
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 0}}
             >
               "Innovative solutions, where every detail matters."
             </motion.span>
             <div className="h-full flex col-span-3 col-start-15 w-full items-center"
             >
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-right"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              />
             </div>
             <div className="h-full flex col-span-3 col-start-9 w-full items-center">
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-left"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+              />
             </div>
             <motion.span
               className="flex text-[25px] font-thin text-home col-span-6 col-start-12 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 1, delay: 1 }}
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 0.75 }}
             >
               "Designing with purpose, creating with passion."
             </motion.span>
 
 
             <div className="h-full flex col-span-1 col-start-9 w-full items-center">
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-left"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.75, delay: 2.0, ease: "easeOut" }}
+              />
             </div>
+
             <motion.span
               className="flex text-[25px] font-thin text-home col-span-7 col-start-10 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 1, delay: 2 }}
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 1.5 }}
             >
               "Each project is a step forward in my journey of growth."
             </motion.span>
 
             <div className="h-full flex col-span-1 col-start-17 w-full items-center">
-              <div className="h-[1px] bg-[#524D47] w-full"></div>
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-right"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.75, delay: 2.0, ease: "easeOut" }}
+              />
             </div>
+
+
           </div>
         </div>
 
+
         {/* With Motion and Button*/}
-        <section className="pr-[5%] pb-[20%] pl-[5%] rounded-t-3xl min-h-screen">
-          <div className="w-full">
-            <div className="flex flex-col justify-between mt-12 gap-y-16">
+        <motion.div
+          className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
+          initial={{ opacity: 0 }}  // Start with 0 opacity (invisible)
+          whileInView={{ opacity: 1 }}  // Fade to full opacity (visible)
+          viewport={{ once: true, amount: 0.1}}
+          transition={{ duration: 3.5, ease: "easeInOut" }}
+        >
+          <div className="w-full pt-16">
+            <div className="flex flex-col justify-between gap-y-16 border-t border-[#524D47]">
               {/* Portfolio */}
-              <div className="sticky top-0 bg-line bg-[#080807] pb-[10em]">
+              <div className="sticky top-0 bg-[#080807] pb-[10em]">
+
                 <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
 
+                  <div className="h-full flex col-span-full col-start-1 w-full items-center">
+                    <motion.div
+                      className="w-full origin-left"
+                      initial={{ scaleX: 0 }}
+                      whileInView={{ scaleX: 1 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+                    />
+                  </div>
+                  
                   {/* Title (Animated) */}
                   <AnimatePresence mode="wait">
                     <motion.h3
@@ -188,7 +200,7 @@ const Project = (() => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.75, ease: "easeOut" }}
+                      transition={{ duration: 1, ease: "easeOut" }}
                       className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem] "
                     >
                       {title}<GoArrowUpRight className='inline-block text-[#644f3e]' />
@@ -202,7 +214,7 @@ const Project = (() => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      transition={{ duration: 1, ease: "easeOut" }}
                       className="flex items-center gap-x-[10px] col-span-6 col-end-[-1] h-full text-[20px] justify-self-end "// start from the end
 
                     >
@@ -239,7 +251,7 @@ const Project = (() => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.75, ease: "easeInOut" }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
                         className="font-thin text-balance text-[1.25rem] pt-4 "
                       >
                         {description}
@@ -312,15 +324,13 @@ const Project = (() => {
 
                   {/* Image Section */}
 
-                  {/* <div className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"> */}
-
                   <motion.div className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"
                     key={backg}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 2 }}>
-                    <img className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125"
+                    <img className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
                       src={backg}
                       alt="backg" >
                     </img>
@@ -376,11 +386,11 @@ const Project = (() => {
               </a>
             </div>
           </div>
-        </section>
+        </motion.div>
 
 
       </div>
-    </div>
+    </section>
   );
 });
 

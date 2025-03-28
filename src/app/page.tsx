@@ -1,13 +1,14 @@
 "use client"; // Ensure it's a Client Component (Next.js App Router)
 
 import { useRef } from "react";
+import Home from "@/components/Home";
 import About from "@/components/About";
+import Project from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Header from "@/components/Header";
-import Project from "@/components/Projects";
 
-export default function Home() {
+export default function Main() {
   // const headerRef = useRef<HTMLDivElement>(null);
   // const aboutRef = useRef<HTMLDivElement>(null);
   // const projectRef = useRef<HTMLDivElement>(null);
@@ -32,7 +33,8 @@ export default function Home() {
       </div>
 
       {/* Main Sections */}
-      <div className="grid">
+      <div id="home" className="grid">
+        <Home/>
         <About/>
         <Project/>
         <Experience/>
