@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 
+
 const About = (() => {
 
   const words = ["Engineer", "Designer", "Developer", "Programmer", "Creator"];
@@ -99,7 +100,7 @@ const About = (() => {
                   <div className="object-contain w-full shadow-md grayscale col-span-4 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]">
                     <img
                       className="object-contain w-full  border-gray-700 rounded-2xl shadow-md col-span-4 col-start-1 overflow-hidden"
-                      src="../assets/me2.jpg"
+                      src="../assets/me/me2.jpg"
                       alt="Example" />
                   </div>
 
