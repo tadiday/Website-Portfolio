@@ -95,3 +95,13 @@ code {
   z-index: 9999; /* Ensures noise is on top */
   pointer-events: none; /* Ensures elements are clickable */
 }
+
+
+@keyframes wordSwap {
+  0%, 20% { opacity: 1; transform: translateY(0); }
+  25%, 100% { opacity: 0; transform: translateY(-100%); }
+}
+
+.animate-wordSwap {
+  animation: wordSwap 6s infinite;
+}

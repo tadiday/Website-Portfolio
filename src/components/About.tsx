@@ -1,6 +1,22 @@
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 
 const About = (() => {
+
+  const words = ["Engineer", "Designer", "Developer", "Programmer", "Creator"];
+
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 4000); // Ensures 4 seconds before switching
+
+    return () => clearTimeout(timeout);
+  }, [index]);
+
 
   return (
     <section id='about' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
@@ -13,18 +29,76 @@ const About = (() => {
             <h2 className='col-span-1 col-start-10 text-[120px] font-semibold'>
               (3)
             </h2>
+            <motion.span
+              className="flex text-[25px] font-thin text-home col-span-2 col-start-10"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 0}}
+            >
+              An UI Designer
+            </motion.span>
+            <div className="h-full flex col-span-3 col-start-12 w-full items-center"
+            >
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-right"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              />
+            </div>
 
+
+            <div className="h-full flex col-span-3 col-start-10 w-full items-center">
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-left"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+              />
+            </div>
+            <motion.span
+              className="flex text-[25px] font-thin text-home col-span-2 col-start-13 justify-center"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 0.75 }}
+            >
+              A SW Engineer
+            </motion.span>
+
+            <motion.span
+              className="flex text-[25px] font-thin text-home col-span-2 col-start-10"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 0}}
+            >
+              A Programmer
+            </motion.span>
+            <div className="h-full flex col-span-3 col-start-12 w-full items-center"
+            >
+              <motion.div
+                className="h-[1px] bg-[#524D47] w-full origin-right"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
+              />
+            </div>
           </div>
 
 
           <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
             <div className="w-full pt-16">
-              <div className="flex flex-col justify-between  py-5 mt-12 gap-y-16 border-t border-[#524D47]">
+              <div className="flex flex-col justify-between gap-y-16 border-t border-[#524D47]">
                 <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12 ">
 
-                  <div  className="object-contain w-full shadow-md grayscale col-span-4 col-start-1 py-4 pl-2">
+                  <div className="object-contain w-full shadow-md grayscale col-span-4 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]">
                     <img
-                      className="object-contain w-full  border-gray-700 rounded-2xl shadow-md grayscale col-span-4 col-start-1 overflow-hidden"
+                      className="object-contain w-full  border-gray-700 rounded-2xl shadow-md col-span-4 col-start-1 overflow-hidden"
                       src="../assets/me2.jpg"
                       alt="Example" />
                   </div>

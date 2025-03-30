@@ -317,9 +317,6 @@ const Project = (() => {
                         </AnimatePresence>
                       </div>
                     </div>
-
-
-
                   </div>
 
                   {/* Image Section */}
