@@ -20,7 +20,7 @@ const Home = (() => {
   }, []);
   return (
     <section
-      className="h-screen sticky top-0 text-home px-[10%] pb-20 bg-home bg-cover bg-center bg-no-repeat"
+      className="h-screen sticky top-0 px-[10%] pb-20 text-home bg-home bg-cover bg-center bg-no-repeat"
     >
       <div className="h-[20%]"></div>
       <div className="font-header text-[20px] bg-red"></div>

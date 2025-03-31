@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
+import { GoArrowUpRight } from "react-icons/go";
 
 
 const About = (() => {
@@ -35,7 +36,7 @@ const About = (() => {
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 0}}
+              transition={{ duration: 0.75, delay: 0 }}
             >
               An UI Designer
             </motion.span>
@@ -75,7 +76,7 @@ const About = (() => {
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 0}}
+              transition={{ duration: 0.75, delay: 0 }}
             >
               A Programmer
             </motion.span>
@@ -141,7 +142,30 @@ const About = (() => {
                 </div>
               </div>
             </div>
+            <div className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%] 
+                    font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
+                    hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title ">
+              <a href="/assets/documents/resume.pdf"
+                target="_blank"
+                className="w-full pt-16 col-span-2 col-start-6 text-[25px] font-mono">
+                <span className="inline-block group-hover/title:text-[#967A54] text-[25px] ">View Vlog</span>
+                <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
+                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1' />
+                <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
+                  <div className="flex flex-col h-full -mb-5">
+                    <div className=" w-[80%] h-[2px] bg-home">
+                    </div>
+                  </div>
+                  <div className="flex flex-col h-full">
+                    <div className=" w-[50%] h-[2px] bg-home">
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
           </div>
+
         </div>
       </div>
       {/* </div> */}

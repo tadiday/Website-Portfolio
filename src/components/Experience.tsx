@@ -194,7 +194,7 @@ const Experience = (() => {
 
 
   return (
-    <div id="experience" className="h-full min-h-[500px] bg-[#080807] p-4 flex flex-col items-center z-30 text-[#bebebe]">
+    <div id="experience" className="h-full min-h-[500px] bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]">
       < div className="relative z-20 w-full bg-secondary-400 overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
@@ -202,7 +202,7 @@ const Experience = (() => {
               CAREER ADVENTURE
             </h2>
             <h2 className='col-span-1 col-start-16 text-[120px] font-semibold'>
-              (2)
+              {"(2)"}
             </h2>
 
             <motion.span
@@ -339,27 +339,30 @@ const Experience = (() => {
               ))}
               <div className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%] 
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
-                    hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 ">
+                    hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title ">
                 <a href="/assets/documents/resume.pdf"
                   target="_blank"
-                  className="w-full pt-16 col-span-6 col-start-6">
-                  View Résumé
+                  className="w-full pt-16 col-span-2 col-start-6 text-[25px]">
+                  <span className="inline-block group-hover/title:text-[#967A54] text-[25px] font-mono">View Résumé</span>
+                  <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
+                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1' />
+                  <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
+                    <div className="flex flex-col h-full -mb-5">
+                      <div className=" w-[80%] h-[2px] bg-home">
+                      </div>
+                    </div>
+                    <div className="flex flex-col h-full">
+                      <div className=" w-[50%] h-[2px] bg-home">
+                      </div>
+                    </div>
+                  </div>
                 </a>
+
               </div>
             </div>
-
-            <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
-              <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' ></div>
-
-            </div>
           </div>
-
-
         </section>
-
-
       </div >
-
     </div >
 
 

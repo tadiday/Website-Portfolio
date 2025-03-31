@@ -83,7 +83,7 @@ const Project = (() => {
 
   return (
     <section id='projects' className="h-full bg-[#080807] p-4 z-30  text-[#bebebe]">
-      < div className="relative z-20 w-full bg-secondary-400 overflow-x-clip" >
+      < div className="relative z-20 w-full overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
             <h2 className='col-span-15 col-start-2 text-[120px] font-semibold text-home'>
@@ -99,7 +99,7 @@ const Project = (() => {
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 0}}
+              transition={{ duration: 0.75, delay: 0 }}
             >
               "Innovative solutions, where every detail matters."
             </motion.span>
@@ -173,7 +173,7 @@ const Project = (() => {
           className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
           initial={{ opacity: 0 }}  // Start with 0 opacity (invisible)
           whileInView={{ opacity: 1 }}  // Fade to full opacity (visible)
-          viewport={{ once: true, amount: 0.1}}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 3.5, ease: "easeInOut" }}
         >
           <div className="w-full pt-16">
@@ -192,7 +192,7 @@ const Project = (() => {
                       transition={{ duration: 1, delay: 1, ease: "easeOut" }}
                     />
                   </div>
-                  
+
                   {/* Title (Animated) */}
                   <AnimatePresence mode="wait">
                     <motion.h3
@@ -365,23 +365,27 @@ const Project = (() => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col items-center justify-center '>
-            <div className='text-center'>
-              <div className='font-semibold text-[50px] '>
-                Checkout More Projects
+          <div className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%] 
+                    font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
+                    hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title ">
+            <a href="https://github.com/tadiday"
+              target="_blank"
+              className="w-full col-span-2 col-start-6 text-[25px]">
+              <span className="inline-block group-hover/title:text-[#967A54] text-[25px] font-mono">View Github</span>
+              <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
+                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1' />
+              <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
+                <div className="flex flex-col h-full -mb-5">
+                  <div className=" w-[80%] h-[2px] bg-home">
+                  </div>
+                </div>
+                <div className="flex flex-col h-full">
+                  <div className=" w-[50%] h-[2px] bg-home">
+                  </div>
+                </div>
               </div>
-              <div></div>
-              <a
-                href="https://github.com/tadiday"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative text-[35px] col-span-7 col-start-5 inline-block px-4 py-2 mt-4 font-semibold bg-button rounded-full shadow-md
-                    transition-transform duration-[0.55s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full 
-                    before:scale-y-0 before:origin-top before:transition-transform before:duration-[0.55s] hover:before:scale-y-100 active:scale-90 overflow-hidden"
-              >
-                <span className='relative z-10'>GitHub</span>
-              </a>
-            </div>
+            </a>
+
           </div>
         </motion.div>
 
