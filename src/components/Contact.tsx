@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaRegCopyright } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -151,7 +150,7 @@ const Contact = () => {
                   <ul className="space-y-1">
                     <div className="">{localTime}, Fairfax</div>
 
-                    <span className="flex items-center font-bold"><FaRegCopyright className="text-base " /> &nbsp;2025 Peter Cao. All rights reserved.</span>
+                    <span className="flex items-center font-bold"><FaRegCopyright className="" /> &nbsp;2025 Peter Cao. All rights reserved.</span>
                     <span className="">Built with Next.js and Tailwind CSS, deployed with Vercel.</span>
                   </ul>
                 </div>

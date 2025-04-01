@@ -35,46 +35,6 @@ const Experience = (() => {
         image: FaGraduationCap
       },
     ],
-    academic: [
-      {
-        company: 'Virginia Tech',
-        date: 'May 2023 - Present',
-        title: 'Undergraduate TA',
-        location: 'Blacksburg, VA',
-        description: `
-          Provide academic support to students by hosting office hours, troubleshooting technical issues, and offering personalized guidance. 
-          Facilitate interactive discussions through online forums to enhance student engagement. 
-          Assist in teaching Computer Organization, Computer Systems, and Comparative Languages.`
-        ,
-        skills: ["C", "x86", "RISC-V", "Rust", 'Haskell', 'Prolog', 'Ruby'],
-        image: MdOutlineWork
-      },
-      {
-        company: 'Virginia Tech IDPro',
-        date: 'Jan - Dec 2024',
-        title: 'Rural Trash Collection',
-        location: 'Blacksburg, VA',
-        description: `
-          Developed an automated trash collection robot enabling remote monitoring and operation, 
-          integrating essential sensors for autonomous navigation and efficient waste collection. 
-          Researched and implemented algorithms for path planning, obstacle avoidance, safety measures, 
-          and optimized trash collection to enhance functionality and reliability.`,
-        skills: ['Python', 'ROS', 'OpenCV', 'Raspberry Pi'],
-        image: FaFileAlt
-      },
-      {
-        company: 'Virginia Tech IDPro',
-        date: 'Sep - Nov 2023',
-        title: 'SMART Research',
-        location: 'Blacksburg, VA',
-        description: `
-          Designed and developed a Software Managed Arduino-based Residential Toolkit (SMART) to enhance home automation, 
-          integrating a Raspberry Pi for improved connectivity and optimized system performance. 
-          Built a Swift-based mobile application to enable remote control and real-time monitoring of smart devices, ensuring a seamless and user-friendly experience.`,
-        skills: ['Swift', 'Arduino', 'Raspberry Pi', 'Xcode'],
-        image: FaFileAlt
-      }
-    ],
     professional: [
       {
         company: 'Virginia Tech',
@@ -146,63 +106,42 @@ const Experience = (() => {
 
     ]
   };
-  const [activeButton, setActiveButton] = useState<ExperienceCategory>('professional');
-
-  const handleButtonClick = (button: ExperienceCategory) => {
-    setActiveButton(button);
-  };
-
-  type ExperienceCategory = "personal" | "academic" | "professional";
-
-  const renderExperiences = (category: ExperienceCategory) => {
-    return experiences[category].map((job, index) => (
-      <div key={'profession' + index} className="flex items-center border-[#524D47]  justify-start gap-x-2 text-left text-[30px] p-[2%] font-semibold text-[#FFFFE0]
-          md:grid md:grid-cols-12 md:justify-between md:gap-x-4  hover:bg-gray-600/10 hover:rounded-xl hover:shadow-md">
-        <span className="flex items-center col-span-5 col-start-1 gap-x-5">
-          {job.image && <job.image className="" />}
-          {job.date}
-        </span>
-        <h3 className="col-span-6 col-start-6 py-4 2xl:py-3">
-          <span className='space-x-2'>
-            <span>{job.title}</span>
-            <span className="inline-block text-[#745f4e]">@</span>
-            <span className="inline-block text-[#745f4e]">{job.company}</span>
-            <GoArrowUpRight className='inline-block text-[#745f4e]' />
-          </span>
-        </h3>
-
-        <div className="flex flex-col w-full col-span-7 col-start-6 pt-4 text-lg gap-y-4">
-          <p>
-            {job.description}
-          </p>
-          <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
-
-            <div className="flex flex-wrap items-center gap-3">
-              {job.skills.map((tech, index) => (
-                <span key={index} className="flex justify-center rounded-full bg-[#524D47] px-3 py-1 min-w-[3em]">
-                  <span className='w-full text-center'>{tech}</span>
-                </span>
-              ))}
-            </div>
 
 
-          </div>
-        </div>
-      </div>
-    ));
+  const sectionTitle = "CAREER ADVENTURE";
+
+  // Animation settings
+  const textVariants = {
+    hidden: { y: "50px", opacity: 0 }, // Start underground (y: 100%)
+    visible: (i: number) => ({
+      y: "0%",
+      opacity: 1,
+      transition: { delay: i * 0.05, duration: 0.25, ease: "easeOut" }, // Stagger letters
+    }),
   };
 
 
   return (
-    <div id="experience" className="h-full min-h-[500px] bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]">
+    <section id="experience" className="h-full min-h-[500px] bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]">
       < div className="relative z-20 w-full bg-secondary-400 overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
             <h2 className='col-span-14 col-start-2 text-[120px] font-semibold text-home'>
-              CAREER ADVENTURE
+              {sectionTitle.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }} // Ensures it animates only once
+                  variants={textVariants}
+                  className="inline-block"
+                >
+                  {char === " " ? "\u00A0" : char} {/* Keeps spaces visible */}
+                </motion.span>
+              ))}
             </h2>
             <h2 className='col-span-1 col-start-16 text-[120px] font-semibold'>
-              (3)
             </h2>
 
             <motion.span
@@ -274,7 +213,7 @@ const Experience = (() => {
           </div>
         </div>
 
-        <section className='pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
+        <div className='pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
 
           <div className="w-full pt-16 ">
             <div className="top-0 flex py-5 flex-col bg-[#080807] border-t border-[#524D47] gap-y-4 group">
@@ -361,9 +300,9 @@ const Experience = (() => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </div >
-    </div >
+    </section >
 
 
   );

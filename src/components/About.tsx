@@ -20,15 +20,15 @@ const About = (() => {
   }, [index]);
 
 
-  const text = "WHO AM I?";
+  const sectionTitle = "WHO AM I?";
 
   // Animation settings
   const textVariants = {
     hidden: { y: "50px", opacity: 0 }, // Start underground (y: 100%)
-    visible: (i:number) => ({
+    visible: (i: number) => ({
       y: "0%",
       opacity: 1,
-      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" }, // Stagger letters
+      transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" }, // Stagger letters
     }),
   };
 
@@ -38,7 +38,7 @@ const About = (() => {
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home'>
             <h2 className='col-span-8 col-start-2 text-[120px] font-semibold'>
-              {text.split("").map((char, index) => (
+              {sectionTitle.split("").map((char, index) => (
                 <motion.span
                   key={index}
                   custom={index}
