@@ -96,17 +96,17 @@ const About = (() => {
           <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
             <div className="w-full pt-16">
               <div className="flex flex-col justify-between gap-y-16 border-t border-[#524D47]">
-                <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12 ">
+                <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-16 ">
 
-                  <div className="object-contain w-full shadow-md grayscale col-span-4 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]">
+                  <div className="object-contain w-full shadow-md grayscale col-span-5 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]">
                     <img
-                      className="object-contain w-full  border-gray-700 rounded-2xl shadow-md col-span-4 col-start-1 overflow-hidden"
+                      className="object-contain w-full  border-gray-700 rounded-2xl shadow-md overflow-hidden"
                       src="../assets/me/me2.jpg"
                       alt="Example" />
                   </div>
 
 
-                  <div className='flex flex-col col-span-10 col-start-6 text-[20px] font-thin gap-y-10 py-4'>
+                  <div className='flex flex-col col-span-10 col-start-7 text-[20px] font-thin gap-y-10 py-4'>
 
                     <p className="text-[30px] text-balance font-light">
                       With a passion for full-stack development, I specialize in creating user-friendly front-end designs and integrating them with robust back-end systems,
