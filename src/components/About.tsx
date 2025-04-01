@@ -29,7 +29,7 @@ const About = (() => {
               WHO AM I?
             </h2>
             <h2 className='col-span-1 col-start-10 text-[120px] font-semibold'>
-              (3)
+              (1)
             </h2>
             <motion.span
               className="flex text-[25px] font-thin text-home col-span-2 col-start-10"

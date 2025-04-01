@@ -202,7 +202,7 @@ const Experience = (() => {
               CAREER ADVENTURE
             </h2>
             <h2 className='col-span-1 col-start-16 text-[120px] font-semibold'>
-              {"(2)"}
+              (3)
             </h2>
 
             <motion.span

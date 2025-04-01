@@ -90,7 +90,7 @@ const Project = (() => {
               SELECTED PROJECTS
             </h2>
             <h2 className='col-span-1 col-start-17 text-[120px] font-semibold'>
-              (1)
+              (2)
             </h2>
 
 
