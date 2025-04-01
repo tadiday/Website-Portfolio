@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -20,16 +20,40 @@ const About = (() => {
   }, [index]);
 
 
+  const text = "WHO AM I?";
+
+  // Animation settings
+  const textVariants = {
+    hidden: { y: "50px", opacity: 0 }, // Start underground (y: 100%)
+    visible: (i:number) => ({
+      y: "0%",
+      opacity: 1,
+      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" }, // Stagger letters
+    }),
+  };
+
   return (
     <section id='about' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home'>
             <h2 className='col-span-8 col-start-2 text-[120px] font-semibold'>
-              WHO AM I?
+              {text.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  custom={index}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }} // Ensures it animates only once
+                  variants={textVariants}
+                  className="inline-block"
+                >
+                  {char === " " ? "\u00A0" : char} {/* Keeps spaces visible */}
+                </motion.span>
+              ))}
             </h2>
-            <h2 className='col-span-1 col-start-10 text-[120px] font-semibold'>
-              (1)
+            <h2 className='col-span-12 col-start-10 text-[120px] font-semibold'>
+
             </h2>
             <motion.span
               className="flex text-[25px] font-thin text-home col-span-2 col-start-10"
