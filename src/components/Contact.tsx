@@ -148,7 +148,7 @@ const Contact = () => {
                 <div className="w-full col-start-1 col-span-6 font-mono">
                   <h3 className="font-bold mb-2">Information</h3>
                   <div className="h-[1px] w-full bg-[#080807] mt-2 mb-2"></div>
-                  <ul className="">
+                  <ul className="space-y-1">
                     <div className="">{localTime}, Fairfax</div>
 
                     <span className="flex items-center font-bold"><FaRegCopyright className="text-base " /> &nbsp;2025 Peter Cao. All rights reserved.</span>
@@ -160,35 +160,54 @@ const Contact = () => {
                 <div className="w-full col-start-7 col-span-4 font-mono">
                   <h3 className="font-bold mb-2">Socials</h3>
                   <div className="h-[1px] w-full bg-[#080807] mt-2 mb-2"></div>
-                  <ul>
+                  <ul className="space-y-1">
                     <li>
                       <a
                         href="https://www.linkedin.com/in/petercao03"
                         target="_blank"
-                        className="hover:text-[#967A54] flex items-center gap-2 transition-transform duration-300 hover:scale-105 hover:translate-x-1 origin-left"
+                        className="block"
+                        style={{ pointerEvents: "none" }} // Disables interaction on empty space
                       >
-                        Linkedin
+                        <span
+                          className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
+                          style={{ pointerEvents: "auto" }} // Enables interaction on the text
+                        >
+                          Linkedin
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a
                         href="https://www.instagram.com/fat_cao"
                         target="_blank"
-                        className="hover:text-[#967A54] flex items-center gap-2 transition-transform duration-300 hover:scale-105 hover:translate-x-1 origin-left"
+                        className="block"
+                        style={{ pointerEvents: "none" }}
                       >
-                        Instagram
+                        <span
+                          className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
+                          style={{ pointerEvents: "auto" }}
+                        >
+                          Instagram
+                        </span>
                       </a>
                     </li>
                     <li>
                       <a
                         href="https://github.com/tadiday"
                         target="_blank"
-                        className="hover:text-[#967A54] flex items-center gap-2 transition-transform duration-300 hover:scale-105 hover:translate-x-1 origin-left"
+                        className="block"
+                        style={{ pointerEvents: "none" }}
                       >
-                        GitHub
+                        <span
+                          className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
+                          style={{ pointerEvents: "auto" }}
+                        >
+                          GitHub
+                        </span>
                       </a>
                     </li>
                   </ul>
+
                 </div>
 
 
@@ -196,7 +215,7 @@ const Contact = () => {
                 <div className="w-full col-start-11 col-span-4 font-mono">
                   <h3 className="font-bold mb-2">Resources</h3>
                   <div className="h-[1px] w-full bg-[#080807] mt-2 mb-2"></div>
-                  <ul className="">
+                  <ul className="space-y-1">
                     <li>
                       <a href="/assets/documents/resume.pdf"
                         target="_blank"
