@@ -16,7 +16,7 @@ export default function Main() {
     target: aboutRef,
     offset: ["start end", "end start"],
   });
-  const scaleAbout = useTransform(aboutProgress, [0, 0.2], [0.95, 1]); // Scale up at 30%
+  const scaleAbout = useTransform(aboutProgress, [0, 0.2], [0.97, 1]); // Scale up at 30%
 
   // Experience Section Scaling (Shrink when leaving)
   const experienceRef = useRef(null);
@@ -26,12 +26,20 @@ export default function Main() {
   });
   const scaleExperience = useTransform(experienceProgress, [0.7, 1], [1, 0.95]); // Shrink at 70%
 
+
+  // Animate X position (Slide in effect)
+  const headerX = useTransform(aboutProgress, [0.2, 0.5], [-100, 0]); 
+  const headerOpacity = useTransform(aboutProgress, [0.2, 0.5], [0, 1]); 
+
   return (
-    <div className="relative w-full text-white">
+    <div className="relative w-full text-white ">
       <div id="noise-overlay"></div>
-      <div className="fixed top-0 left-0 z-60 flex flex-col items-end justify-center w-[10%] max-w-[60px] h-full">
-        <Header/>
-      </div>
+      <motion.div
+        className="fixed top-0 left-0 z-60 flex flex-col items-end justify-center w-[10%] max-w-[60px] h-full"
+        style={{ x: headerX, opacity: headerOpacity }}
+      >
+        <Header />
+      </motion.div>
       <div className="h-[20%] grid grid-cols-25 items-start absolute z-50 w-full px-[10%] py-[2%]">
         {/* Left Side: Copyright */}
         <div
@@ -39,7 +47,6 @@ export default function Main() {
         >
           <FaRegCopyright className="flex mr-2 mt-1" /> 2025 Peter Cao
         </div>
-
         {/* Right Side: Navigation Links */}
         <ul
           className="col-end-25 col-span-7 text-right text-[22px] flex space-x-6 font-thin"

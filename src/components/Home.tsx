@@ -1,5 +1,6 @@
 // import React from 'react';
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // import myImage from '../assets/me.jpg';
 import { FaRegCopyright } from "react-icons/fa";
@@ -36,30 +37,38 @@ const Home = (() => {
   }, []);
 
   return (
-    <section className="h-screen sticky top-0 px-[10%] pb-20 text-home bg-home bg-cover bg-center bg-no-repeat">
+    <motion.section
+      className="h-screen sticky top-0 px-[10%] pb-20 text-home bg-cover bg-center bg-no-repeat"
+      initial={{ backgroundColor: "#000000" }} // Start with black background
+      animate={{ backgroundColor: "#000000" }} // Animate background color
+      transition={{ duration: 1 }} // Control duration of the background change
+    >
+      {/* Animated background sliding up with radius change */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full bg-[#524D47]"
+        initial={{ y: "100%", borderRadius: "50%" }} // Start with off-screen and 50% radius
+        animate={{
+          y: "0%", // Slide it up into place
+          borderRadius: "0%", // Animate the radius to 0%
+        }}
+        transition={{
+          duration: 1.5, // Duration of the slide-up
+          ease: [0.25, 0.8, 0.25, 1], // Cubic Bezier for smooth transition
+        }}
+      />
       <div className="h-[20%] grid grid-cols-25 items-start sticky">
         {/* Left Side: Copyright */}
         <div
           className="col-start-1 col-span-10 font-semibold text-[25px] flex items-center"
         >
-          {/* <FaRegCopyright className="flex mr-2 mt-1" /> 2025 Peter Cao */}
         </div>
 
-        {/* Right Side: Navigation Links */}
-        {/* <ul
-          className="col-end-25 col-span-8 text-right text-[25px] flex space-x-6 font-semibold"
-        >
-          <li><a href="#about" className="hover:text-gray-400 transition-colors">About</a></li>
-          <li><a href="#projects" className="hover:text-gray-400 transition-colors">Projects</a></li>
-          <li><a href="#experience" className="hover:text-gray-400 transition-colors">Experience</a></li>
-          <li><a href="#contact" className="hover:text-gray-400 transition-colors">Contact</a></li>
-        </ul> */}
       </div>
 
       <div className="flex flex-col w-full">
         <div className="w-full">
           <h1
-            className="flex w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold"
+            className="flex w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold underline justify-center"
             style={{
               opacity,
               transform: `scale(${scale})`,
@@ -71,18 +80,41 @@ const Home = (() => {
 
           <div className="grid grid-flow-row-dense grid-cols-25">
             <div
-              className="font-title text-[30px] col-start-1 col-span-12 font-mono font-semibold w-full"
+              className="font-title text-[30px] col-start-1 col-span-25 font-mono font-light w-full justify-between flex"
               style={{
                 opacity,
                 transform: `scale(${scale})`,
                 transition: "all 0.3s ease-out",
               }}
             >
-              <p>An Upcoming Software Engineer</p>
+              <div className="w-full">
+                <p >An Upcoming Software Engineer</p>
+                <p className="mt-2 font-light text-[20px] col-start-1 col-span-9 text-balance">
+                  Passionate about building scalable software, solving complex problems, and
+                  creating innovative solutions.</p>
+
+              </div>
+              <div
+                className="font-title text-[30px] col-end-25 col-span-11 font-mono font-bold w-full text-right"
+                style={{
+                  opacity,
+                  transform: `scale(${scale})`,
+                  transition: "all 0.3s ease-out",
+                }}
+              >
+                <p className="font-light">AVAILABLE FOR HIRE</p>
+                <div className="text-[70px]">MAY 2025</div>
+              </div>
+            </div>
+
+
+
+            <div
+              className="font-title text-[22px] min-h-[190px] col-start-1 col-span-25 font-mono font-light w-full justify-end flex flex-col">
             </div>
 
             <div
-              className="font-title text-[30px] col-end-25 col-span-11 font-mono font-bold w-full text-right"
+              className="font-title text-[22px] col-start-1 col-span-25 font-mono font-light w-full flex justify-between select-text"
               style={{
                 opacity,
                 transform: `scale(${scale})`,
@@ -92,10 +124,11 @@ const Home = (() => {
               <p>38.7439° N, 77.2405° W</p>
               <div>{localTime}</div>
             </div>
+
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 });
 

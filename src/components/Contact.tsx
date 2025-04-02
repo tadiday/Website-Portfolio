@@ -28,13 +28,19 @@ const Contact = () => {
 
 
   return (
-    <section id='contact' className="bg-[#524D47] min-h-screen z-20">
+    <section id='contact' className="bg-gradient-to-b from-[#524D47] to-[#080807] min-h-screen z-20">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
-          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-black'>
-            <h2 className='col-span-12 col-start-5 text-[120px] font-semibold text-[#bebebe] justify-center items-center flex'>
+          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-[#bebebe]'>
+            <motion.h2
+              className="col-span-12 col-start-5 text-[120px] font-semibold text-[#bebebe] justify-center items-center flex"
+              initial={{ opacity: 0, y: 50 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.6, delay: 0 }}
+            >
               LET'S CONNECT
-            </h2>
+            </motion.h2>
             {/* <h2 className='col-span-1 col-start-12 text-[120px] font-semibold'>(4)</h2> */}
             <div className="h-full flex col-span-2 col-start-6 w-full items-center"
             >
@@ -87,7 +93,7 @@ const Contact = () => {
             <div id="contact-container" className="w-full col-span-18 col-start-2 bg-[] text-black overflow-hidden pt-16">
               {/* <div className="flex flex-col justify-between gap-y-16 border-t border-[#080807]">
               </div> */}
-              <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-14 text-black pt-16">
+              <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-14 text-[#80776d] pt-16">
                 <div className="flex flex-col col-start-3 col-span-10 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
                   <span className="w-full font-bold items-center justify-center flex">DROP ME A MESSAGE!</span>
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -146,7 +152,7 @@ const Contact = () => {
                 </div>
                 <div className="w-full col-start-1 col-span-6 font-mono">
                   <h3 className="font-bold mb-2">Information</h3>
-                  <div className="h-[1px] w-full bg-[#080807] mt-2 mb-2"></div>
+                  <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
                   <ul className="space-y-1">
                     <div className="">{localTime}, Fairfax</div>
 
@@ -158,7 +164,7 @@ const Contact = () => {
                 {/* Socials Section */}
                 <div className="w-full col-start-7 col-span-4 font-mono">
                   <h3 className="font-bold mb-2">Socials</h3>
-                  <div className="h-[1px] w-full bg-[#080807] mt-2 mb-2"></div>
+                  <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
                   <ul className="space-y-1">
                     <li>
                       <a
@@ -213,7 +219,7 @@ const Contact = () => {
                 {/* Resources Section */}
                 <div className="w-full col-start-11 col-span-4 font-mono">
                   <h3 className="font-bold mb-2">Resources</h3>
-                  <div className="h-[1px] w-full bg-[#080807] mt-2 mb-2"></div>
+                  <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
                   <ul className="space-y-1">
                     <li>
                       <a href="/assets/documents/resume.pdf"
