@@ -17,10 +17,10 @@ const Footer = () => {
                 <h3 className="font-bold mb-2">Information</h3>
                 <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
                 <ul className="space-y-1">
-                    <div className="">{localTime} Fairfax, VA</div>
+                    <li className="">{localTime} Fairfax, VA</li>
 
-                    <span className="flex items-center font-bold"><FaRegCopyright className="" /> &nbsp;2025 Peter Cao. All rights reserved.</span>
-                    <span className="">Built with Next.js and Tailwind CSS, deployed with Vercel.</span>
+                    <li className="flex items-center font-bold"><FaRegCopyright className="" /> &nbsp;2025 Peter Cao. All rights reserved.</li>
+                    <li className="">Built with Next.js and Tailwind CSS, deployed with Vercel.</li>
                 </ul>
             </div>
 

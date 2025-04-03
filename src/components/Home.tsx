@@ -92,7 +92,7 @@ const Home = () => {
       <div className="flex flex-col w-full">
         <div className="w-full">
           {/* Name Section */}
-          <motion.a
+          <motion.h1
             initial="initial"
             animate="visible"
             className="relative block overflow-hidden whitespace-nowrap w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold justify-center text-white"
@@ -118,7 +118,7 @@ const Home = () => {
                 </motion.span>
               ))}
             </div>
-          </motion.a>
+          </motion.h1>
 
           {/* Subtitle Section */}
           <div className="grid grid-flow-row-dense grid-cols-25 text-white min-h-[60vh]">

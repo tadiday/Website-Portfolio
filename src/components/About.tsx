@@ -135,7 +135,12 @@ const About = (() => {
                   </motion.div>
 
                   {/* Text Section */}
-                  <div className='flex flex-col col-span-10 col-start-7 text-[20px] font-thin gap-y-10 py-4'>
+                  <motion.div
+                    className='flex flex-col col-span-10 col-start-7 text-[20px] font-thin gap-y-10 py-4'
+                    initial={{ opacity: 0, y: 10, z: 10 }}
+                    whileInView={{ opacity: 1, y: 0, z: 10 }}
+                    viewport={{ once: true }}
+                    transition={{duration: 1.5, ease: "easeOut" }}>
 
                     {/* Introduction Section */}
                     <p className="text-[30px] text-balance font-light">
@@ -165,7 +170,7 @@ const About = (() => {
                       </p>
                     </div>
 
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>

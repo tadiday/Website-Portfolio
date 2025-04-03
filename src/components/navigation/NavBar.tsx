@@ -12,19 +12,29 @@ const NavBar = () => {
       <div className="flex flex-col items-center my-4">
         <ul className="text-[20px] flex flex-col gap-y-6 items-center font-thin text-black">
           <li className='py-[5px] px-4 hover:rounded-full text-symbol hover:bg-[#847A6F]'>
-            <Link href="#home"><RiHome2Line /></Link>
+            <Link href="#home" aria-label="Go to Home">
+              <RiHome2Line />
+            </Link>
           </li>
           <li className='py-[5px] px-4 hover:rounded-full text-symbol hover:bg-[#847A6F]'>
-            <Link href="#about"><IoPersonOutline /></Link>
+            <Link href="#about" aria-label="Go to About">
+              <IoPersonOutline />
+            </Link>
           </li>
           <li className='py-[5px] px-4 hover:rounded-full text-symbol hover:bg-[#847A6F]'>
-            <Link href="#projects"><IoCodeWorkingSharp /></Link>
+            <Link href="#projects" aria-label="Go to Project">
+              <IoCodeWorkingSharp />
+            </Link>
           </li>
           <li className='py-[5px] px-4 hover:rounded-full text-symbol hover:bg-[#847A6F]'>
-            <Link href="#experience"><MdWorkOutline /></Link>
+            <Link href="#experience" aria-label="Go to Experience">
+              <MdWorkOutline />
+            </Link>
           </li>
           <li className='py-[5px] px-4 hover:rounded-full text-symbol hover:bg-[#847A6F]'>
-            <Link href="#contact"><MdOutlineMailOutline /></Link>
+            <Link href="#contact" aria-label="Go to Contact">
+              <MdOutlineMailOutline />
+            </Link>
           </li>
         </ul>
       </div>
