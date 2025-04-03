@@ -18,7 +18,7 @@ export default function Main() {
     target: aboutRef,
     offset: ["start end", "end start"],
   });
-  const scaleAbout = useTransform(aboutProgress, [0, 0.2], [0.97, 1]); // Scale up at 30%
+  const scaleAbout = useTransform(aboutProgress, [0, 0.3], [0.95, 1]); // Scale up at 30%
 
   // Experience Section Scaling (Shrink when leaving)
   const experienceRef = useRef(null);

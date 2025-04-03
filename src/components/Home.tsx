@@ -78,6 +78,7 @@ const Home = () => {
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 w-full h-full pointer-events-none z-20"
+        style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
       />
 
       {/* Animated background overlay */}

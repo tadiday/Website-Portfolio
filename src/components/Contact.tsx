@@ -6,18 +6,32 @@ import Footer from "@/components/Footer";
 
 const Contact = () => {
 
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+  
+    const form = event.currentTarget; // TypeScript now recognizes it as an HTMLFormElement
+    const formData = new FormData(form);
+  
+    formData.append("access_key", "be249f55-0454-44a6-b6ab-d35527daa8db");
+  
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+  
+    const data = await response.json();
+  
+    if (data.success) {
+      setResult("I WILL GET IN TOUCH SOON!");
+      form.reset(); // Now TypeScript allows calling reset()
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
   };
-
-
-  // Handle form submission TODO: Implement email sending logic using backend service (e.g., EmailJS, Nodemailer)
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted", formData);
-  };
-
 
 
   return (
@@ -76,21 +90,22 @@ const Contact = () => {
             </motion.span>
 
             <div id="contact-container" className="w-full col-span-18 col-start-2 bg-[] text-black overflow-hidden pt-16">
-              <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-14 text-[#80776d] pt-16">
-                <div className="flex flex-col col-start-3 col-span-10 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
+              <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] text-[#80776d] pt-16">
+                <div className="flex flex-col col-start-4 col-span-14 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
                   <span className="w-full font-bold items-center justify-center flex">DROP ME A MESSAGE!</span>
 
                   {/* Form Section */}
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                  <form onSubmit={onSubmit} className="flex flex-col gap-6" action="https://api.web3forms.com/submit" method="POST">
 
                     {/* Name & Email on the Same Row */}
+                    <input type="hidden" name="access_key" value="be249f55-0454-44a6-b6ab-d35527daa8db" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <input
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        value={formData.name}
-                        onChange={handleChange}
+                        // value={formData.name}
+                        // onChange={handleChange}
                         className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                         required
                       />
@@ -98,8 +113,8 @@ const Contact = () => {
                         type="email"
                         name="email"
                         placeholder="Your Email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        // value={formData.email}
+                        // onChange={handleChange}
                         className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                         required
                       />
@@ -110,8 +125,8 @@ const Contact = () => {
                       type="text"
                       name="subject"
                       placeholder="Subject"
-                      value={formData.subject}
-                      onChange={handleChange}
+                      // value={formData.subject}
+                      // onChange={handleChange}
                       className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                       required
                     />
@@ -120,8 +135,8 @@ const Contact = () => {
                     <textarea
                       name="message"
                       placeholder="Your Message"
-                      value={formData.message}
-                      onChange={handleChange}
+                      // value={formData.message}
+                      // onChange={handleChange}
                       className="p-4 w-full h-40 rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                       required
                     ></textarea>
@@ -134,6 +149,7 @@ const Contact = () => {
                       Send Message
                     </button>
                   </form>
+                  <span className="w-full font-bold items-center justify-center flex">{result}</span>
                 </div>
 
 
