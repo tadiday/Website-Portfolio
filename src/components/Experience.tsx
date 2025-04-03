@@ -1,19 +1,11 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from 'next/image';
+import {} from "react";
+import { motion} from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdOutlineWork } from "react-icons/md";
-import { BiLinkAlt } from "react-icons/bi";
-import { FiArrowUpRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
-import { FaFileAlt } from "react-icons/fa";
-import { IoLocationSharp } from "react-icons/io5";
-import { div } from "motion/react-client";
 
 
 const Experience = (() => {
-
-
 
   const experiences = {
     personal: [
@@ -233,7 +225,6 @@ const Experience = (() => {
         </div>
 
         <div className='pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
-
           <div className="w-full pt-16 ">
             <div className="top-0 flex py-5 flex-col bg-[#080807] border-t border-[#524D47] gap-y-4 group">
               {experiences.professional.map((job, index) => (
