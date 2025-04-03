@@ -1,28 +1,28 @@
 import { useState, useEffect } from "react";
 import { FaRegCopyright } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
 
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+
+  // Handle form submission TODO: Implement email sending logic using backend service (e.g., EmailJS, Nodemailer)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted", formData);
   };
 
-  const [localTime, setLocalTime] = useState<string | null>(null);
 
+  const [localTime, setLocalTime] = useState<string | null>(null);  // Time state
   useEffect(() => {
     const updateTime = () => setLocalTime(new Date().toLocaleTimeString());
-
     updateTime(); // Set initial value after mount
     const interval = setInterval(updateTime, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -41,9 +41,8 @@ const Contact = () => {
             >
               LET'S CONNECT
             </motion.h2>
-            {/* <h2 className='col-span-1 col-start-12 text-[120px] font-semibold'>(4)</h2> */}
-            <div className="h-full flex col-span-2 col-start-6 w-full items-center"
-            >
+
+            <div className="h-full flex col-span-2 col-start-6 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#080807] w-full origin-left"
                 initial={{ scaleX: 0 }}
@@ -52,6 +51,7 @@ const Contact = () => {
                 transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
               />
             </div>
+
             <motion.span
               className="flex text-[25px] font-thin text-home col-span-6 col-start-8 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
@@ -61,8 +61,8 @@ const Contact = () => {
             >
               "Great connections spark endless possibilities."
             </motion.span>
-            <div className="h-full flex col-span-2 col-start-14 w-full items-center"
-            >
+
+            <div className="h-full flex col-span-2 col-start-14 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#080807] w-full origin-right"
                 initial={{ scaleX: 0 }}
@@ -71,15 +71,7 @@ const Contact = () => {
                 transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
               />
             </div>
-            {/* <div className="h-full flex col-span-3 col-start-9 w-full items-center">
-              <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
-              />
-            </div> */}
+
             <motion.span
               className="flex text-[25px] font-thin text-home col-span-6 col-start-8 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
@@ -91,12 +83,13 @@ const Contact = () => {
             </motion.span>
 
             <div id="contact-container" className="w-full col-span-18 col-start-2 bg-[] text-black overflow-hidden pt-16">
-              {/* <div className="flex flex-col justify-between gap-y-16 border-t border-[#080807]">
-              </div> */}
               <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-14 text-[#80776d] pt-16">
                 <div className="flex flex-col col-start-3 col-span-10 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
                   <span className="w-full font-bold items-center justify-center flex">DROP ME A MESSAGE!</span>
+
+                  {/* Form Section */}
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                    
                     {/* Name & Email on the Same Row */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <input
@@ -106,7 +99,6 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
-
                         required
                       />
                       <input
@@ -150,6 +142,8 @@ const Contact = () => {
                     </button>
                   </form>
                 </div>
+
+                {/* Information Section */}
                 <div className="w-full col-start-1 col-span-6 font-mono">
                   <h3 className="font-bold mb-2">Information</h3>
                   <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
@@ -188,10 +182,7 @@ const Contact = () => {
                         className="block"
                         style={{ pointerEvents: "none" }}
                       >
-                        <span
-                          className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
-                          style={{ pointerEvents: "auto" }}
-                        >
+                        <span className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block" style={{ pointerEvents: "auto" }}>
                           Instagram
                         </span>
                       </a>
@@ -232,8 +223,8 @@ const Contact = () => {
                   </ul>
                 </div>
 
+                {/* Space For Footer */}
                 <div className="w-full text-center text-sm flex items-center font-mono col-start-5 col-span-5">
-
                 </div>
 
               </div>
