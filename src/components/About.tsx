@@ -1,5 +1,5 @@
 import { motion} from "framer-motion";
-import { GoArrowUpRight } from "react-icons/go";
+// import { GoArrowUpRight } from "react-icons/go";
 
 
 const About = (() => {
