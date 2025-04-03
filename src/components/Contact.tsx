@@ -28,7 +28,7 @@ const Contact = () => {
 
 
   return (
-    <section id='contact' className="bg-gradient-to-b from-[#524D47] to-[#080807] min-h-screen z-20">
+    <section id='contact' className="bg-gradient-to-b from-[#524D47] to-[#080807] min-h-screen z-20 pb-[5%]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-[#bebebe]'>
@@ -221,10 +221,6 @@ const Contact = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
-
-                {/* Space For Footer */}
-                <div className="w-full text-center text-sm flex items-center font-mono col-start-5 col-span-5">
                 </div>
 
               </div>
