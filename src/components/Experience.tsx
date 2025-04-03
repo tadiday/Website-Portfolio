@@ -126,23 +126,42 @@ const Experience = (() => {
       < div className="relative z-20 w-full overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
-            <h2 className='col-span-14 col-start-2 text-[120px] font-semibold text-home'>
-              {sectionTitle.split("").map((char, index) => (
+            {/* Section Title*/}
+            <motion.h2
+              initial="initial"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3, }} // Ensures animation only triggers when in view
+              className="relative block overflow-hidden whitespace-nowrap col-span-20 col-start-2 w-full text-[120px] font-bold justify-center"
+            >
+              <div>
+                {/* Place Holder */}
                 <motion.span
-                  key={index}
-                  custom={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }} // Ensures it animates only once
-                  variants={textVariants}
+                  variants={{ initial: { y: 100, opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                  transition={{ duration: 0.5, ease: "easeInOut", delay: 0.25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3, }}
                   className="inline-block"
                 >
-                  {char === " " ? "\u00A0" : char} {/* Keeps spaces visible */}
+                  {/* {sectionTitle} */}
                 </motion.span>
-              ))}
-            </h2>
-            <h2 className='col-span-1 col-start-16 text-[120px] font-semibold'>
-            </h2>
+              </div>
+
+              {/* Animated letters */}
+              <div className="absolute inset-0">
+                {sectionTitle.split("").map((l, i) => (
+                  <motion.span
+                    key={i}
+                    variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                    transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03  * i }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="inline-block"
+                  >
+                    {l === " " ? "\u00A0" : l} {/* Keeps spaces visible */}
+                  </motion.span>
+                ))}
+              </div>
+            </motion.h2>
 
             <motion.span
               className="text-[25px] font-thin text-home col-span-6 col-start-9"

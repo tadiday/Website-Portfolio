@@ -63,7 +63,7 @@ const About = (() => {
                   <motion.span
                     key={i}
                     variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                    transition={{ duration: 0.5, ease: "easeInOut", delay: 0.05 * i }}
+                    transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * i }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3, }}
                     className="inline-block"

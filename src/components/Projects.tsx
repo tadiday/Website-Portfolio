@@ -113,7 +113,7 @@ const Project = (() => {
                   <motion.span
                     key={i}
                     variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                    transition={{ duration: 0.25, ease: "easeInOut", delay: 0.05 * i }}
+                    transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * i }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     className="inline-block"
@@ -356,7 +356,7 @@ const Project = (() => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 2 }}>
+                    transition={{ duration: 3}}>
                     <img className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
                       src={backg}
                       alt="backg" >
@@ -368,7 +368,7 @@ const Project = (() => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 1 }}
+                      transition={{ duration: 3 }}
                       className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip 
                       ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit' : ''}`}
                     >
@@ -395,6 +395,8 @@ const Project = (() => {
               </div>
             </div>
           </div>
+
+          {/* Button Section */}
           <div className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%] 
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title ">
