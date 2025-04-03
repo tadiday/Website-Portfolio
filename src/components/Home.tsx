@@ -1,7 +1,5 @@
-// import React from 'react';
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaRegCopyright } from "react-icons/fa";
+import { motion} from "framer-motion";
 
 
 const Home = (() => {
