@@ -1,6 +1,7 @@
-import { useState} from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
+import Image from 'next/image';
 
 const Project = (() => {
 
@@ -13,9 +14,9 @@ const Project = (() => {
       gitHub: 'https://github.com/tadiday/Website-Portfolio',
       description: `
           Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
-      image: '../assets/gif/web-port2.mp4',
+      image: '/assets/gif/web-port.gif',
       tags: ['Web-App', 'GitHub', '2025'],
-      backg: '../assets/background/background1.jpg',
+      backg: '/assets/background/background1.jpg',
     },
     {
       title: 'Simplisplit',
@@ -25,9 +26,9 @@ const Project = (() => {
       description: `
           A mobile application that allows user to scan their bills and split the cost with their friends seamlessly. 
           Available through the App Store.`,
-      image: '../assets/gif/scan.gif',
+      image: '/assets/gif/scan.gif',
       tags: ['Mobile', 'Private', '2023'],
-      backg: '../assets/background/background3.jpg',
+      backg: '/assets/background/background3.jpg',
     },
     {
       title: 'Food Swipe',
@@ -37,9 +38,9 @@ const Project = (() => {
       description: `
           Developed a Tinder-inspired restaurant discovery app designed to help users find the perfect dining spot. 
           The app allows users to swipe right for more details on local restaurants tailored to their location.`,
-      image: '../assets/gif/foodSwipe.gif',
+      image: '/assets/gif/foodSwipe.gif',
       tags: ['Web-App', 'GitHub', '2022'],
-      backg: '../assets/background/background2-bw.jpeg',
+      backg: '/assets/background/background2-bw.jpeg',
     },
   ]
 
@@ -59,18 +60,6 @@ const Project = (() => {
 
 
   const sectionTitle = "SELECTED PROJECTS";
-
-  // Animation settings
-  const textVariants = {
-    hidden: { y: "50px", opacity: 0 }, // Start underground (y: 100%)
-    visible: (i: number) => ({
-      y: "0%",
-      opacity: 1,
-      transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" }, // Stagger letters
-    }),
-  };
-
-
 
   return (
     <section id='projects' className="h-full bg-[#080807] p-4 z-30  text-[#bebebe]">
@@ -346,13 +335,16 @@ const Project = (() => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 3}}>
-                    <img className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
+                    transition={{ duration: 3 }}>
+                    <Image
+                      className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
                       src={backg}
-                      alt="backg" 
+                      alt="backg"
+                      layout="fill"  // Makes the image cover the div (equivalent to object-cover)
+                      objectFit="cover" // Ensures the image maintains the desired cover behavior
                       loading="lazy"
-                      >
-                    </img>
+                    />
+
 
 
                     <motion.div
@@ -364,21 +356,15 @@ const Project = (() => {
                       className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip 
                       ${title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit' : ''}`}
                     >
-                      {title === 'Web-Portfolio' ?
-                        <video
-                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
-                          src={image}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                        />
-                        :
-                        <img
-                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
-                          src={image}
-                          alt={title} />
-                      }
+                      <Image
+                        className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                        src={image}
+                        alt={title}
+                        layout="responsive"
+                        width={500}
+                        height={500}
+                        // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
+                      />
 
                     </motion.div>
                   </motion.div>

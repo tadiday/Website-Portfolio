@@ -155,7 +155,7 @@ const Home = () => {
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
               style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
             >
-              <div>38.7439° N, 77.2405° W</div>
+              <div>Fairfax, Virginia</div>
               <div>{localTime}</div>
             </motion.div>
           </div>
