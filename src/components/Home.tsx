@@ -75,6 +75,9 @@ const Home = (() => {
             className="relative block overflow-hidden whitespace-nowrap w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold justify-center"
             style={{
               lineHeight: 1.5,
+              opacity,
+              transform: `scale(${scale})`,
+              transition: "all 0.3s ease-out",
             }}
           >
             <div>
@@ -111,7 +114,7 @@ const Home = (() => {
                 transition={{
                   duration: 0.5,
                   ease: "easeInOut",
-                  delay: 1 + 0.025 * i,
+                  delay: 0.5 + 0.025 * i,
                 }}
                 className="inline-block"
                 key={i}
@@ -126,6 +129,7 @@ const Home = (() => {
 
 
           <div className="grid grid-flow-row-dense grid-cols-25">
+            
             <motion.div
               className="font-title text-[30px] col-start-1 col-span-25 font-mono font-light w-full justify-between flex"
               initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
@@ -149,11 +153,11 @@ const Home = (() => {
                 initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
                 animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
                 transition={{ delay: 2, duration: 1, ease: "easeOut" }} // Delayed fade-in
-                style={{
-                  opacity,
-                  transform: `scale(${scale})`,
-                  transition: "all 0.3s ease-out",
-                }}
+                // style={{
+                //   opacity,
+                //   transform: `scale(${scale})`,
+                //   transition: "all 0.3s ease-out",
+                // }}
               >
                 <p className="font-light">AVAILABLE FOR HIRE</p>
                 <div className="text-[70px]">MAY 2025</div>

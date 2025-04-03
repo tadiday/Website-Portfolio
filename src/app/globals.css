@@ -96,16 +96,6 @@ code {
   pointer-events: none; /* Ensures elements are clickable */
 }
 
-
-@keyframes wordSwap {
-  0%, 20% { opacity: 1; transform: translateY(0); }
-  25%, 100% { opacity: 0; transform: translateY(-100%); }
-}
-
-.animate-wordSwap {
-  animation: wordSwap 6s infinite;
-}
-
 /* bg-gradient-to-r from-[#A39173] to-[#B38C66] */
 
 html {
