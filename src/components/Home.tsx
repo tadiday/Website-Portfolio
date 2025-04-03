@@ -77,7 +77,7 @@ const Home = () => {
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
+        className="absolute top-0 left-0 w-full h-full pointer-events-none z-20"
       />
 
       {/* Animated background overlay */}

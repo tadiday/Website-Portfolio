@@ -117,12 +117,22 @@ const About = (() => {
                 <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-16 ">
 
                   {/* Image Section: TODO: Animation*/}
-                  <div className="object-contain w-full shadow-md grayscale col-span-5 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]">
-                    <img
-                      className="object-contain w-full  border-gray-700 rounded-2xl shadow-md overflow-hidden"
+                  <motion.div
+                    className="object-contain w-full shadow-md grayscale col-span-5 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]"
+                    initial={{ opacity: 0 }}  // Start with invisible container
+                    animate={{ opacity: 1 }}  // Fade in the container
+                    transition={{ duration: 1 }} // Fade-in duration
+                  >
+                    <motion.img
+                      className="object-contain w-full border-gray-700 rounded-2xl shadow-md overflow-hidden"
                       src="../assets/me/me2.jpg"
-                      alt="Example" />
-                  </div>
+                      alt="Example"
+                      initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      whileInView={{ clipPath: "inset(0 0 0 0)" }}  // Always animate when in view
+                      viewport={{ once: true }}  // Trigger animation once when image is in view
+                    />
+                  </motion.div>
 
                   {/* Text Section */}
                   <div className='flex flex-col col-span-10 col-start-7 text-[20px] font-thin gap-y-10 py-4'>
