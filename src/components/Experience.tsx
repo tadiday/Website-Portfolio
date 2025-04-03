@@ -102,16 +102,6 @@ const Experience = (() => {
 
   const sectionTitle = "CAREER ADVENTURE";
 
-  // Animation settings
-  const textVariants = {
-    hidden: { y: "50px", opacity: 0 }, // Start underground (y: 100%)
-    visible: (i: number) => ({
-      y: "0%",
-      opacity: 1,
-      transition: { delay: i * 0.05, duration: 0.25, ease: "easeOut" }, // Stagger letters
-    }),
-  };
-
 
   return (
     <section id="experience" className="h-full min-h-[500px] bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]">

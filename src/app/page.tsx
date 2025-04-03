@@ -1,5 +1,6 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useRouter } from "next/router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/navigation/Header";
 import Home from "@/components/Home";
@@ -28,8 +29,16 @@ export default function Main() {
 
 
   // Animate X position (Slide in effect)
-  const headerX = useTransform(aboutProgress, [0.2, 0.5], [-100, 0]);
-  const headerOpacity = useTransform(aboutProgress, [0.2, 0.5], [0, 1]);
+  const headerX = useTransform(aboutProgress, [0.2, 0.4], [-100, 0]);
+  const headerOpacity = useTransform(aboutProgress, [0.2, 0.4], [0, 1]);
+
+
+  // useEffect(() => {
+  //   if (window.history.scrollRestoration) {
+  //     window.history.scrollRestoration = "manual";
+  //   }
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <div className="relative w-full text-white ">
@@ -69,7 +78,7 @@ export default function Main() {
           <Experience />
         </motion.div>
 
-        <Contact />
+        <Contact/>
       </div>
     </div>
   );

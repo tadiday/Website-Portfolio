@@ -73,12 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <motion.section
-      className="h-screen sticky top-0 px-[10%] pt-[10%] pb-20 text-home bg-cover bg-center bg-no-repeat"
-      initial={{ backgroundColor: "#000000" }}
-      animate={{ backgroundColor: "#000000" }}
-      transition={{ duration: 1 }}
-    >
+    <section className="h-screen sticky top-0 px-[10%] pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -87,7 +82,7 @@ const Home = () => {
 
       {/* Animated background overlay */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-[#524D47] opacity-80"
+        className="absolute top-0 left-0 w-full h-full bg-[#524D47]"
         initial={{ y: "100%", borderRadius: "100%" }}
         animate={{ y: "0%", borderRadius: "0%" }}
         transition={{ duration: 1.5, ease: [0.25, 0.8, 0.25, 1] }}
@@ -131,19 +126,24 @@ const Home = () => {
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
             >
-              <div className="w-full">
+              <div
+                className="w-full"
+                style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+              >
                 <p>An Upcoming Software Engineer</p>
                 <p className="mt-2 font-light text-[20px]">
                   Passionate about building scalable software, solving complex problems, and
                   creating innovative solutions.
                 </p>
               </div>
-              <motion.div className="font-title text-[30px] font-mono font-bold w-full text-right">
+              <div
+                className="font-title text-[30px] font-mono font-bold w-full text-right"
+                style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+              >
                 <p className="font-light">AVAILABLE FOR HIRE</p>
                 <div className="text-[70px]">MAY 2025</div>
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Location and Local Time */}
@@ -160,7 +160,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

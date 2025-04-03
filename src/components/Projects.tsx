@@ -1,15 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
-// import WebPortfolioMP4 from '../assets/gif/web-port2.mp4';
-// import FoodSwipe from '../assets/gif/foodSwipe.gif';
-// import Background2 from '../assets/background/background2-bw.jpeg';
-// import Background1 from '../assets/background/background3-bw.jpg';
-// import Background3 from '../assets/background/background1-bw.jpg';
-// import SimPliSplitGif from '../assets/gif/scan.gif';
 import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
 import { GoArrowUpRight } from "react-icons/go";
-import { FaPenNib } from "react-icons/fa";
-
 
 
 const Project = (() => {

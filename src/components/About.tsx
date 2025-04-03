@@ -1,36 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
-
 import { GoArrowUpRight } from "react-icons/go";
 
 
 const About = (() => {
 
-  const words = ["Engineer", "Designer", "Developer", "Programmer", "Creator"];
-
-
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 4000); // Ensures 4 seconds before switching
-
-    return () => clearTimeout(timeout);
-  }, [index]);
-
-
   const sectionTitle = "WHO AM I?";
-
-  // Animation settings
-  const textVariants = {
-    hidden: { y: "50px", opacity: 0 }, // Start underground (y: 100%)
-    visible: (i: number) => ({
-      y: "0%",
-      opacity: 1,
-      transition: { delay: i * 0.05, duration: 0.5, ease: "easeOut" }, // Stagger letters
-    }),
-  };
 
   return (
     <section id='about' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
