@@ -3,12 +3,13 @@ import { useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/navigation/Header";
+import NavBar from "@/components/navigation/NavBar";
 import Home from "@/components/Home";
 import About from "@/components/About";
 import Project from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
-import NavBar from "@/components/navigation/NavBar";
+import Footer from "@/components/Footer";
 
 export default function Main() {
   // About Section Scaling (Zoom in when entering)
@@ -49,15 +50,14 @@ export default function Main() {
         className="fixed top-0 left-0 z-60 flex flex-col items-end justify-center w-[10%] max-w-[60px] h-full"
         style={{ x: headerX, opacity: headerOpacity }}
       >
-        <NavBar/>
+        <NavBar />
       </motion.div>
 
       {/* Header */}
-      <Header/>
+      <Header />
 
       <div id="home" className="grid">
         <Home />
-        {/* About Section (Zoom In) */}
         <motion.div
           ref={aboutRef}
           id="about"
@@ -66,9 +66,7 @@ export default function Main() {
         >
           <About />
         </motion.div>
-
         <Project />
-        {/* Experience Section (Shrink When Leaving) */}
         <motion.div
           ref={experienceRef}
           id="experience"
@@ -77,8 +75,8 @@ export default function Main() {
         >
           <Experience />
         </motion.div>
+        <Contact />
 
-        <Contact/>
       </div>
     </div>
   );

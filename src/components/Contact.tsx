@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaRegCopyright } from "react-icons/fa";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 
 const Contact = () => {
@@ -17,14 +18,6 @@ const Contact = () => {
     console.log("Form submitted", formData);
   };
 
-
-  const [localTime, setLocalTime] = useState<string | null>(null);  // Time state
-  useEffect(() => {
-    const updateTime = () => setLocalTime(new Date().toLocaleTimeString());
-    updateTime(); // Set initial value after mount
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
 
   return (
@@ -89,7 +82,7 @@ const Contact = () => {
 
                   {/* Form Section */}
                   <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                    
+
                     {/* Name & Email on the Same Row */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <input
@@ -143,84 +136,9 @@ const Contact = () => {
                   </form>
                 </div>
 
-                {/* Information Section */}
-                <div className="w-full col-start-1 col-span-6 font-mono">
-                  <h3 className="font-bold mb-2">Information</h3>
-                  <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
-                  <ul className="space-y-1">
-                    <div className="">{localTime} Fairfax, VA</div>
 
-                    <span className="flex items-center font-bold"><FaRegCopyright className="" /> &nbsp;2025 Peter Cao. All rights reserved.</span>
-                    <span className="">Built with Next.js and Tailwind CSS, deployed with Vercel.</span>
-                  </ul>
-                </div>
-
-                {/* Socials Section */}
-                <div className="w-full col-start-7 col-span-4 font-mono">
-                  <h3 className="font-bold mb-2">Socials</h3>
-                  <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
-                  <ul className="space-y-1">
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/in/petercao03"
-                        target="_blank"
-                        className="block"
-                        style={{ pointerEvents: "none" }} // Disables interaction on empty space
-                      >
-                        <span
-                          className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
-                          style={{ pointerEvents: "auto" }} // Enables interaction on the text
-                        >
-                          Linkedin
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.instagram.com/fat_cao"
-                        target="_blank"
-                        className="block"
-                        style={{ pointerEvents: "none" }}
-                      >
-                        <span className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block" style={{ pointerEvents: "auto" }}>
-                          Instagram
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/tadiday"
-                        target="_blank"
-                        className="block"
-                        style={{ pointerEvents: "none" }}
-                      >
-                        <span
-                          className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
-                          style={{ pointerEvents: "auto" }}
-                        >
-                          GitHub
-                        </span>
-                      </a>
-                    </li>
-                  </ul>
-
-                </div>
-
-
-                {/* Resources Section */}
-                <div className="w-full col-start-11 col-span-4 font-mono">
-                  <h3 className="font-bold mb-2">Resources</h3>
-                  <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
-                  <ul className="space-y-1">
-                    <li>
-                      <a href="/assets/documents/resume.pdf"
-                        target="_blank"
-                        className="hover:text-[#967A54] flex items-center gap-2 transition-transform duration-300 hover:scale-105 hover:translate-x-1 origin-left"
-                      >
-                        Résumé
-                      </a>
-                    </li>
-                  </ul>
+                <div className="col-start-1 col-span-20">
+                  <Footer />
                 </div>
 
               </div>
