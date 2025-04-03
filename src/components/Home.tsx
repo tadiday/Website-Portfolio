@@ -46,7 +46,7 @@ const Home = (() => {
       {/* Animated background sliding up with radius change */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full bg-[#524D47]"
-        initial={{ y: "100%", borderRadius: "50%" }} // Start with off-screen and 50% radius
+        initial={{ y: "100%", borderRadius: "100%" }} // Start with off-screen and 50% radius
         animate={{
           y: "0%", // Slide it up into place
           borderRadius: "0%", // Animate the radius to 0%
@@ -65,22 +65,72 @@ const Home = (() => {
 
       </div>
 
+
       <div className="flex flex-col w-full">
         <div className="w-full">
-          <h1
-            className="flex w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold underline justify-center"
+          <motion.a
+            initial="initial"
+            animate="hovered"
+            // href={href}
+            className="relative block overflow-hidden whitespace-nowrap w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold justify-center"
             style={{
-              opacity,
-              transform: `scale(${scale})`,
-              transition: "all 0.3s ease-out",
+              lineHeight: 1.5,
             }}
           >
-            PETER CAO
-          </h1>
+            <div>
+              <motion.span
+                variants={{
+                  initial: {
+                    y: 0,
+                  },
+                  hovered: {
+                    y: "-100%",
+                  },
+                }}
+                transition={{
+                  duration: 0.25,
+                  ease: "easeInOut",
+                  delay: 0.25,
+                }}
+                className="inline-block"
+              >
+                {/* PETER CAO */}
+              </motion.span>
+            </div>
+            <div className="absolute inset-0">
+            {("PETER CAO").split("").map((l, i) => (
+              <motion.span
+                variants={{
+                  initial: {
+                    y: "100%",
+                  },
+                  hovered: {
+                    y: 0,
+                  },
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                  delay: 1 + 0.025 * i,
+                }}
+                className="inline-block"
+                key={i}
+              >
+                {l}
+              </motion.span>
+            ))}
+            </div>
+          </motion.a>
+
+
+
 
           <div className="grid grid-flow-row-dense grid-cols-25">
-            <div
+            <motion.div
               className="font-title text-[30px] col-start-1 col-span-25 font-mono font-light w-full justify-between flex"
+              initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
+              animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
+              transition={{ delay: 2, duration: 1, ease: "easeOut" }} // Delayed fade-in
               style={{
                 opacity,
                 transform: `scale(${scale})`,
@@ -94,8 +144,11 @@ const Home = (() => {
                   creating innovative solutions.</p>
 
               </div>
-              <div
+              <motion.div
                 className="font-title text-[30px] col-end-25 col-span-11 font-mono font-bold w-full text-right"
+                initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
+                animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
+                transition={{ delay: 2, duration: 1, ease: "easeOut" }} // Delayed fade-in
                 style={{
                   opacity,
                   transform: `scale(${scale})`,
@@ -104,8 +157,8 @@ const Home = (() => {
               >
                 <p className="font-light">AVAILABLE FOR HIRE</p>
                 <div className="text-[70px]">MAY 2025</div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
 
 
@@ -113,8 +166,11 @@ const Home = (() => {
               className="font-title text-[22px] min-h-[190px] col-start-1 col-span-25 font-mono font-light w-full justify-end flex flex-col">
             </div>
 
-            <div
+            <motion.div
               className="font-title text-[22px] col-start-1 col-span-25 font-mono font-light w-full flex justify-between select-text"
+              initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
+              animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
+              transition={{ delay: 2, duration: 1, ease: "easeOut" }} // Delayed fade-in
               style={{
                 opacity,
                 transform: `scale(${scale})`,
@@ -123,12 +179,12 @@ const Home = (() => {
             >
               <p>38.7439° N, 77.2405° W</p>
               <div>{localTime}</div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
       </div>
-    </motion.section>
+    </motion.section >
   );
 });
 
