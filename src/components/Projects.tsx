@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 
@@ -44,7 +44,7 @@ const Project = (() => {
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { title, description, tech, image, gitHub, tags, backg } = useMemo(() => projects[currentIndex], [currentIndex]);
+  const { title, description, tech, image, gitHub, tags, backg } = projects[currentIndex];
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
@@ -122,7 +122,7 @@ const Project = (() => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 0 }}
             >
-              "Innovative solutions, where every detail matters."
+              &quot;Innovative solutions, where every detail matters.&quot;
             </motion.span>
             <div className="h-full flex col-span-3 col-start-15 w-full items-center"
             >
@@ -150,7 +150,7 @@ const Project = (() => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 0.75 }}
             >
-              "Designing with purpose, creating with passion."
+              &quot;Designing with purpose, creating with passion.&quot;
             </motion.span>
 
 
@@ -171,7 +171,7 @@ const Project = (() => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 1.5 }}
             >
-              "Each project is a step forward in my journey of growth."
+              &quot;Each project is a step forward in my journey of growth.&quot;
             </motion.span>
 
             <div className="h-full flex col-span-1 col-start-17 w-full items-center">
@@ -349,7 +349,9 @@ const Project = (() => {
                     transition={{ duration: 3}}>
                     <img className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
                       src={backg}
-                      alt="backg" >
+                      alt="backg" 
+                      loading="lazy"
+                      >
                     </img>
 
 

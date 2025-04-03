@@ -152,7 +152,7 @@ const Experience = (() => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              "Innovating through collaboration and growths."
+              &quot;Innovating through collaboration and growths.&quot;
             </motion.span>
             <div className="h-full flex col-span-3 col-start-15 w-full items-center"
             >
@@ -179,7 +179,7 @@ const Experience = (() => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.6, delay: 1.6 }}
             >
-              "Transforming challenges into impactful solutions."
+              &quot;Transforming challenges into impactful solutions.&quot;
             </motion.span>
 
 
@@ -199,7 +199,7 @@ const Experience = (() => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.6, delay: 2.5 }}
             >
-              "Working smarter, not harder."
+              &quot;Working smarter, not harder.&quot;
             </motion.span>
 
             <div className="h-full flex col-span-3 col-start-15 w-full items-center">

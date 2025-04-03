@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { FaRegCopyright } from "react-icons/fa";
+import { useState} from "react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 
@@ -46,7 +45,7 @@ const Contact = () => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.6, delay: 0 }}
             >
-              LET'S CONNECT
+              LET&apos;S CONNECT
             </motion.h2>
 
             <div className="h-full flex col-span-2 col-start-6 w-full items-center">
@@ -66,7 +65,7 @@ const Contact = () => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 0 }}
             >
-              "Great connections spark endless possibilities."
+              &quot;Great connections spark endless possibilities.&quot;
             </motion.span>
 
             <div className="h-full flex col-span-2 col-start-14 w-full items-center">
@@ -86,7 +85,7 @@ const Contact = () => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 0.75 }}
             >
-              "Collaboration is the key to innovation."
+              &quot;Collaboration is the key to innovation.&quot;
             </motion.span>
 
             <div id="contact-container" className="w-full col-span-18 col-start-2 bg-[] text-black overflow-hidden pt-16">

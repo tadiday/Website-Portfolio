@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion} from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 
 
@@ -125,12 +125,14 @@ const About = (() => {
                   >
                     <motion.img
                       className="object-contain w-full border-gray-700 rounded-2xl shadow-md overflow-hidden"
-                      src="../assets/me/me2.jpg"
+                      src="../assets/me/me2.avif"
                       alt="Example"
                       initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
                       transition={{ duration: 1.5, ease: "easeOut" }}
                       whileInView={{ clipPath: "inset(0 0 0 0)" }}  // Always animate when in view
                       viewport={{ once: true }}  // Trigger animation once when image is in view
+                      width={500}  // Specify width
+                      height={500}  // Specify height
                     />
                   </motion.div>
 
