@@ -184,12 +184,12 @@ const About = (() => {
               <a href="/assets/documents/resume.pdf"
                 target="_blank"
                 className="w-full pt-16 col-span-2 col-start-6 text-[25px] font-mono">
-                <span className="inline-block group-hover/title:text-[#967A54] text-[25px] ">View Vlog</span>
-                <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
-                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1' />
+                {/* <span className="inline-block group-hover/title:text-[#967A54] text-[25px] ">View Vlog</span> */}
+                {/* <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
+                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1' /> */}
 
                 {/* Animated underline */}
-                <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
+                {/* <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
                   <div className="flex flex-col h-full -mb-5">
                     <div className=" w-[80%] h-[2px] bg-home">
                     </div>
@@ -198,7 +198,7 @@ const About = (() => {
                     <div className=" w-[50%] h-[2px] bg-home">
                     </div>
                   </div>
-                </div>
+                </div> */}
               </a>
             </div>
 
