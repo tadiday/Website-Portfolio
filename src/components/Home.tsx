@@ -92,60 +92,105 @@ const Home = () => {
       <div className="flex flex-col w-full">
         <div className="w-full">
           {/* Name Section */}
-          <motion.h1
-            initial="initial"
-            animate="visible"
-            className="relative block overflow-hidden whitespace-nowrap w-full text-[60px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold justify-center text-white"
-            style={{
-              lineHeight: 1.5,
-              opacity,
-              transform: `scale(${scale})`,
-              transition: "all 0.3s ease-out",
-            }}
-          >
-            <div>
-              <motion.span className="inline-block"></motion.span>
-            </div>
-            <div className="absolute inset-0 text-center">
-              {("PETER CAO").split("").map((l, i) => (
+
+          <div className="sm:flex sm:justify-center sm:gap-4 sm:items-center relative">
+            <motion.h1
+              initial="initial"
+              animate="visible"
+              className="overflow-hidden whitespace-nowrap text-[60px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
+              style={{
+                lineHeight: 1.5,
+                opacity,
+                transform: `scale(${scale})`,
+                transition: "all 0.3s ease-out",
+              }}
+            >
+              {/* Desktop version: one line */}
+              {("PETER").split("").map((l, i) => (
                 <motion.span
                   key={i}
                   className="inline-block"
                   variants={{ initial: { y: "100%" }, visible: { y: 0 } }}
                   transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 + 0.025 * i }}
                 >
-                  {l === " " ? "\u00A0" : l}
+                   {l}
                 </motion.span>
               ))}
-            </div>
-          </motion.h1>
+            </motion.h1>
+            {"\u00A0"}
+            {"\u00A0"}
+            <motion.h1
+              initial="initial"
+              animate="visible"
+              className="overflow-hidden whitespace-nowrap text-[60px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
+              style={{
+                lineHeight: 1.5,
+                opacity,
+                transform: `scale(${scale})`,
+                transition: "all 0.3s ease-out",
+              }}
+            >
+
+              {("CAO").split("").map((l, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block"
+                  variants={{ initial: { y: "100%" }, visible: { y: 0 } }}
+                  transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 + 0.025 * i }}
+                >
+                  {l}
+                </motion.span>
+              ))}
+            </motion.h1>
+          </div>
+
+
+
+
+
+
 
           {/* Subtitle Section */}
-          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-25 text-white md:min-h-[60vh]">
+          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 text-white md:min-h-[60vh]">
             <motion.div
-              className="font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-25 font-mono font-light w-full justify-between flex"
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
+              className="font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-1 md:col-span-1 font-mono font-light w-full justify-between flex "
             >
               <div
                 className="w-full "
                 style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
               >
-                <p>An Upcoming Software Engineer</p>
-                <p className="mt-2 font-light text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] ">
+                <p className="text-lg sm:text-xl lg:text-[30px] mb-2">An Upcoming Software Engineer</p>
+                <p className="mt-5 font-light text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] ">
                   Passionate about building scalable software, solving complex problems, and
                   creating innovative solutions.
                 </p>
               </div>
+
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 10, z: 10 }}
+              animate={{ opacity: 1, y: 0, z: 10 }}
+              transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
+              className="font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
+            >
               <div
-                className="font-title font-mono font-bold w-full text-right"
+                className="w-full "
                 style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
               >
-                <p className="font-light">AVAILABLE FOR HIRE</p>
-                <div className="text-[34px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
+                <div
+                  className="font-title font-mono font-bold w-full text-right"
+                  style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                >
+                  <p className="font-light">AVAILABLE FOR HIRE</p>
+                  <div className="text-[34px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
+                </div>
               </div>
+
             </motion.div>
+
 
             {/* Location and Local Time */}
             <motion.div
