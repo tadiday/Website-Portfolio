@@ -73,7 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-screen max-w-screen sticky top-0  px-[5%] pt-[20%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
+    <section className="h-screen max-w-screen sticky top-0  px-[5%] pt-[25%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -97,7 +97,7 @@ const Home = () => {
             <motion.h1
               initial="initial"
               animate="visible"
-              className="overflow-hidden whitespace-nowrap text-[60px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
+              className="overflow-hidden whitespace-nowrap text-[80px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
               style={{
                 lineHeight: 1.5,
                 opacity,
@@ -113,16 +113,18 @@ const Home = () => {
                   variants={{ initial: { y: "100%" }, visible: { y: 0 } }}
                   transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 + 0.025 * i }}
                 >
-                   {l}
+                  {l}
                 </motion.span>
               ))}
             </motion.h1>
-            {"\u00A0"}
-            {"\u00A0"}
+            <h1 className="hidden sm:flex sm:overflow-hidden sm:whitespace-nowrap text-[80px] sm:text-[100px] md:text-[190px] lg:text-[250px]">
+              {"\u00A0"}
+            </h1>
+
             <motion.h1
               initial="initial"
               animate="visible"
-              className="overflow-hidden whitespace-nowrap text-[60px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
+              className="overflow-hidden whitespace-nowrap text-[80px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white flex items-center"
               style={{
                 lineHeight: 1.5,
                 opacity,
@@ -141,6 +143,28 @@ const Home = () => {
                   {l}
                 </motion.span>
               ))}
+
+              {/* Mobile version: Availability */}
+              <motion.div
+                initial={{ opacity: 0, y: 10, z: 10 }}
+                animate={{ opacity: 1, y: 0, z: 10 }}
+                transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
+                className="sm:hidden font-title text-[12px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
+              >
+                <div
+                  className="w-full "
+                  style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                >
+                  <div
+                    className="font-title font-mono font-bold w-full text-right"
+                    style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                  >
+                    <p className="font-light">AVAILABLE FOR HIRE</p>
+                    <div className="text-[27px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
+                  </div>
+                </div>
+
+              </motion.div>
             </motion.h1>
           </div>
 
@@ -170,11 +194,13 @@ const Home = () => {
               </div>
 
             </motion.div>
+
+             {/* Desktop version: Availability */}
             <motion.div
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              className="font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
+              className="hidden font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between sm:flex "
             >
               <div
                 className="w-full "
