@@ -73,7 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-screen sticky top-0 px-[10%] pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
+    <section className="h-screen max-w-screen sticky top-0  px-[5%] pt-[20%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -95,7 +95,7 @@ const Home = () => {
           <motion.h1
             initial="initial"
             animate="visible"
-            className="relative block overflow-hidden whitespace-nowrap w-full sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold justify-center text-white"
+            className="relative block overflow-hidden whitespace-nowrap w-full text-[60px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold justify-center text-white"
             style={{
               lineHeight: 1.5,
               opacity,
@@ -121,35 +121,35 @@ const Home = () => {
           </motion.h1>
 
           {/* Subtitle Section */}
-          <div className="grid grid-flow-row-dense grid-cols-25 text-white min-h-[60vh]">
+          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-25 text-white md:min-h-[60vh]">
             <motion.div
-              className="font-title text-[30px] col-start-1 col-span-25 font-mono font-light w-full justify-between flex"
+              className="font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-25 font-mono font-light w-full justify-between flex"
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
             >
               <div
-                className="w-full"
+                className="w-full "
                 style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
               >
                 <p>An Upcoming Software Engineer</p>
-                <p className="mt-2 font-light text-[20px]">
+                <p className="mt-2 font-light text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] ">
                   Passionate about building scalable software, solving complex problems, and
                   creating innovative solutions.
                 </p>
               </div>
               <div
-                className="font-title text-[30px] font-mono font-bold w-full text-right"
+                className="font-title font-mono font-bold w-full text-right"
                 style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
               >
                 <p className="font-light">AVAILABLE FOR HIRE</p>
-                <div className="text-[70px]">MAY 2025</div>
+                <div className="text-[34px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
               </div>
             </motion.div>
 
             {/* Location and Local Time */}
             <motion.div
-              className="font-title text-[22px] col-start-1 col-span-25 font-mono font-light w-full flex justify-between select-text"
+              className="font-title text-[15px] sm:text-[22px] md:text-[22px] lg:text-[22px] col-start-1 col-span-25 font-mono font-light w-full flex justify-between select-text"
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}

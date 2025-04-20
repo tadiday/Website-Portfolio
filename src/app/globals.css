@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -101,3 +102,10 @@ code {
 html {
   scroll-behavior: smooth;
 }
+
+/* Home Page CSS */
+.section-home-base {
+  @apply px-6 sm:px-12 md:px-[10%] pt-[20%] sm:pt-[10%] pb-20 min-h-screen w-full relative;
+}
+
+
