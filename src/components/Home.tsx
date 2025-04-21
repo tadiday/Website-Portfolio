@@ -73,7 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-screen max-w-screen sticky top-0  px-[5%] pt-[25%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
+    <section className="h-screen max-w-screen sticky top-0  px-[5%] pt-[50%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -97,7 +97,7 @@ const Home = () => {
             <motion.h1
               initial="initial"
               animate="visible"
-              className="overflow-hidden whitespace-nowrap text-[80px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
+              className="overflow-hidden whitespace-nowrap text-[90px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white"
               style={{
                 lineHeight: 1.5,
                 opacity,
@@ -124,7 +124,7 @@ const Home = () => {
             <motion.h1
               initial="initial"
               animate="visible"
-              className="overflow-hidden whitespace-nowrap text-[80px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white flex items-center"
+              className="overflow-hidden whitespace-nowrap text-[90px] sm:text-[100px] md:text-[190px] lg:text-[250px] font-bold text-white flex items-center"
               style={{
                 lineHeight: 1.5,
                 opacity,
@@ -149,7 +149,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 10, z: 10 }}
                 animate={{ opacity: 1, y: 0, z: 10 }}
                 transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-                className="sm:hidden font-title text-[12px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
+                className="sm:hidden font-title text-[13px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
               >
                 <div
                   className="w-full "
@@ -160,7 +160,7 @@ const Home = () => {
                     style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
                   >
                     <p className="font-light">AVAILABLE FOR HIRE</p>
-                    <div className="text-[27px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
+                    <div className="text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
                   </div>
                 </div>
 
@@ -175,7 +175,7 @@ const Home = () => {
 
 
           {/* Subtitle Section */}
-          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 text-white md:min-h-[60vh]">
+          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 text-white py-[50px]">
             <motion.div
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
@@ -186,8 +186,8 @@ const Home = () => {
                 className="w-full "
                 style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
               >
-                <p className="text-lg sm:text-xl lg:text-[30px] mb-2">An Upcoming Software Engineer</p>
-                <p className="mt-5 font-light text-[12px] sm:text-[20px] md:text-[20px] lg:text-[20px] ">
+                <h3 className="text-center md:text-left text-[33px] sm:text-xl lg:text-[30px] mb-2">An Upcoming Software Engineer</h3>
+                <p className="text-center md:text-left md:mt-5 font-light text-[18px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
                   Passionate about building scalable software, solving complex problems, and
                   creating innovative solutions.
                 </p>
@@ -220,7 +220,7 @@ const Home = () => {
 
             {/* Location and Local Time */}
             <motion.div
-              className="font-title text-[15px] sm:text-[22px] md:text-[22px] lg:text-[22px] col-start-1 col-span-25 font-mono font-light w-full flex justify-between select-text"
+              className="absolute bottom-3 left-0 right-0 px-[5%] md:px-[10%] font-title text-[15px] sm:text-[22px] md:text-[22px] lg:text-[22px] font-mono font-light flex justify-between text-white z-40"
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}

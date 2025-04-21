@@ -5,7 +5,7 @@ import Link from 'next/link';  // Import Link from Next.js
 
 const Header = () => {
     return (
-        <header className="grid grid-cols-25 items-start absolute z-50 w-full px-[10%] py-10">
+        <header className="grid grid-cols-25 items-start absolute z-50 w-full px-[10%] py-10 max-w-screen ">
             {/* Left Side: Copyright */}
             <motion.div
                 className="col-start-1 col-span-4 font-semibold text-[22px] flex items-center font-mono"

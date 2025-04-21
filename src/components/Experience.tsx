@@ -104,7 +104,7 @@ const Experience = (() => {
 
 
   return (
-    <section id="experience" className="h-full min-h-[500px] bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]">
+    <section id="experience" className="h-full min-h-[500px] max-w-screen  bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]">
       < div className="relative z-20 w-full overflow-x-clip" >
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
