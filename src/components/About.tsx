@@ -156,7 +156,7 @@ const About = (() => {
                         <span className="h-full text-nowrap">(About Me)</span>
                       </span>
                       <p className="max-w-[40ch] text-balance">
-                        I'm a Computer Science student at Virginia Tech, graduating in May 2025. I've contributed to projects involving system optimization,
+                        I&apos;m a Computer Science student at Virginia Tech, graduating in May 2025. I&apos;ve contributed to projects involving system optimization,
                         automation tools, and user interface development, allowing me to build well-rounded solutions while collaborating across different areas of development.
                       </p>
                     </div>
@@ -167,7 +167,7 @@ const About = (() => {
                         <span className="h-full text-nowrap ">(Hobbies)</span>
                       </span>
                       <p className="max-w-[40ch] text-balance">
-                        When I'm not coding, I enjoy playing games and watching anime. I also love trying new restaurants, cooking, and traveling. 
+                        When I&apos;m not coding, I enjoy playing games and watching anime. I also love trying new restaurants, cooking, and traveling. 
                         Currently, my travel bucket list includes Seattle, Miami, Austin, and Las Vegas.
 
 
