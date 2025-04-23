@@ -212,7 +212,8 @@ const Project = (() => {
                       transition={{ duration: 1, ease: "easeOut" }}
                       className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem] "
                     >
-                      {title}<GoArrowUpRight className='inline-block text-[#644f3e]' />
+                      {title}
+                      {/* <GoArrowUpRight className='inline-block text-[#644f3e]' /> */}
                     </motion.h3>
                   </AnimatePresence>
 

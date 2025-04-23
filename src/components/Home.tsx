@@ -73,7 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-screen max-w-screen sticky top-0  px-[5%] pt-[50%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-cover bg-center bg-no-repeat">
+    <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0  px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-center bg-no-repeat">
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -175,7 +175,7 @@ const Home = () => {
 
 
           {/* Subtitle Section */}
-          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 text-white py-[50px]">
+          <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 text-white">
             <motion.div
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
@@ -186,8 +186,8 @@ const Home = () => {
                 className="w-full "
                 style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
               >
-                <h3 className="text-center md:text-left text-[33px] sm:text-xl lg:text-[30px] mb-2">An Upcoming Software Engineer</h3>
-                <p className="text-center md:text-left md:mt-5 font-light text-[18px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
+                <h3 className="md:text-left text-[20px] sm:text-xl lg:text-[30px] mb-2">An Upcoming Software Engineer</h3>
+                <p className="md:text-left md:mt-5 font-light text-[16px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-balance">
                   Passionate about building scalable software, solving complex problems, and
                   creating innovative solutions.
                 </p>

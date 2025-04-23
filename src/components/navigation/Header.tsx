@@ -5,10 +5,10 @@ import Link from 'next/link';  // Import Link from Next.js
 
 const Header = () => {
     return (
-        <header className="grid grid-cols-25 items-start absolute z-50 w-full px-[10%] py-10 max-w-screen ">
+        <header className="grid sm:grid-cols-25 items-start absolute z-50 w-full px-[5%] sm:px-[10%] py-10 max-w-screen">
             {/* Left Side: Copyright */}
             <motion.div
-                className="col-start-1 col-span-4 font-semibold text-[22px] flex items-center font-mono"
+                className="col-start-1 col-span-4 font-semibold text-[18px] sm:text-[22px] flex items-center font-mono"
                 initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
                 animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
                 transition={{ delay: 1.25, duration: 1, ease: "easeOut" }} // Delayed fade-in
@@ -18,7 +18,7 @@ const Header = () => {
 
             {/* Right Side: Navigation Links */}
             <motion.ul
-                className="col-end-23 col-span-6 text-[22px] flex space-x-6 font-light text-right font-mono"
+                className=" hidden col-end-23 col-span-6 text-[22px] sm:flex space-x-6 font-light text-right font-mono"
                 initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
                 animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
                 transition={{ delay: 1.25, duration: 1, ease: "easeOut" }} // Delayed fade-in
