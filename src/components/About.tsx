@@ -1,4 +1,4 @@
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 // import { GoArrowUpRight } from "react-icons/go";
 
 
@@ -7,7 +7,7 @@ const About = (() => {
   const sectionTitle = "WHO AM I?";
 
   return (
-    <section id='about' className="h-full rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
+    <section id='about' className="h-full max-w-screen rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home'>
@@ -142,12 +142,12 @@ const About = (() => {
                     initial={{ opacity: 0, y: 10, z: 10 }}
                     whileInView={{ opacity: 1, y: 0, z: 10 }}
                     viewport={{ once: true }}
-                    transition={{duration: 1.5, ease: "easeOut" }}>
+                    transition={{ duration: 1.5, ease: "easeOut" }}>
 
                     {/* Introduction Section */}
                     <p className="text-[30px] text-balance font-light">
-                      With a passion for full-stack development, I specialize in creating user-friendly front-end designs and integrating them with robust back-end systems,
-                      combining creativity and technical expertise to deliver impactful user experiences.
+                      With a passion for full-stack development, I specialize in creating user-friendly front-end designs and
+                      integrating them with robust back-end systems—combining creativity and technical expertise to deliver impactful user experiences.
                     </p>
 
                     {/* About Section */}
@@ -156,8 +156,8 @@ const About = (() => {
                         <span className="h-full text-nowrap">(About Me)</span>
                       </span>
                       <p className="max-w-[40ch] text-balance">
-                        I’m a Computer Science student at Virginia Tech, graduating May 2025. I’ve contributed to projects involving optimizing systems,
-                        automation tools, and user interfaces allowing me to build well-rounded solutions and collaborating across development areas.
+                        I&apos;m a Computer Science student at Virginia Tech, graduating in May 2025. I&apos;ve contributed to projects involving system optimization,
+                        automation tools, and user interface development, allowing me to build well-rounded solutions while collaborating across different areas of development.
                       </p>
                     </div>
 
@@ -167,8 +167,10 @@ const About = (() => {
                         <span className="h-full text-nowrap ">(Hobbies)</span>
                       </span>
                       <p className="max-w-[40ch] text-balance">
-                        When I’m not coding, I like to play games and watch anime, as well as I enjoy try new restaurants and cooking.
-                        I also love to travel and currently have (Seattle, Miami, Austin, and Las Vegas) on my bucket travel list.
+                        When I&apos;m not coding, I enjoy playing games and watching anime. I also love trying new restaurants, cooking, and traveling. 
+                        Currently, my travel bucket list includes Seattle, Miami, Austin, and Las Vegas.
+
+
                       </p>
                     </div>
 
