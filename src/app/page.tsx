@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/navigation/Header";
 import NavBar from "@/components/navigation/NavBar";
@@ -28,9 +28,21 @@ export default function Main() {
   const scaleExperience = useTransform(experienceProgress, [0.7, 1], [1, 0.95]); // Shrink at 70%
 
 
-  // Animate X position (Slide in effect)
-  const headerX = useTransform(aboutProgress, [0.2, 0.4], [-100, 0]);
-  const headerOpacity = useTransform(aboutProgress, [0.2, 0.4], [0, 1]);
+  // NavBar animation
+  const navSlideX = useTransform(aboutProgress, [0.2, 0.4], [-100, 0]);
+  const navSlideY = useTransform(aboutProgress, [0.2, 0.4], [100, 0]);
+  const navOpacity = useTransform(aboutProgress, [0.2, 0.4], [0, 1]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640); // Tailwind's 'sm' breakpoint
+    };
+
+    handleResize(); // Set initially
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
   // useEffect(() => {
@@ -40,13 +52,20 @@ export default function Main() {
   //   window.scrollTo(0, 0);
   // }, []);
 
+
+
+
   return (
     <div className="relative w-full max-w-screen text-white ">
       <div id="noise-overlay"></div>
       {/* NavBar */}
       <motion.div
-        className="fixed top-0 left-0 z-60 flex flex-col items-end justify-center w-[10%] max-w-[60px] h-full"
-        style={{ x: headerX, opacity: headerOpacity }}
+        className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] h-full"
+        style={{
+          x: isMobile ? 0 : navSlideX,
+          y: isMobile ? navSlideY : 0,
+          opacity: navOpacity
+        }}
       >
         <NavBar />
       </motion.div>

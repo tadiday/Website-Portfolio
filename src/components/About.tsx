@@ -7,7 +7,7 @@ const About = (() => {
   const sectionTitle = "WHO AM I?";
 
   return (
-    <section id='about' className="h-full max-w-screen rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
+    <section id='about' className="min-h-[100svh] sm:h-full max-w-screen rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
           <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home'>
@@ -16,7 +16,7 @@ const About = (() => {
               initial="initial"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3, }} // Ensures animation only triggers when in view
-              className="relative block overflow-hidden whitespace-nowrap col-span-20 col-start-2 w-full text-[120px] font-bold justify-center"
+              className="relative block overflow-hidden whitespace-nowrap col-span-20 col-start-2 w-full text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-bold justify-center"
             >
               <div>
                 {/* Place Holder */}
@@ -50,7 +50,7 @@ const About = (() => {
 
             {/* Quotes Section */}
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-2 col-start-10"
+              className="hidden sm:flex text-[25px] font-thin text-home col-span-2 col-start-10"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -58,7 +58,7 @@ const About = (() => {
             >
               An UI Designer
             </motion.span>
-            <div className="h-full flex col-span-3 col-start-12 w-full items-center"
+            <div className="h-full hidden sm:flex col-span-3 col-start-12 w-full items-center"
             >
               <motion.div
                 className="h-[1px] bg-[#524D47] w-full origin-right"
@@ -70,7 +70,7 @@ const About = (() => {
             </div>
 
 
-            <div className="h-full flex col-span-3 col-start-10 w-full items-center">
+            <div className="h-full hidden sm:flex col-span-3 col-start-10 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#524D47] w-full origin-left"
                 initial={{ scaleX: 0 }}
@@ -80,7 +80,7 @@ const About = (() => {
               />
             </div>
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-2 col-start-13 justify-center"
+              className="hidden sm:flex text-[25px] font-thin text-home col-span-2 col-start-13 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -90,7 +90,7 @@ const About = (() => {
             </motion.span>
 
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-2 col-start-10"
+              className="hidden sm:flex text-[25px] font-thin text-home col-span-2 col-start-10"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -98,7 +98,7 @@ const About = (() => {
             >
               A Programmer
             </motion.span>
-            <div className="h-full flex col-span-3 col-start-12 w-full items-center"
+            <div className= "h-full hidden sm:flex col-span-3 col-start-12 w-full items-center"
             >
               <motion.div
                 className="h-[1px] bg-[#524D47] w-full origin-right"
@@ -118,7 +118,7 @@ const About = (() => {
 
                   {/* Image Section: TODO: Animation*/}
                   <motion.div
-                    className="object-contain w-full shadow-md grayscale col-span-5 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]"
+                    className="hidden sm:flex object-contain w-full shadow-md grayscale col-span-5 col-start-1 py-4 pl-2 hover:grayscale-0 hover:scale-105 duration-[0.5s]"
                     initial={{ opacity: 0 }}  // Start with invisible container
                     animate={{ opacity: 1 }}  // Fade in the container
                     transition={{ duration: 1 }} // Fade-in duration
@@ -138,20 +138,20 @@ const About = (() => {
 
                   {/* Text Section */}
                   <motion.div
-                    className='flex flex-col col-span-10 col-start-7 text-[20px] font-thin gap-y-10 py-4'
+                    className='flex flex-col sm:col-span-10 sm:col-start-7 text-[20px] font-thin gap-y-10 py-4'
                     initial={{ opacity: 0, y: 10, z: 10 }}
                     whileInView={{ opacity: 1, y: 0, z: 10 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, ease: "easeOut" }}>
 
                     {/* Introduction Section */}
-                    <p className="text-[30px] text-balance font-light">
+                    <p className="text-[20px] sm:text-[30px] md:text-[30px] lg:text-[30px] text-balance font-light">
                       With a passion for full-stack development, I specialize in creating user-friendly front-end designs and
                       integrating them with robust back-end systems—combining creativity and technical expertise to deliver impactful user experiences.
                     </p>
 
                     {/* About Section */}
-                    <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[20px]">
+                    <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[15px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
                       <span className='flex h-fit overflow-clip font-mono tracking-mono flex-grow max-w-[150px]'>
                         <span className="h-full text-nowrap">(About Me)</span>
                       </span>
@@ -162,12 +162,12 @@ const About = (() => {
                     </div>
 
                     {/* Hobbies Section */}
-                    <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row ">
+                    <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[15px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
                       <span className='flex h-fit overflow-clip font-mono tracking-mono flex-grow max-w-[150px]'>
                         <span className="h-full text-nowrap ">(Hobbies)</span>
                       </span>
                       <p className="max-w-[40ch] text-balance">
-                        When I&apos;m not coding, I enjoy playing games and watching anime. I also love trying new restaurants, cooking, and traveling. 
+                        When I&apos;m not coding, I enjoy playing games and watching anime. I also love trying new restaurants, cooking, and traveling.
                         Currently, my travel bucket list includes Seattle, Miami, Austin, and Las Vegas.
 
 
