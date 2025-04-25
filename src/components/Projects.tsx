@@ -64,14 +64,15 @@ const Project = (() => {
   return (
     <section id='projects' className="h-full max-w-screen  bg-[#080807] p-4 z-30  text-[#bebebe]">
       < div className="relative z-20 w-full overflow-x-clip" >
-        <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl" >
-          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-home' >
+        <div className="flex flex-col w-full" >
+          <div className='grid grid-cols-4 sm:gap-x-2 md:grid md:grid-cols-20 text-home' >
             {/* Section Title*/}
             <motion.h2
               initial="initial"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3, }} // Ensures animation only triggers when in view
-              className="relative block overflow-hidden whitespace-nowrap col-span-20 col-start-2 w-full text-[120px] font-bold justify-center"
+              className="relative block overflow-hidden whitespace-nowrap col-span-20 col-start-1 md:col-span-20 md:col-start-2 w-full 
+              text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-bold justify-center"
             >
               <div>
                 {/* Place Holder */}
@@ -87,25 +88,52 @@ const Project = (() => {
               </div>
 
               {/* Animated letters */}
-              <div className="absolute inset-0">
-                {sectionTitle.split("").map((l, i) => (
-                  <motion.span
-                    key={i}
-                    variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                    transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * i }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="inline-block"
-                  >
-                    {l === " " ? "\u00A0" : l} {/* Keeps spaces visible */}
-                  </motion.span>
+              <div className="sm:absolute inset-0 leading-tight">
+                {sectionTitle.split(" ").map((word, i) => (
+                  <span key={i} className="inline">
+                    {i === 1 ? (
+                      <>
+                        <span className="hidden sm:inline">&nbsp;</span>
+                        <br className = "sm:hidden"></br>
+                        {word.split("").map((l, j) => (
+                          <motion.span
+                            key={`${i}-${j}`}
+                            variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * (i * 10 + j) }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="inline-block"
+                          >
+                            {l}
+                          </motion.span>
+                        ))}
+                      </>
+                    ) 
+                    
+  
+                    : (
+                      word.split("").map((l, j) => (
+                        <motion.span
+                          key={`${i}-${j}`}
+                          variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                          transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * (i * 10 + j) }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          className="inline-block"
+                        >
+                          {l}
+                        </motion.span>
+                      ))
+                    )}
+                  </span>
                 ))}
               </div>
+
             </motion.h2>
 
             {/* Quotes Section */}
             <motion.span
-              className="text-[25px] font-thin text-home col-span-6 col-start-9"
+              className="text-[25px] flex font-thin text-home col-span-6 col-start-9"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -364,7 +392,7 @@ const Project = (() => {
                         layout="responsive"
                         width={500}
                         height={500}
-                        // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
+                      // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
                       />
 
                     </motion.div>

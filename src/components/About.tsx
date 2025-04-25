@@ -17,7 +17,7 @@ const About = (() => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3, }} // Ensures animation only triggers when in view
               className="relative block overflow-hidden whitespace-nowrap col-span-4 col-start-1 md:col-span-20 md:col-start-2 w-full 
-              text-[60px] sm:text-[80px] md:text-[120px] lg:text-[160px] font-bold justify-center"
+              text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-bold justify-center"
             >
               <div>
                 {/* Place Holder */}
