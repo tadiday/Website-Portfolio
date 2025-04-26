@@ -65,13 +65,13 @@ const Project = (() => {
     <section id='projects' className="h-full max-w-screen  bg-[#080807] p-4 z-30  text-[#bebebe]">
       < div className="relative z-20 w-full overflow-x-clip" >
         <div className="flex flex-col w-full" >
-          <div className='grid grid-cols-4 sm:gap-x-2 md:grid md:grid-cols-20 text-home' >
+          <div className='mx-5 sm:mx-0 grid grid-cols-12 sm:gap-x-2 md:grid md:grid-cols-20 text-home' >
             {/* Section Title*/}
             <motion.h2
               initial="initial"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3, }} // Ensures animation only triggers when in view
-              className="relative block overflow-hidden whitespace-nowrap col-span-20 col-start-1 md:col-span-20 md:col-start-2 w-full 
+              className="relative block overflow-hidden whitespace-nowrap col-span-12 col-start-1 md:col-span-20 md:col-start-2 w-full 
               text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-bold justify-center"
             >
               <div>
@@ -133,7 +133,7 @@ const Project = (() => {
 
             {/* Quotes Section */}
             <motion.span
-              className="text-[25px] flex font-thin text-home col-span-6 col-start-9"
+              className="text-[14px] flex font-thin text-home col-span-12 col-start-1 sm:col-span-6 sm:col-start-9 sm:text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -144,14 +144,14 @@ const Project = (() => {
             <div className="h-full flex col-span-3 col-start-15 w-full items-center"
             >
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right"
+                className="hidden sm:flex h-[1px] bg-[#524D47] w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
               />
             </div>
-            <div className="h-full flex col-span-3 col-start-9 w-full items-center">
+            <div className="h-full hidden sm:flex col-span-3 col-start-9 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#524D47] w-full origin-left"
                 initial={{ scaleX: 0 }}
@@ -161,7 +161,7 @@ const Project = (() => {
               />
             </div>
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-6 col-start-12 justify-center"
+              className="flex text-[14px] sm:text-[25px] font-thin text-home col-span-12 col-start-1 sm:col-span-6 sm:col-start-12 sm:justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -171,7 +171,7 @@ const Project = (() => {
             </motion.span>
 
 
-            <div className="h-full flex col-span-1 col-start-9 w-full items-center">
+            <div className="h-full hidden sm:flex col-span-1 col-start-9 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#524D47] w-full origin-left"
                 initial={{ scaleX: 0 }}
@@ -182,7 +182,7 @@ const Project = (() => {
             </div>
 
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-7 col-start-10 justify-center"
+              className="flex text-[14px] sm:text-[25px] font-thin text-home col-span-12 col-start-1 sm:col-span-7 sm:col-start-10 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -191,7 +191,7 @@ const Project = (() => {
               &quot;Each project is a step forward in my journey of growth.&quot;
             </motion.span>
 
-            <div className="h-full flex col-span-1 col-start-17 w-full items-center">
+            <div className="hidden h-full sm:flex col-span-1 col-start-17 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#524D47] w-full origin-right"
                 initial={{ scaleX: 0 }}
@@ -430,6 +430,10 @@ const Project = (() => {
 
 
       </div>
+
+
+
+      
     </section>
   );
 });
