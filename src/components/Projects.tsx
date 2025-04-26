@@ -16,7 +16,8 @@ const Project = (() => {
           Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
       image: '/assets/gif/web-port.gif',
       tags: ['Web-App', 'GitHub', '2025'],
-      backg: '/assets/background/background1.jpg',
+      type: 'Website Application',
+      backg: '/assets/background/background4.jpg',
     },
     {
       title: 'Simplisplit',
@@ -28,6 +29,7 @@ const Project = (() => {
           Available through the App Store.`,
       image: '/assets/gif/scan.gif',
       tags: ['Mobile', 'Private', '2023'],
+      type: 'Mobile Application',
       backg: '/assets/background/background3.jpg',
     },
     {
@@ -40,7 +42,8 @@ const Project = (() => {
           The app allows users to swipe right for more details on local restaurants tailored to their location.`,
       image: '/assets/gif/foodSwipe.gif',
       tags: ['Web-App', 'GitHub', '2022'],
-      backg: '/assets/background/background2-bw.jpeg',
+      type: 'Website and Mobile Application',
+      backg: '/assets/background/background5.jpg',
     },
   ]
 
@@ -94,7 +97,7 @@ const Project = (() => {
                     {i === 1 ? (
                       <>
                         <span className="hidden sm:inline">&nbsp;</span>
-                        <br className = "sm:hidden"></br>
+                        <br className="sm:hidden"></br>
                         {word.split("").map((l, j) => (
                           <motion.span
                             key={`${i}-${j}`}
@@ -108,23 +111,23 @@ const Project = (() => {
                           </motion.span>
                         ))}
                       </>
-                    ) 
-                    
-  
-                    : (
-                      word.split("").map((l, j) => (
-                        <motion.span
-                          key={`${i}-${j}`}
-                          variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
-                          transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * (i * 10 + j) }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          viewport={{ once: true, amount: 0.3 }}
-                          className="inline-block"
-                        >
-                          {l}
-                        </motion.span>
-                      ))
-                    )}
+                    )
+
+
+                      : (
+                        word.split("").map((l, j) => (
+                          <motion.span
+                            key={`${i}-${j}`}
+                            variants={{ initial: { y: "100%", opacity: 0 }, visible: { y: 0, opacity: 1 } }}
+                            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.03 * (i * 10 + j) }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="inline-block"
+                          >
+                            {l}
+                          </motion.span>
+                        ))
+                      )}
                   </span>
                 ))}
               </div>
@@ -133,7 +136,7 @@ const Project = (() => {
 
             {/* Quotes Section */}
             <motion.span
-              className="text-[14px] flex font-thin text-home col-span-12 col-start-1 sm:col-span-6 sm:col-start-9 sm:text-[25px]"
+              className="hidden sm:flex font-thin text-home col-span-6 col-start-9 text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -161,7 +164,7 @@ const Project = (() => {
               />
             </div>
             <motion.span
-              className="flex text-[14px] sm:text-[25px] font-thin text-home col-span-12 col-start-1 sm:col-span-6 sm:col-start-12 sm:justify-center"
+              className="hidden sm:flex text-[25px] font-thin text-home col-span-6 col-start-12 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -182,7 +185,7 @@ const Project = (() => {
             </div>
 
             <motion.span
-              className="flex text-[14px] sm:text-[25px] font-thin text-home col-span-12 col-start-1 sm:col-span-7 sm:col-start-10 justify-center"
+              className="hidden sm:flex text-[25px] font-thin text-home col-span-7 col-start-10 justify-center"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -201,13 +204,24 @@ const Project = (() => {
               />
             </div>
 
+            <motion.span
+              className="flex sm:hidden text-[16px] font-normal text-home col-span-12 col-start-1 justify-center text-balance pt-10"
+              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
+              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
+              transition={{ duration: 0.75, delay: 1.5 }}
+            >
+              Each project is a step forward in my journey of growth.
+              It been crafted with passion and precision.
+
+            </motion.span>
           </div>
         </div>
 
 
         {/* With Motion and Button*/}
         <motion.div
-          className="pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
+          className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
           initial={{ opacity: 0 }}  // Start with 0 opacity (invisible)
           whileInView={{ opacity: 1 }}  // Fade to full opacity (visible)
           viewport={{ once: true, amount: 0.1 }}
@@ -429,11 +443,89 @@ const Project = (() => {
         </motion.div>
 
 
+        {/* Mobile Version */}
+        <motion.div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
+          <div className="w-full pt-16">
+            <div className="flex flex-col justify-between gap-y-10 border-t border-[#524D47]">
+              <div className="sticky top-0 bg-[#080807] pb-[2em] flex flex-row flex-wrap gap-y-14">
+                {projects.map((project, index) => (
+                  <div key={`mobile-${index}`} className="flex flex-row flex-wrap gap-y-2">
+                    <motion.div
+                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[5000px]"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 3 }}
+                    >
+                      <Image
+                        className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125"
+                        src={project.backg}
+                        alt="background"
+                        layout="fill"
+                        objectFit="cover"
+                        loading="lazy"
+                      />
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 3 }}
+                        className={`z-10 w-8/9 space-y-4 rounded-lg overflow-clip 
+                      ${project.title === 'Simplisplit' ? 'border-[#524D47] shadow-xl w-[42%] max-w-[250px] rounded-xl object-fit' : ''}`}
+                      >
+                        <Image
+                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                          src={project.image}
+                          alt={project.title}
+                          width={500}
+                          height={500}
+                          style={{ height: 'auto', width: '100%' }}
+                        />
+                      </motion.div>
+                    </motion.div>
+
+                    <div className="flex flex-rows flex-wrap">
+                      <motion.h3
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="font-medium text-[1rem] w-full"
+                      >
+                        {project.type}
+                      </motion.h3>
+
+                      <motion.h3
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="font-semibold text-[1.5rem] w-full -mt-1"
+                      >
+                        {project.title}
+                      </motion.h3>
+
+                      <div className="flex flex-wrap gap-x-2 gap-y-3 pt-3">
+                        {project.tech.map((item, index) => (
+                          <span className="flex px-2 py-0.5 rounded-full bg-border bg-button text-[0.75rem]" key={index}>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+              </div>
+
+
+            </div>
+          </div>
+        </motion.div>
       </div>
 
 
-
-      
     </section>
   );
 });

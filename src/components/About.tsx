@@ -10,7 +10,7 @@ const About = (() => {
     <section id='about' className="min-h-[100svh] sm:h-full max-w-screen rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full" >
-          <div className='grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-home'>
+          <div className='mx-5 sm:mx-0 grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-home'>
             {/* Section Title*/}
             <motion.h2
               initial="initial"
@@ -51,8 +51,8 @@ const About = (() => {
 
             {/* Quotes Section */}
             <motion.span
-              className="ml-5 text-[18px] font-thin text-home col-span-2 col-start-1 
-                        sm:ml-0 sm:col-span-2 sm:col-start-10 sm:flex sm:text-[25px]"
+              className="text-[18px] font-thin text-home col-span-2 col-start-1 
+                         sm:col-span-2 sm:col-start-10 sm:flex sm:text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -64,7 +64,7 @@ const About = (() => {
                             sm:col-span-3 sm:col-start-12"
             >
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right mr-5 sm:mr-0"
+                className="h-[1px] bg-[#524D47] w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -75,7 +75,7 @@ const About = (() => {
 
             <div className="h-full col-span-2 col-start-1 flex w-full items-center sm:col-span-3 sm:col-start-10">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left  ml-5 sm:ml-0"
+                className="h-[1px] bg-[#524D47] w-full origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -83,8 +83,8 @@ const About = (() => {
               />
             </div>
             <motion.span
-              className="flex text-[18px] col-span-2 col-start-3 font-thin text-home justify-end mr-5 
-                        sm:mr-0 sm:justify-center sm:text-[25px] sm:col-span-2 sm:col-start-13"
+              className="flex text-[18px] col-span-2 col-start-3 font-thin text-home justify-end
+                         sm:justify-center sm:text-[25px] sm:col-span-2 sm:col-start-13"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -94,8 +94,8 @@ const About = (() => {
             </motion.span>
 
             <motion.span
-              className="ml-5 text-[18px] font-thin text-home col-span-2 col-start-1 
-              sm:ml-0 sm:col-span-2 sm:col-start-10 sm:flex sm:text-[25px]"
+              className="text-[18px] font-thin text-home col-span-2 col-start-1 
+                         sm:col-span-2 sm:col-start-10 sm:flex sm:text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -107,7 +107,7 @@ const About = (() => {
                             sm:col-span-3 sm:col-start-12"
             >
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right mr-5 sm:mr-0"
+                className="h-[1px] bg-[#524D47] w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
