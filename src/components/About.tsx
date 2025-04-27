@@ -194,7 +194,7 @@ const About = (() => {
                         <span className="h-full text-nowrap ">(Hobbies)</span>
                       </span>
                       <p className="sm:max-w-[40ch] sm:text-balance font-normal">
-                        When I'm not coding, I enjoy playing games and watching anime. I also love cooking, trying new restaurants, and traveling.
+                        When I&apos;m not coding, I enjoy playing games and watching anime. I also love cooking, trying new restaurants, and traveling.
                         Currently, my travel bucket list includes Seattle, Miami, Austin, and Las Vegas.
 
 
