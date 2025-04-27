@@ -60,7 +60,7 @@ export default function Main() {
       <div id="noise-overlay"></div>
       {/* NavBar */}
       <motion.div
-        className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] h-full"
+        className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] sm:h-full"
         style={{
           x: isMobile ? 0 : navSlideX,
           y: isMobile ? navSlideY : 0,
