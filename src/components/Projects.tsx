@@ -10,7 +10,7 @@ const Project = (() => {
     {
       title: 'Web-Portfolio',
       date: '2025',
-      tech: ['React.js', 'TypeScript', 'Tailwind', 'Next.js', 'Framer Motion'],
+      tech: ['React.js', 'TypeScript', 'Tailwind', 'Next.js', 'Node.js', 'Framer Motion'],
       gitHub: 'https://github.com/tadiday/Website-Portfolio',
       description: `
           Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
@@ -35,7 +35,7 @@ const Project = (() => {
     {
       title: 'Food Swipe',
       date: '2022',
-      tech: ['React.js', 'TypeScript', 'Tailwind', 'Next.js', 'Framer Motion'],
+      tech: ['React.js', 'TypeScript', 'Tailwind', 'Next.js', 'Node.js', 'Google Map', 'Framer Motion'],
       gitHub: 'http://github.com/kmsungporant/food_swipe',
       description: `
           Developed a Tinder-inspired restaurant discovery app designed to help users find the perfect dining spot. 
@@ -144,7 +144,7 @@ const Project = (() => {
             >
               &quot;Innovative solutions, where every detail matters.&quot;
             </motion.span>
-            <div className="h-full flex col-span-3 col-start-15 w-full items-center"
+            <div className="hiddenh-full flex col-span-3 col-start-15 w-full items-center"
             >
               <motion.div
                 className="hidden sm:flex h-[1px] bg-[#524D47] w-full origin-right"
@@ -374,7 +374,6 @@ const Project = (() => {
                   {/* Image Section */}
 
                   <motion.div className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"
-                    key={backg}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -383,15 +382,14 @@ const Project = (() => {
                       className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
                       src={backg}
                       alt="backg"
-                      layout="fill"  // Makes the image cover the div (equivalent to object-cover)
-                      objectFit="cover" // Ensures the image maintains the desired cover behavior
-                      loading="lazy"
+                      fill  // Makes the image cover the div (equivalent to object-cover)
+                      priority
+                      style={{ objectFit: "cover" }}
                     />
 
 
 
                     <motion.div
-                      key={image}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
@@ -403,9 +401,9 @@ const Project = (() => {
                         className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
                         src={image}
                         alt={title}
-                        layout="responsive"
                         width={500}
                         height={500}
+                        priority
                       // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
                       />
 
@@ -446,7 +444,7 @@ const Project = (() => {
         {/* Mobile Version */}
         <motion.div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="flex flex-col justify-between gap-y-10 border-t border-[#524D47]">
+            <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
               <div className="sticky top-0 bg-[#080807] pb-[2em] flex flex-row flex-wrap gap-y-14">
                 {projects.map((project, index) => (
                   <div key={`mobile-${index}`} className="flex flex-row flex-wrap gap-y-2">
@@ -461,9 +459,9 @@ const Project = (() => {
                         className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125"
                         src={project.backg}
                         alt="background"
-                        layout="fill"
-                        objectFit="cover"
-                        loading="lazy"
+                        fill
+                        priority // only first project
+                        style={{ objectFit: "cover" }}
                       />
 
                       <motion.div
@@ -491,20 +489,24 @@ const Project = (() => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="font-medium text-[1rem] w-full"
+                        className="font-medium text-[0.9rem] w-full font-mono text-[#7e7e7e]"
                       >
                         {project.type}
                       </motion.h3>
+                      <a href={project.gitHub}>
+                        <motion.h3
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 1, ease: "easeOut" }}
+                          className="font-semibold text-[1.5rem] w-full -mt-1"
+                        >
+                          {project.title}
+                          <GoArrowUpRight className='inline-block text-[#745f4e] group-hover/title:text-[#967A54] 
+                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1'/>
+                        </motion.h3>
+                      </a>
 
-                      <motion.h3
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="font-semibold text-[1.5rem] w-full -mt-1"
-                      >
-                        {project.title}
-                      </motion.h3>
 
                       <div className="flex flex-wrap gap-x-2 gap-y-3 pt-3">
                         {project.tech.map((item, index) => (
