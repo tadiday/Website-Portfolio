@@ -78,7 +78,11 @@ const Home = () => {
       <canvas
         ref={canvasRef}
         className="absolute top-0 left-0 w-full h-full pointer-events-none z-20"
-        style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+        style={{
+          opacity,
+          transform: `scale(${scale})`,
+          transition: "all 0.3s ease-out",
+        }}
       />
 
       {/* Animated background overlay */}
@@ -105,13 +109,18 @@ const Home = () => {
                 transition: "all 0.3s ease-out",
               }}
             >
+              <span className="sr-only">Peter Cao</span>
               {/* Desktop version: one line */}
-              {("PETER").split("").map((l, i) => (
+              {"PETER".split("").map((l, i) => (
                 <motion.span
                   key={i}
                   className="inline-block"
                   variants={{ initial: { y: "100%" }, visible: { y: 0 } }}
-                  transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 + 0.025 * i }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    delay: 0.5 + 0.025 * i,
+                  }}
                 >
                   {l}
                 </motion.span>
@@ -132,13 +141,16 @@ const Home = () => {
                 transition: "all 0.3s ease-out",
               }}
             >
-
-              {("CAO").split("").map((l, i) => (
+              {"CAO".split("").map((l, i) => (
                 <motion.span
                   key={i}
                   className="inline-block"
                   variants={{ initial: { y: "100%" }, visible: { y: 0 } }}
-                  transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 + 0.025 * i }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    delay: 0.5 + 0.025 * i,
+                  }}
                 >
                   {l}
                 </motion.span>
@@ -153,26 +165,29 @@ const Home = () => {
               >
                 <div
                   className="w-full "
-                  style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                  style={{
+                    opacity,
+                    transform: `scale(${scale})`,
+                    transition: "all 0.3s ease-out",
+                  }}
                 >
                   <div
                     className="font-title font-mono font-bold w-full text-right"
-                    style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                    style={{
+                      opacity,
+                      transform: `scale(${scale})`,
+                      transition: "all 0.3s ease-out",
+                    }}
                   >
                     <p className="font-light">AVAILABLE FOR HIRE</p>
-                    <div className="text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
+                    <div className="text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">
+                      MAY 2025
+                    </div>
                   </div>
                 </div>
-
               </motion.div>
             </motion.h1>
           </div>
-
-
-
-
-
-
 
           {/* Subtitle Section */}
           <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 text-white">
@@ -184,18 +199,23 @@ const Home = () => {
             >
               <div
                 className="w-full "
-                style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                style={{
+                  opacity,
+                  transform: `scale(${scale})`,
+                  transition: "all 0.3s ease-out",
+                }}
               >
-                <h3 className="md:text-left text-[20px] sm:text-xl lg:text-[30px] mb-2">An Upcoming Software Engineer</h3>
+                <h3 className="md:text-left text-[20px] sm:text-xl lg:text-[30px] mb-2">
+                  An Upcoming Software Engineer
+                </h3>
                 <p className="md:text-left md:mt-5 font-light text-[16px] sm:text-[20px] md:text-[20px] lg:text-[20px] text-balance">
-                  Passionate about building scalable software, solving complex problems, and
-                  creating innovative solutions.
+                  Passionate about building scalable software, solving complex
+                  problems, and creating innovative solutions.
                 </p>
               </div>
-
             </motion.div>
 
-             {/* Desktop version: Availability */}
+            {/* Desktop version: Availability */}
             <motion.div
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
@@ -204,19 +224,27 @@ const Home = () => {
             >
               <div
                 className="w-full "
-                style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                style={{
+                  opacity,
+                  transform: `scale(${scale})`,
+                  transition: "all 0.3s ease-out",
+                }}
               >
                 <div
                   className="font-title font-mono font-bold w-full text-right"
-                  style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+                  style={{
+                    opacity,
+                    transform: `scale(${scale})`,
+                    transition: "all 0.3s ease-out",
+                  }}
                 >
                   <p className="font-light">AVAILABLE FOR HIRE</p>
-                  <div className="text-[34px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">MAY 2025</div>
+                  <div className="text-[34px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">
+                    MAY 2025
+                  </div>
                 </div>
               </div>
-
             </motion.div>
-
 
             {/* Location and Local Time */}
             <motion.div
@@ -224,7 +252,11 @@ const Home = () => {
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              style={{ opacity, transform: `scale(${scale})`, transition: "all 0.3s ease-out" }}
+              style={{
+                opacity,
+                transform: `scale(${scale})`,
+                transition: "all 0.3s ease-out",
+              }}
             >
               <div>38.7439° N, 77.2405° W</div>
               <div>{localTime}</div>
