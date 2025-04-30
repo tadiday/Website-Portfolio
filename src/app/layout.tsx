@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Peter Cao",
-  description: "Build by Peter Cao",
+  title: "Peter Cao - Software Engineer",
+  description:
+    "Peter Cao - An upcoming software engineer passionate about building scalable software, solving complex problems, and creating innovative solutions. Available for hire May 2025.",
 };
 
 export default function RootLayout({
