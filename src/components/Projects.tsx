@@ -231,6 +231,7 @@ const Project = () => {
               />
             </div>
 
+            {/*Mobile Quotes*/}
             <motion.span
               className="flex sm:hidden text-[16px] font-normal text-home col-span-12 col-start-1 justify-center text-balance pt-10"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
