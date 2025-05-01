@@ -431,6 +431,7 @@ const Project = () => {
                         width={500}
                         height={500}
                         priority
+                        unoptimized
                         // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
                       />
                     </motion.div>
@@ -501,7 +502,7 @@ const Project = () => {
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 3 }}
                         className={`z-10 w-8/9 space-y-4 rounded-lg overflow-clip
-                      ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[42%] max-w-[250px] rounded-xl object-fit" : ""}`}
+                      ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-xl object-fit" : ""}`}
                       >
                         <Image
                           className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
@@ -510,6 +511,7 @@ const Project = () => {
                           width={500}
                           height={500}
                           style={{ height: "auto", width: "100%" }}
+                          unoptimized
                         />
                       </motion.div>
                     </motion.div>
