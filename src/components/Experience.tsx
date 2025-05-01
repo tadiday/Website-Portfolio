@@ -41,6 +41,11 @@ const Experience = () => {
           Provide academic support to students by hosting office hours, troubleshooting technical issues, and offering personalized guidance.
           Facilitate interactive discussions through online forums to enhance student engagement.
           Assist in teaching Computer Organization, Computer Systems, and Comparative Languages.`,
+        mobile_description: [
+          "Hosting office hours, troubleshooting technical issues, and offering personalized guidance.",
+          "Facilitate interactive discussions through online forums to enhance student engagement.",
+          "Assist in teaching Computer Organization, Computer Systems, and Comparative Languages.",
+        ],
         skills: ["C", "x86", "RISC-V", "Rust", "Haskell", "Prolog", "Ruby"],
         image: FaGraduationCap,
       },
@@ -54,7 +59,18 @@ const Experience = () => {
           Contributed to the development and maintenance of a cyber-threat intelligence platform.
           Improved system performance by enhancing build processes, resolving issues, and updating dependencies.
           Collaborated with cross-functional teams to document and address functionality improvements, ensuring a more secure and reliable platform.`,
-        skills: ["Maven", "Java", "Junit", "Docker", "JavaScript", "SQL"],
+        mobile_description: [
+          "Improved a cyber-threat intelligence platform by enhancing build processes, resolving issues, and updating dependencies.",
+          "Collaborated with cross-functional ensuring a more secure and reliable platform.",
+        ],
+        skills: [
+          "Maven",
+          "Java",
+          "Junit",
+          "Docker",
+          "Kubernetes",
+          "JavaScript",
+        ],
         image: MdOutlineWork,
       },
       {
@@ -68,6 +84,10 @@ const Experience = () => {
           integrating essential sensors for autonomous navigation and efficient waste collection.
           Researched and implemented algorithms for path planning, obstacle avoidance, safety measures,
           and optimized trash collection to enhance functionality and reliability.`,
+        mobile_description: [
+          "Developed an automated trash collection robot enabling remote monitoring and operation.",
+          "Researched and implemented algorithms for path planning, obstacle avoidance, safety measures, and optimized trash collection.",
+        ],
         skills: ["Python", "ROS", "OpenCV", "Raspberry Pi"],
         image: FaGraduationCap,
       },
@@ -81,6 +101,10 @@ const Experience = () => {
           Designed and developed a Software Managed Arduino-based Residential Toolkit (SMART) to enhance home automation,
           integrating a Raspberry Pi for improved connectivity and optimized system performance.
           Built a Swift-based mobile application to enable remote control and real-time monitoring of smart devices, ensuring a seamless and user-friendly experience.`,
+        mobile_description: [
+          "Designed and developed a Raspberry Pi smart home device for security and convenience.",
+          "Built a Swift-based mobile application to enable remote control and real-time monitoring of smart devices",
+        ],
         skills: ["Swift", "Arduino", "Raspberry Pi", "Xcode"],
         image: FaGraduationCap,
       },
@@ -94,6 +118,11 @@ const Experience = () => {
           Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience.
           Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability.
           Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.`,
+        mobile_description: [
+          "Improved the company’s website by adding new features and enhancing UI layouts to create a more engaging user experience.",
+          "Redesigned key interface elements such as search bars, buttons, and page structures using Alpine.js to improve usability.",
+          "Conducted thorough testing with Playwright to ensure functionality and reliability across the platform.",
+        ],
         skills: ["Alpine.js", "Playwright", "Node.js", "CSS"],
         image: MdOutlineWork,
       },
@@ -270,17 +299,21 @@ const Experience = () => {
 
         <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-home ">
           <div className="w-full pt-16 ">
-            <div className="top-0 flex py-5 flex-col bg-[#080807] border-t border-[#524D47] gap-y-4 group">
+            <div className="top-0 flex py-5 flex-col bg-[#080807] border-t border-[#524D47] gap-y-10 sm:gap-y-4 group">
               {experiences.professional.map((job, index) => (
                 <div key={"profession" + index} className="">
                   <div
-                    className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
+                    className="border-[#524D47] justify-start gap-x-2 text-left text-[19px] md:text-[25px] sm:p-[2%]
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 "
                   >
-                    <span className="col-span-3 col-start-1 gap-x-5 py-4">
+                    <span className="sm:col-span-3 sm:col-start-1 gap-x-5 sm:py-4">
                       <div className="top-0 flex items-center col-span-5 col-start-1 gap-x-5">
-                        {job.image && <job.image className="text-[#866A44]" />}
+                        <span className="hidden sm:flex">
+                          {job.image && (
+                            <job.image className="text-[#866A44]" />
+                          )}
+                        </span>
                         {job.date}
                       </div>
                     </span>
@@ -290,7 +323,7 @@ const Experience = () => {
                       whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
                       viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                       transition={{ duration: 1.5, ease: "easeOut" }}
-                      className="col-span-7 col-start-4 py-4 pl-10"
+                      className="sm:col-span-7 sm:col-start-4 sm:py-4 sm:pl-10"
                     >
                       <a
                         className="space-x-2 group/link group/title"
@@ -300,25 +333,32 @@ const Experience = () => {
                         <span className="inline-block group-hover/title:text-[#967A54] ">
                           {job.title}
                         </span>
-                        <span className="inline-block group-hover/title:text-[#967A54]">
+                        <span className="hidden sm:inline-block group-hover/title:text-[#967A54]">
                           @
                         </span>
-                        <span className="inline-block  group-hover/title:text-[#967A54]">
+                        <span className="block sm:inline-block  group-hover/title:text-[#967A54]">
                           {job.company}
+                          <GoArrowUpRight
+                            className="inline-block text-[#745f4e] group-hover/title:text-[#967A54]
+                            transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
+                          />
                         </span>
-                        <GoArrowUpRight
-                          className="inline-block text-[#745f4e] group-hover/title:text-[#967A54]
-                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
-                        />
                       </a>
-                      <div className="flex flex-col w-full col-span-6 col-start-6 text-lg gap-y-4">
-                        <p className="font-thin">{job.description}</p>
+                      <div className="flex flex-col w-full col-span-6 col-start-6 text-lg sm:gap-y-4">
+                        <p className="hidden sm:flex font-thin text-[1rem] sm:text-[18px]">
+                          {job.description}
+                        </p>
+                        <ul className="flex flex-col sm:hidden font-thin text-[1rem] sm:text-[18px] list-disc pl-4 gap-y-2">
+                          {job.mobile_description.map((item, index) => (
+                            <li key={index}>{item}</li>
+                          ))}
+                        </ul>
                         <div className="flex flex-col col-span-7 col-start-6 pt-4 border-gray-700 divide-y divide-gray-700">
                           <div className="flex flex-wrap items-center gap-3">
                             {job.skills.map((tech, index) => (
                               <span
                                 key={index}
-                                className="flex justify-center rounded-full bg-[#524D47] px-3 py-1 min-w-[3em]"
+                                className="flex justify-center rounded-full bg-[#524D47] px-2 py-0.5 sm:px-3 sm:py-1 sm:min-w-[3em] text-[0.75rem] sm:text-[18px]"
                               >
                                 <span className="w-full text-center">
                                   {tech}
