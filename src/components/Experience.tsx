@@ -284,8 +284,8 @@ const Experience = () => {
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 1.5 }}
             >
-              <span>Innovating through collaboration and growths.</span>
-              <span>Work smarter not harder; focus on what matters.</span>
+              Innovating through collaboration and growths. Work smarter not
+              harder; focus on what matters.
             </motion.span>
           </div>
         </div>
@@ -300,22 +300,22 @@ const Experience = () => {
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 "
                   >
-                    <motion.span
-                      initial={{ opacity: 0, x: 100 }} // Start offscreen to the right
-                      whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
-                      viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
-                      transition={{ duration: 1.5, ease: "easeOut" }}
-                      className="sm:col-span-3 sm:col-start-1 gap-x-5 sm:py-4"
-                    >
-                      <div className="top-0 flex items-center col-span-5 col-start-1 gap-x-5">
+                    <span className="sm:col-span-3 sm:col-start-1 gap-x-5 sm:py-4">
+                      <motion.div
+                        initial={{ opacity: 0, x: 100 }} // Start offscreen to the right
+                        whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
+                        viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5"
+                      >
                         <span className="hidden sm:flex">
                           {job.image && (
                             <job.image className="text-[#866A44]" />
                           )}
                         </span>
                         {job.date}
-                      </div>
-                    </motion.span>
+                      </motion.div>
+                    </span>
 
                     <motion.h3
                       initial={{ opacity: 0, x: 100 }} // Start offscreen to the right
@@ -379,6 +379,7 @@ const Experience = () => {
                   </div>
                 </div>
               ))}
+
               <div
                 className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4

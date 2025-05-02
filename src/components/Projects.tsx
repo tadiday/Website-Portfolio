@@ -472,9 +472,10 @@ const Project = () => {
         </motion.div>
 
         {/* Mobile Version */}
-        <motion.div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
+        <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
+              {/* Portfolio */}
               <div className="sticky top-0 bg-[#080807] pb-[2em] flex flex-row flex-wrap gap-y-14">
                 {projects.map((project, index) => (
                   <div
@@ -555,10 +556,40 @@ const Project = () => {
                     </div>
                   </div>
                 ))}
+
+                {/* Button Section */}
+
+                <div
+                  className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
+                          font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
+                          hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title w-full "
+                >
+                  <a
+                    href="https://github.com/tadiday"
+                    target="_blank"
+                    className="w-full col-span-2 col-start-6 text-[25px]"
+                  >
+                    <span className="inline-block group-hover/title:text-[#967A54] text-[25px] font-mono">
+                      View Github
+                    </span>
+                    <GoArrowUpRight
+                      className="inline-block text-[#745f4e] group-hover/title:text-[#967A54]
+                                transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
+                    />
+                    <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
+                      <div className="flex flex-col h-full -mb-5">
+                        <div className=" w-[80%] h-[2px] bg-home"></div>
+                      </div>
+                      <div className="flex flex-col h-full">
+                        <div className=" w-[50%] h-[2px] bg-home"></div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
