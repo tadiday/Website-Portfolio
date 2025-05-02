@@ -63,14 +63,7 @@ const Experience = () => {
           "Improved a cyber-threat intelligence platform by enhancing build processes, resolving issues, and updating dependencies.",
           "Collaborated with cross-functional ensuring a more secure and reliable platform.",
         ],
-        skills: [
-          "Maven",
-          "Java",
-          "Junit",
-          "Docker",
-          "Kubernetes",
-          "JavaScript",
-        ],
+        skills: ["JavaScript", "Maven", "Java", "Junit", "Docker"],
         image: MdOutlineWork,
       },
       {
@@ -307,7 +300,13 @@ const Experience = () => {
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 "
                   >
-                    <span className="sm:col-span-3 sm:col-start-1 gap-x-5 sm:py-4">
+                    <motion.span
+                      initial={{ opacity: 0, x: 100 }} // Start offscreen to the right
+                      whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
+                      viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      className="sm:col-span-3 sm:col-start-1 gap-x-5 sm:py-4"
+                    >
                       <div className="top-0 flex items-center col-span-5 col-start-1 gap-x-5">
                         <span className="hidden sm:flex">
                           {job.image && (
@@ -316,7 +315,7 @@ const Experience = () => {
                         </span>
                         {job.date}
                       </div>
-                    </span>
+                    </motion.span>
 
                     <motion.h3
                       initial={{ opacity: 0, x: 100 }} // Start offscreen to the right
@@ -358,7 +357,7 @@ const Experience = () => {
                             {job.skills.map((tech, index) => (
                               <span
                                 key={index}
-                                className="flex justify-center rounded-full bg-[#524D47] px-2 py-0.5 sm:px-3 sm:py-1 sm:min-w-[3em] text-[0.75rem] sm:text-[18px]"
+                                className="flex justify-center rounded-full bg-[#524D47] px-2 py-0.5 sm:px-3 sm:py-1 min-w-[3em] text-[0.75rem] sm:text-[18px]"
                               >
                                 <span className="w-full text-center">
                                   {tech}
