@@ -1,28 +1,26 @@
-import { useState} from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 
-
 const Contact = () => {
-
   const [result, setResult] = useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setResult("Sending....");
-  
+
     const form = event.currentTarget; // TypeScript now recognizes it as an HTMLFormElement
     const formData = new FormData(form);
-  
+
     formData.append("access_key", "be249f55-0454-44a6-b6ab-d35527daa8db");
-  
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: formData,
     });
-  
+
     const data = await response.json();
-  
+
     if (data.success) {
       setResult("I WILL GET IN TOUCH SOON!");
       form.reset(); // Now TypeScript allows calling reset()
@@ -32,15 +30,17 @@ const Contact = () => {
     }
   };
 
-
   return (
-    <section id='contact' className="bg-gradient-to-b from-[#524D47] max-w-screen  to-[#080807] min-h-screen z-20 pb-[5%]">
+    <section
+      id="contact"
+      className="bg-gradient-to-b from-[#524D47] max-w-screen  to-[#080807] min-h-screen z-20 pb-[5%]"
+    >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
-          <div className='grid gap-x-2 grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-20 text-[#bebebe]'>
+          <div className="grid gap-x-2 grid-cols-1 md:grid md:grid-cols-20 text-[#bebebe]">
             <motion.h2
-              className="col-span-12 col-start-5 text-[120px] font-semibold text-[#bebebe] justify-center items-center flex"
-              initial={{ opacity: 0, y: 50 }}  // Start offscreen to the right
+              className="col-start-1 sm:col-span-12 sm:col-start-5  text-center text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-semibold text-[#bebebe] justify-center items-center flex"
+              initial={{ opacity: 0, y: 50 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.6, delay: 0 }}
@@ -48,7 +48,7 @@ const Contact = () => {
               LET&apos;S CONNECT
             </motion.h2>
 
-            <div className="h-full flex col-span-2 col-start-6 w-full items-center">
+            <div className="hidden h-full sm:flex col-start-1 sm:col-span-2 sm:col-start-6 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#080807] w-full origin-left"
                 initial={{ scaleX: 0 }}
@@ -59,8 +59,8 @@ const Contact = () => {
             </div>
 
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-6 col-start-8 justify-center"
-              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              className="flex text-[16px] sm:text-[25px] font-normal sm:font-thin text-home sm:col-span-6 sm:col-start-8 justify-center"
+              initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 0 }}
@@ -68,7 +68,7 @@ const Contact = () => {
               &quot;Great connections spark endless possibilities.&quot;
             </motion.span>
 
-            <div className="h-full flex col-span-2 col-start-14 w-full items-center">
+            <div className="hidden h-full sm:flex sm:col-span-2 sm:col-start-14 w-full items-center">
               <motion.div
                 className="h-[1px] bg-[#080807] w-full origin-right"
                 initial={{ scaleX: 0 }}
@@ -79,8 +79,8 @@ const Contact = () => {
             </div>
 
             <motion.span
-              className="flex text-[25px] font-thin text-home col-span-6 col-start-8 justify-center"
-              initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
+              className="flex text-[16px] sm:text-[25px] font-normal sm:font-thin text-home sm:col-span-6 sm:col-start-8 justify-center"
+              initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
               transition={{ duration: 0.75, delay: 0.75 }}
@@ -88,16 +88,29 @@ const Contact = () => {
               &quot;Collaboration is the key to innovation.&quot;
             </motion.span>
 
-            <div id="contact-container" className="w-full col-span-18 col-start-2 bg-[] text-black overflow-hidden pt-16">
+            <div
+              id="contact-container"
+              className="w-full sm:col-span-18 sm:col-start-2 bg-[] text-black overflow-hidden pt-16"
+            >
               <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] text-[#80776d] pt-16">
                 <div className="flex flex-col col-start-4 col-span-14 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
-                  <span className="w-full font-bold items-center justify-center flex">DROP ME A MESSAGE!</span>
+                  <span className="w-full font-bold items-center justify-center flex">
+                    DROP ME A MESSAGE!
+                  </span>
 
                   {/* Form Section */}
-                  <form onSubmit={onSubmit} className="flex flex-col gap-6" action="https://api.web3forms.com/submit" method="POST">
-
+                  <form
+                    onSubmit={onSubmit}
+                    className="flex flex-col gap-6"
+                    action="https://api.web3forms.com/submit"
+                    method="POST"
+                  >
                     {/* Name & Email on the Same Row */}
-                    <input type="hidden" name="access_key" value="be249f55-0454-44a6-b6ab-d35527daa8db" />
+                    <input
+                      type="hidden"
+                      name="access_key"
+                      value="be249f55-0454-44a6-b6ab-d35527daa8db"
+                    />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <input
                         type="text"
@@ -148,14 +161,14 @@ const Contact = () => {
                       Send Message
                     </button>
                   </form>
-                  <span className="w-full font-bold items-center justify-center flex">{result}</span>
+                  <span className="w-full font-bold items-center justify-center flex">
+                    {result}
+                  </span>
                 </div>
-
 
                 <div className="col-start-1 col-span-20">
                   <Footer />
                 </div>
-
               </div>
             </div>
           </div>
