@@ -92,8 +92,8 @@ const Contact = () => {
               id="contact-container"
               className="w-full sm:col-span-18 sm:col-start-2 bg-[] text-black overflow-hidden pt-16"
             >
-              <div className="grid gap-x-4 gap-y-20 grid-cols-[repeat(20,minmax(0,1fr))] text-[#80776d] pt-16">
-                <div className="flex flex-col col-start-4 col-span-14 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
+              <div className="grid sm:gap-x-4 sm:gap-y-20 grid-cols-1 sm:grid-cols-[repeat(20,minmax(0,1fr))] text-[#80776d] px-6 pt-8 sm:px-0 sm:pt-16">
+                <div className="flex flex-col col-start-1 col-span-1 sm:col-start-4 sm:col-span-14 gap-6 w-full h-full p-8 bg-section rounded-3xl text-home shadow-lg">
                   <span className="w-full font-bold items-center justify-center flex">
                     DROP ME A MESSAGE!
                   </span>
@@ -101,7 +101,7 @@ const Contact = () => {
                   {/* Form Section */}
                   <form
                     onSubmit={onSubmit}
-                    className="flex flex-col gap-6"
+                    className="flex flex-col gap-4 sm:gap-6"
                     action="https://api.web3forms.com/submit"
                     method="POST"
                   >
@@ -118,7 +118,7 @@ const Contact = () => {
                         placeholder="Your Name"
                         // value={formData.name}
                         // onChange={handleChange}
-                        className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                        className="p-2 sm:p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                         required
                       />
                       <input
@@ -127,7 +127,7 @@ const Contact = () => {
                         placeholder="Your Email"
                         // value={formData.email}
                         // onChange={handleChange}
-                        className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                        className="p-2 sm:p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                         required
                       />
                     </div>
@@ -139,7 +139,7 @@ const Contact = () => {
                       placeholder="Subject"
                       // value={formData.subject}
                       // onChange={handleChange}
-                      className="p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                      className="p-2 sm:p-4 w-full rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                       required
                     />
 
@@ -149,7 +149,7 @@ const Contact = () => {
                       placeholder="Your Message"
                       // value={formData.message}
                       // onChange={handleChange}
-                      className="p-4 w-full h-40 rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                      className="p-2 sm:p-4 w-full h-40 rounded-lg border border-[#524D47] focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                       required
                     ></textarea>
 

@@ -9,7 +9,6 @@ import Project from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 
-
 export default function Main() {
   // About Section Scaling (Zoom in when entering)
   const aboutRef = useRef(null);
@@ -27,7 +26,6 @@ export default function Main() {
   });
   const scaleExperience = useTransform(experienceProgress, [0.7, 1], [1, 0.95]); // Shrink at 70%
 
-
   // NavBar animation
   const navSlideX = useTransform(aboutProgress, [0.2, 0.4], [-100, 0]);
   const navSlideY = useTransform(aboutProgress, [0.2, 0.4], [100, 0]);
@@ -44,16 +42,12 @@ export default function Main() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   // useEffect(() => {
   //   if (window.history.scrollRestoration) {
   //     window.history.scrollRestoration = "manual";
   //   }
   //   window.scrollTo(0, 0);
   // }, []);
-
-
-
 
   return (
     <div className="relative w-full max-w-screen text-white ">
@@ -64,7 +58,7 @@ export default function Main() {
         style={{
           x: isMobile ? 0 : navSlideX,
           y: isMobile ? navSlideY : 0,
-          opacity: navOpacity
+          opacity: navOpacity,
         }}
       >
         <NavBar />
@@ -93,7 +87,6 @@ export default function Main() {
           <Experience />
         </motion.div>
         <Contact />
-
       </div>
     </div>
   );
