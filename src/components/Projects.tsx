@@ -237,7 +237,7 @@ const Project = () => {
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 1.5 }}
+              transition={{ duration: 0.75, delay: 0.5 }}
             >
               Each project is a step forward in my journey of growth. It been
               crafted with passion and precision.
@@ -246,12 +246,12 @@ const Project = () => {
         </div>
 
         {/* With Motion and Button*/}
-        <motion.div
+        <div
           className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
-          initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
-          whileInView={{ opacity: 1 }} // Fade to full opacity (visible)
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 3.5, ease: "easeInOut" }}
+        // initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
+        // whileInView={{ opacity: 1 }} // Fade to full opacity (visible)
+        // viewport={{ once: true, amount: 0.1 }}
+        // transition={{ duration: 3.5, ease: "easeInOut" }}
         >
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between gap-y-16 border-t border-[#524D47]">
@@ -360,20 +360,24 @@ const Project = () => {
                       <div className="flex items-end justify-start h-full mt-auto gap-x-3">
                         <button
                           onClick={handlePrevious}
-                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
-                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full
-                          before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 active:scale-90 overflow-hidden"
+                          className="group relative bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
+                          overflow-hidden transition-transform duration-300 ease-in-out active:scale-90"
                         >
-                          <span className="relative z-10">Prev</span>
+                          <span className="relative z-20">Prev</span>
+                          <span className="absolute inset-0 rounded-full [background-color:#847A6F!important] [transform:scaleX(0)!important] origin-left
+                          transition-transform duration-300 ease-in-out group-hover:[transform:scaleX(1)!important] z-10"></span>
                         </button>
+
                         <button
                           onClick={handleNext}
-                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
-                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full
-                          before:scale-x-0 before:origin-right before:transition-transform before:duration-[0.35s] hover:before:scale-x-100 active:scale-90 overflow-hidden"
+                          className="group relative bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
+                          overflow-hidden transition-transform duration-300 ease-in-out active:scale-90"
                         >
-                          <span className="relative z-10">Next</span>
+                          <span className="relative z-20">Next</span>
+                          <span className="absolute inset-0 rounded-full [background-color:#847A6F!important] [transform:scaleX(0)!important] origin-right
+                          transition-transform duration-300 ease-in-out group-hover:[transform:scaleX(1)!important] z-10"></span>
                         </button>
+
                       </div>
                       <div className="relative flex items-center order-first h-fit gap-x-2 overflow-clip text-[18px] text-heading-4 leading-tighter">
                         Page
@@ -432,7 +436,7 @@ const Project = () => {
                         height={500}
                         priority
                         unoptimized
-                        // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
+                      // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
                       />
                     </motion.div>
                   </motion.div>
@@ -469,7 +473,7 @@ const Project = () => {
               </div>
             </a>
           </div>
-        </motion.div>
+        </div>
 
         {/* Mobile Version */}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
@@ -483,9 +487,10 @@ const Project = () => {
                     className="flex flex-row flex-wrap gap-y-2"
                   >
                     <motion.div
-                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[5000px]"
+                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[600px]"
                       initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{ duration: 1 }}
                     >
                       <Image
@@ -499,9 +504,9 @@ const Project = () => {
 
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 3 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 2 }}
                         className={`z-10 w-8/9 space-y-4 rounded-lg overflow-clip
                       ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-xl object-fit" : ""}`}
                       >
@@ -520,8 +525,8 @@ const Project = () => {
                     <div className="flex flex-rows flex-wrap">
                       <motion.h3
                         initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="font-medium text-[0.9rem] w-full font-mono text-[#7e7e7e]"
                       >
@@ -530,8 +535,8 @@ const Project = () => {
                       <a href={project.gitHub}>
                         <motion.h3
                           initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
                           transition={{ duration: 1, ease: "easeOut" }}
                           className="font-semibold text-[1.5rem] w-full -mt-1"
                         >
