@@ -7,8 +7,8 @@ const About = (() => {
   const sectionTitle = "WHO AM I?";
 
   return (
-    <section id='about' className="min-h-[100svh] sm:h-full max-w-screen rounded-t-[25px] bg-[#080807] p-4 z-30  text-[#bebebe]">
-      <div className="relative z-20 w-full overflow-x-clip">
+    <section id='about' className="min-h-[100svh] sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30  text-[#bebebe] flex flex-col items-center  will-change-transform">
+      <div className="relative w-full overflow-x-visible">
         <div className="flex flex-col w-full" >
           <div className='mx-5 sm:mx-0 grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-home'>
             {/* Section Title*/}
@@ -143,7 +143,7 @@ const About = (() => {
                     <motion.img
                       className="object-contain w-full border-gray-700 rounded-2xl shadow-md overflow-hidden"
                       src="../assets/me/me2.avif"
-                      alt="Example"
+                      alt="LA Peter"
                       initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
                       transition={{ duration: 1.5, ease: "easeOut" }}
                       whileInView={{ clipPath: "inset(0 0 0 0)" }}  // Always animate when in view
@@ -200,6 +200,7 @@ const About = (() => {
 
                       </p>
                     </div>
+                  
 
                   </motion.div>
                 </div>

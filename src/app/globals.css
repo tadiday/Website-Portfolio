@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+@config "../../tailwind.config.mjs"; /* or .ts or .mjs depending on your setup */
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -93,7 +94,7 @@ code {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999; /* Ensures noise is on top */
+  z-index: 50; /* Ensures noise is on top */
   pointer-events: none; /* Ensures elements are clickable */
 }
 

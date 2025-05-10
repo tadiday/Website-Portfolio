@@ -2,7 +2,11 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}', // includes components and pages
+    './public/index.html',        // in case you have static HTML
+    './src/app/globals.css',      // ensures your global styles are parsed
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -16,6 +20,7 @@ const config = {
     },
   },
   plugins: [],
+  important: true,
 };
 
 export default config;

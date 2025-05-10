@@ -246,12 +246,12 @@ const Project = () => {
         </div>
 
         {/* With Motion and Button*/}
-        <div
+        <motion.div
           className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
-        // initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
-        // whileInView={{ opacity: 1 }} // Fade to full opacity (visible)
-        // viewport={{ once: true, amount: 0.1 }}
-        // transition={{ duration: 3.5, ease: "easeInOut" }}
+        initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
+        whileInView={{ opacity: 1 }} // Fade to full opacity (visible)
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 3.5, ease: "easeInOut" }}
         >
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between gap-y-16 border-t border-[#524D47]">
@@ -360,22 +360,20 @@ const Project = () => {
                       <div className="flex items-end justify-start h-full mt-auto gap-x-3">
                         <button
                           onClick={handlePrevious}
-                          className="group relative bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
-                          overflow-hidden transition-transform duration-300 ease-in-out active:scale-90"
+                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
+                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full
+                          before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 active:scale-90 overflow-hidden"
                         >
-                          <span className="relative z-20">Prev</span>
-                          <span className="absolute inset-0 rounded-full [background-color:#847A6F!important] [transform:scaleX(0)!important] origin-left
-                          transition-transform duration-300 ease-in-out group-hover:[transform:scaleX(1)!important] z-10"></span>
+                          <span className="relative z-10">Prev</span>
                         </button>
 
                         <button
                           onClick={handleNext}
-                          className="group relative bg-[#524D47] text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
-                          overflow-hidden transition-transform duration-300 ease-in-out active:scale-90"
+                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
+                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full
+                          before:scale-x-0 before:origin-right before:transition-transform before:duration-[0.35s] hover:before:scale-x-100 active:scale-90 overflow-hidden"
                         >
-                          <span className="relative z-20">Next</span>
-                          <span className="absolute inset-0 rounded-full [background-color:#847A6F!important] [transform:scaleX(0)!important] origin-right
-                          transition-transform duration-300 ease-in-out group-hover:[transform:scaleX(1)!important] z-10"></span>
+                          <span className="relative z-10">Next</span>
                         </button>
 
                       </div>
@@ -473,9 +471,11 @@ const Project = () => {
               </div>
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Mobile Version */}
+
+
+        {/* Mobile Version 2*/}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
