@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @config "../../tailwind.config.mjs"; /* or .ts or .mjs depending on your setup */
+/* @tailwind base;
+@tailwind components; */
 @tailwind utilities;
 
 :root {
@@ -97,6 +99,17 @@ code {
   z-index: 50; /* Ensures noise is on top */
   pointer-events: none; /* Ensures elements are clickable */
 }
+
+.gpu-stable {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform, opacity;
+  contain: layout paint style;
+}
+
+
 
 /* bg-gradient-to-r from-[#A39173] to-[#B38C66] */
 

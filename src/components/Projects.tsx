@@ -79,7 +79,7 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="h-full max-w-screen  bg-[#080807] p-4 z-30  text-[#bebebe]"
+      className="h-full min-h-[500px] max-w-screen  bg-[#080807] p-4 flex flex-col items-center z-30 text-[#bebebe] gpu-stable"
     >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full">
@@ -403,7 +403,7 @@ const Project = () => {
                   {/* Image Section */}
 
                   <motion.div
-                    className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"
+                    className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px] "
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -414,7 +414,6 @@ const Project = () => {
                       src={backg}
                       alt="backg"
                       fill // Makes the image cover the div (equivalent to object-cover)
-                      priority
                       style={{ objectFit: "cover" }}
                     />
 
@@ -487,7 +486,7 @@ const Project = () => {
                     className="flex flex-row flex-wrap gap-y-2"
                   >
                     <motion.div
-                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[600px]"
+                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[600px] gpu-stable"
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}

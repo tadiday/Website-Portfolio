@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/navigation/Header";
 import NavBar from "@/components/navigation/NavBar";
 import Home from "@/components/Home";
+import HomeTest from "@/components/HomeTest";
 import About from "@/components/About";
 import Project from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -51,43 +52,56 @@ export default function Main() {
 
   return (
     <div className="relative w-full max-w-screen text-white ">
-      <div id="noise-overlay"></div>
-      {/* NavBar */}
-      <motion.div
-        className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] sm:h-full"
+      {/* <div
+        className="relative w-full max-w-screen text-white"
         style={{
-          x: isMobile ? 0 : navSlideX,
-          y: isMobile ? navSlideY : 0,
-          opacity: navOpacity,
+          transform: "translate3d(0,0,0)",
+          backfaceVisibility: "hidden",
+          willChange: "transform",
+          WebkitTransform: "translate3d(0,0,0)"
         }}
-      >
-        <NavBar />
-      </motion.div>
+      > */}
 
-      {/* Header */}
-      <Header />
 
-      <div id="home" className="grid">
-        <Home />
+        <div id="noise-overlay"></div>
+        {/* NavBar */}
         <motion.div
-          ref={aboutRef}
-          id="about"
-          style={{ scale: scaleAbout }}
-          className="grid transition-transform duration-200 ease-out"
+          className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] sm:h-full"
+          style={{
+            x: isMobile ? 0 : navSlideX,
+            y: isMobile ? navSlideY : 0,
+            opacity: navOpacity,
+          }}
         >
-          <About />
+          <NavBar />
         </motion.div>
-        <Project />
-        <motion.div
-          ref={experienceRef}
-          id="experience"
-          style={{ scale: scaleExperience }}
-          className="grid transition-transform duration-200 ease-out"
-        >
-          <Experience />
-        </motion.div>
-        <Contact />
+
+        {/* Header */}
+        <Header />
+
+        <div id="home" className="grid">
+          <Home />
+          <motion.div
+            ref={aboutRef}
+            id="about"
+            style={{ scale: scaleAbout }}
+            className="grid transition-transform duration-200 ease-out"
+          >
+            <About />
+          </motion.div>
+          {/* <HomeTest/> */}
+          <Project />
+          <motion.div
+            ref={experienceRef}
+            id="experience"
+            style={{ scale: scaleExperience }}
+            className="grid transition-transform duration-200 ease-out"
+          >
+            <Experience />
+          </motion.div>
+          <Contact />
+        </div>
       </div>
-    </div>
+    // </div>
   );
 }

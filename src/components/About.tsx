@@ -1,22 +1,34 @@
+import {} from "react";
 import { motion } from "framer-motion";
-// import { GoArrowUpRight } from "react-icons/go";
+import { FaGraduationCap } from "react-icons/fa";
+import { MdOutlineWork } from "react-icons/md";
+import { GoArrowUpRight } from "react-icons/go";
 
-
-const About = (() => {
+const Home = () => {
 
   const sectionTitle = "WHO AM I?";
 
   return (
-    <section id='about' className="min-h-[100svh] sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30  text-[#bebebe] flex flex-col items-center  will-change-transform">
-      <div className="relative w-full overflow-x-visible">
-        <div className="flex flex-col w-full" >
-          <div className='mx-5 sm:mx-0 grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-home'>
-            {/* Section Title*/}
+    <section
+      id="about"
+      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30 text-[#bebebe] bg-fixed"
+      style={{
+        WebkitBackfaceVisibility: "hidden",
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)",
+        willChange: "transform, opacity",
+        contain: "layout paint style",
+      }}
+    >
+      <div className="relative z-20 w-full bg-[#080807] ">
+        <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
+          <div className='mx-5 sm:mx-0 grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-home'>            {/* Section Title*/}
             <motion.h2
               initial="initial"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3, }} // Ensures animation only triggers when in view
-              className="relative block overflow-hidden whitespace-nowrap col-span-4 col-start-1 md:col-span-20 md:col-start-2 w-full 
+              className="relative block whitespace-nowrap col-span-4 col-start-1 md:col-span-20 md:col-start-2 w-full 
               text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-bold justify-center"
             >
               <div>
@@ -49,8 +61,9 @@ const About = (() => {
               </div>
             </motion.h2>
 
-            {/* Quotes Section */}
-            <motion.span
+            
+                       {/* Quotes Section */}
+                       <motion.span
               className="text-[18px] font-thin text-home col-span-2 col-start-1 
                          sm:col-span-2 sm:col-start-10 hidden sm:flex sm:text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
@@ -125,7 +138,9 @@ const About = (() => {
               I specialize in creating user-friendly user interface and integrating them with robust back-end systems to deliver impactful user experiences.
 
             </motion.span>
+           
           </div>
+        </div>
 
           {/* Content Section */}
           <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
@@ -141,7 +156,7 @@ const About = (() => {
                     transition={{ duration: 1 }} // Fade-in duration
                   >
                     <motion.img
-                      className="object-contain w-full border-gray-700 rounded-2xl shadow-md overflow-hidden"
+                      className="object-contain w-full border-gray-700 rounded-2xl shadow-md"
                       src="../assets/me/me2.avif"
                       alt="LA Peter"
                       initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
@@ -169,7 +184,7 @@ const About = (() => {
 
                     {/* About Section */}
                     <div className="hidden sm:flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[20px]">
-                      <span className='flex h-fit overflow-clip font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
+                      <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                         <span className="h-full text-nowrap">(About Me)</span>
                       </span>
                       <p className="sm:max-w-[40ch] sm:text-balance font-normal">
@@ -179,7 +194,7 @@ const About = (() => {
                     </div>
 
                     <div className="flex sm:hidden flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[16px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
-                      <span className='flex h-fit overflow-clip font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
+                      <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                         <span className="h-full text-nowrap">(About Me)</span>
                       </span>
                       <p className="sm:max-w-[40ch] sm:text-balance font-normal">
@@ -190,7 +205,7 @@ const About = (() => {
 
                     {/* Hobbies Section */}
                     <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[16px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
-                      <span className='flex h-fit overflow-clip font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
+                      <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                         <span className="h-full text-nowrap ">(Hobbies)</span>
                       </span>
                       <p className="sm:max-w-[40ch] sm:text-balance font-normal">
@@ -231,12 +246,10 @@ const About = (() => {
                 </div> */}
               </a>
             </div>
-
           </div>
-        </div>
       </div>
     </section>
   );
-});
+};
 
-export default About;
+export default Home;
