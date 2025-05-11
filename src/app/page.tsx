@@ -52,56 +52,45 @@ export default function Main() {
 
   return (
     <div className="relative w-full max-w-screen text-white ">
-      {/* <div
-        className="relative w-full max-w-screen text-white"
+
+      <div id="noise-overlay"></div>
+      {/* NavBar */}
+      <motion.div
+        className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] sm:h-full"
         style={{
-          transform: "translate3d(0,0,0)",
-          backfaceVisibility: "hidden",
-          willChange: "transform",
-          WebkitTransform: "translate3d(0,0,0)"
+          x: isMobile ? 0 : navSlideX,
+          y: isMobile ? navSlideY : 0,
+          opacity: navOpacity,
         }}
-      > */}
+      >
+        <NavBar />
+      </motion.div>
 
+      {/* Header */}
+      <Header />
 
-        <div id="noise-overlay"></div>
-        {/* NavBar */}
+      <div id="home" className="grid">
+        <Home />
         <motion.div
-          className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] sm:h-full"
-          style={{
-            x: isMobile ? 0 : navSlideX,
-            y: isMobile ? navSlideY : 0,
-            opacity: navOpacity,
-          }}
+          ref={aboutRef}
+          id="about"
+          style={{ scale: scaleAbout }}
+          className="grid transition-transform duration-200 ease-out"
         >
-          <NavBar />
+          <About />
         </motion.div>
-
-        {/* Header */}
-        <Header />
-
-        <div id="home" className="grid">
-          <Home />
-          <motion.div
-            ref={aboutRef}
-            id="about"
-            style={{ scale: scaleAbout }}
-            className="grid transition-transform duration-200 ease-out"
-          >
-            <About />
-          </motion.div>
-          {/* <HomeTest/> */}
-          <Project />
-          <motion.div
-            ref={experienceRef}
-            id="experience"
-            style={{ scale: scaleExperience }}
-            className="grid transition-transform duration-200 ease-out"
-          >
-            <Experience />
-          </motion.div>
-          <Contact />
-        </div>
+        {/* <HomeTest/> */}
+        <Project />
+        <motion.div
+          ref={experienceRef}
+          id="experience"
+          style={{ scale: scaleExperience }}
+          className="grid transition-transform duration-200 ease-out"
+        >
+          <Experience />
+        </motion.div>
+        <Contact />
       </div>
-    // </div>
+    </div>
   );
 }

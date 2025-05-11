@@ -11,15 +11,7 @@ const Home = () => {
   return (
     <section
       id="about"
-      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30 text-[#bebebe] bg-fixed"
-      style={{
-        WebkitBackfaceVisibility: "hidden",
-        backfaceVisibility: "hidden",
-        transform: "translateZ(0)",
-        WebkitTransform: "translateZ(0)",
-        willChange: "transform, opacity",
-        contain: "layout paint style",
-      }}
+      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30 text-[#bebebe] bg-fixed gpu-stable"
     >
       <div className="relative z-20 w-full bg-[#080807] ">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">

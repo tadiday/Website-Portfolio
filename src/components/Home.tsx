@@ -74,6 +74,11 @@ const Home = () => {
 
   return (
     <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0 px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-center bg-no-repeat z-0 gpu-stable"
+    style={{
+      opacity,
+      transform: `scale(${scale})`,
+      transition: "all 0.3s ease-out",
+    }}
     >
       {/* Starry Background Canvas */}
       <canvas
@@ -83,6 +88,7 @@ const Home = () => {
           opacity,
           transform: `scale(${scale})`,
           transition: "all 0.3s ease-out",
+          display: opacity === 0 ? "none" : "block",
         }}
       />
 
@@ -253,14 +259,26 @@ const Home = () => {
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              style={{
+              // style={{
+              //   opacity,
+              //   transform: `scale(${scale})`,
+              //   transition: "all 0.3s ease-out",
+              // }}
+            >
+              <div style={{
                 opacity,
                 transform: `scale(${scale})`,
                 transition: "all 0.3s ease-out",
-              }}
-            >
-              <div>38.7439° N, 77.2405° W</div>
-              <div>{localTime}</div>
+              }}>
+                38.7439° N, 77.2405° W
+              </div>
+              <div style={{
+                opacity,
+                transform: `scale(${scale})`,
+                transition: "all 0.3s ease-out",
+              }}>
+                {localTime}
+              </div>
             </motion.div>
           </div>
         </div>

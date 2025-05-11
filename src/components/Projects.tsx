@@ -493,7 +493,7 @@ const Project = () => {
                       transition={{ duration: 1 }}
                     >
                       <Image
-                        className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125"
+                        className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 gpu-stable"
                         src={project.backg}
                         alt="background"
                         fill
@@ -510,7 +510,7 @@ const Project = () => {
                       ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-xl object-fit" : ""}`}
                       >
                         <Image
-                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md gpu-stable"
                           src={project.image}
                           alt={project.title}
                           width={500}
