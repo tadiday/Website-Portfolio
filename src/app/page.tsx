@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Header from "@/components/navigation/Header";
 import NavBar from "@/components/navigation/NavBar";
 import Home from "@/components/Home";
-import HomeTest from "@/components/HomeTest";
 import About from "@/components/About";
 import Project from "@/components/Projects";
 import Experience from "@/components/Experience";
@@ -79,7 +78,6 @@ export default function Main() {
         >
           <About />
         </motion.div>
-        {/* <HomeTest/> */}
         <Project />
         <motion.div
           ref={experienceRef}

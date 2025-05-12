@@ -1,8 +1,5 @@
 import {} from "react";
 import { motion } from "framer-motion";
-import { FaGraduationCap } from "react-icons/fa";
-import { MdOutlineWork } from "react-icons/md";
-import { GoArrowUpRight } from "react-icons/go";
 
 const Home = () => {
 
