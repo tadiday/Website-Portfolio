@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <section
       id="about"
-      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30 text-[#bebebe] bg-fixed gpu-stable"
+      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30 text-[#bebebe] bg-fixed"
     >
       <div className="relative z-20 w-full bg-[#080807] ">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
@@ -125,7 +125,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 1.5 }}
+              transition={{ duration: 0.75, delay: 0.5 }}
             >
               I specialize in creating user-friendly user interface and integrating them with robust back-end systems to deliver impactful user experiences.
 
