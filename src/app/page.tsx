@@ -51,6 +51,7 @@ export default function Main() {
 
   return (
     <div className="relative w-full max-w-screen text-white ">
+
       <div id="noise-overlay"></div>
       {/* NavBar */}
       <motion.div

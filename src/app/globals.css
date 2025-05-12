@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+@config "../../tailwind.config.mjs"; /* or .ts or .mjs depending on your setup */
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -19,13 +20,6 @@
     --foreground: #ededed;
   }
 }
-
-/* body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 
 body {
   margin: 0;
@@ -93,11 +87,9 @@ code {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999; /* Ensures noise is on top */
+  z-index: 50; /* Ensures noise is on top */
   pointer-events: none; /* Ensures elements are clickable */
 }
-
-/* bg-gradient-to-r from-[#A39173] to-[#B38C66] */
 
 html {
   scroll-behavior: smooth;

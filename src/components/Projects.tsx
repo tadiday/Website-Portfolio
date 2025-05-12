@@ -19,7 +19,7 @@ const Project = () => {
       gitHub: "https://github.com/tadiday/Website-Portfolio",
       description: `
           Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
-      image: "/assets/gif/web-port.gif",
+      image: "/assets/gif/webport.mp4",
       tags: ["Web-App", "GitHub", "2025"],
       type: "Website Application",
       backg: "/assets/background/background4.jpg",
@@ -32,7 +32,7 @@ const Project = () => {
       description: `
           A mobile application that allows user to scan their bills and split the cost with their friends seamlessly.
           Available through the App Store.`,
-      image: "/assets/gif/scan.gif",
+      image: "/assets/gif/simplisplit.mp4",
       tags: ["Mobile", "Private", "2023"],
       type: "Mobile Application",
       backg: "/assets/background/background3.jpg",
@@ -53,7 +53,7 @@ const Project = () => {
       description: `
           Developed a Tinder-inspired restaurant discovery app designed to help users find the perfect dining spot.
           The app allows users to swipe right for more details on local restaurants tailored to their location.`,
-      image: "/assets/gif/foodSwipe.gif",
+      image: "/assets/gif/foodswipe.mp4",
       tags: ["Web-App", "GitHub", "2022"],
       type: "Website and Mobile Application",
       backg: "/assets/background/background5.jpg",
@@ -79,7 +79,7 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="h-full max-w-screen  bg-[#080807] p-4 z-30  text-[#bebebe]"
+      className="h-full min-h-[500px] max-w-screen  bg-[#080807] p-4 flex flex-col items-center z-30 text-[#bebebe]"
     >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full">
@@ -237,7 +237,7 @@ const Project = () => {
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 1.5 }}
+              transition={{ duration: 0.75, delay: 0.5 }}
             >
               Each project is a step forward in my journey of growth. It been
               crafted with passion and precision.
@@ -366,6 +366,7 @@ const Project = () => {
                         >
                           <span className="relative z-10">Prev</span>
                         </button>
+
                         <button
                           onClick={handleNext}
                           className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
@@ -374,6 +375,7 @@ const Project = () => {
                         >
                           <span className="relative z-10">Next</span>
                         </button>
+
                       </div>
                       <div className="relative flex items-center order-first h-fit gap-x-2 overflow-clip text-[18px] text-heading-4 leading-tighter">
                         Page
@@ -399,43 +401,45 @@ const Project = () => {
                   </div>
 
                   {/* Image Section */}
-
-                  <motion.div
-                    className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 3 }}
-                  >
-                    <Image
-                      className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
-                      src={backg}
-                      alt="backg"
-                      fill // Makes the image cover the div (equivalent to object-cover)
-                      priority
-                      style={{ objectFit: "cover" }}
-                    />
-
+                  <AnimatePresence mode="wait">
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
+                      key={title} // <--- this makes it animate on change
+                      className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"
+                      initial={{ opacity: 0, y: 0 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 3 }}
-                      className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip
-                      ${title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit" : ""}`}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{ duration: 1 }}
                     >
                       <Image
-                        className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
-                        src={image}
-                        alt={title}
-                        width={500}
-                        height={500}
-                        priority
-                        unoptimized
-                        // priority={title === 'Web-Portfolio'} // Load Web-Portfolio image with higher priority
+                        className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
+                        src={backg}
+                        alt="backg"
+                        fill
+                        style={{ objectFit: "cover" }}
                       />
+                      <motion.div
+                        initial={{ opacity: 0, y: 0 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        transition={{ duration: 1 }}
+                        className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip ${title === "Simplisplit"
+                          ? "border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit"
+                          : ""
+                          }`}
+                      >
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                        >
+                          <source src={image} type="video/mp4"/>
+                          Your browser does not support the video tag.
+                        </video>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
@@ -471,7 +475,9 @@ const Project = () => {
           </div>
         </motion.div>
 
-        {/* Mobile Version */}
+
+
+        {/* Mobile Version 2*/}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
@@ -483,9 +489,10 @@ const Project = () => {
                     className="flex flex-row flex-wrap gap-y-2"
                   >
                     <motion.div
-                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[5000px]"
+                      className="relative flex items-center justify-center w-full aspect-square overflow-hidden max-h-[600px]"
                       initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
                       transition={{ duration: 1 }}
                     >
                       <Image
@@ -499,29 +506,32 @@ const Project = () => {
 
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 3 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 2 }}
                         className={`z-10 w-8/9 space-y-4 rounded-lg overflow-clip
                       ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-xl object-fit" : ""}`}
                       >
-                        <Image
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
                           className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
-                          src={project.image}
-                          alt={project.title}
-                          width={500}
-                          height={500}
-                          style={{ height: "auto", width: "100%" }}
-                          unoptimized
-                        />
+                        >
+                          <source src={project.image} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </motion.div>
+
+
                     </motion.div>
 
                     <div className="flex flex-rows flex-wrap">
                       <motion.h3
                         initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="font-medium text-[0.9rem] w-full font-mono text-[#7e7e7e]"
                       >
@@ -530,8 +540,8 @@ const Project = () => {
                       <a href={project.gitHub}>
                         <motion.h3
                           initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
                           transition={{ duration: 1, ease: "easeOut" }}
                           className="font-semibold text-[1.5rem] w-full -mt-1"
                         >

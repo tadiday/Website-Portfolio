@@ -73,7 +73,13 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0  px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-center bg-no-repeat">
+    <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0 px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-center bg-no-repeat z-0"
+    style={{
+      opacity,
+      transform: `scale(${scale})`,
+      transition: "all 0.3s ease-out",
+    }}
+    >
       {/* Starry Background Canvas */}
       <canvas
         ref={canvasRef}
@@ -82,12 +88,13 @@ const Home = () => {
           opacity,
           transform: `scale(${scale})`,
           transition: "all 0.3s ease-out",
+          display: opacity === 0 ? "none" : "block",
         }}
       />
 
       {/* Animated background overlay */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-[#524D47]"
+        className="absolute top-0 left-0 w-full h-full bg-[#524D47] z-0"
         initial={{ y: "100%", borderRadius: "100%" }}
         animate={{ y: "0%", borderRadius: "0%" }}
         transition={{ duration: 1.5, ease: [0.25, 0.8, 0.25, 1] }}
@@ -161,7 +168,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 10, z: 10 }}
                 animate={{ opacity: 1, y: 0, z: 10 }}
                 transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-                className="sm:hidden font-title text-[13px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
+                className="sm:hidden text-[13px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between flex "
               >
                 <div
                   className="w-full "
@@ -172,7 +179,7 @@ const Home = () => {
                   }}
                 >
                   <div
-                    className="font-title font-mono font-bold w-full text-right"
+                    className="font-mono font-bold w-full text-right"
                     style={{
                       opacity,
                       transform: `scale(${scale})`,
@@ -195,10 +202,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              className="font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-1 md:col-span-1 font-mono font-light w-full justify-between flex "
+              className="font-mono text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-1 md:col-span-1 font-light w-full justify-between flex "
             >
               <div
-                className="w-full "
+                className="w-full"
                 style={{
                   opacity,
                   transform: `scale(${scale})`,
@@ -220,7 +227,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              className="hidden font-title text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between sm:flex "
+              className="hidden text-[15px] sm:text-[30px] md:text-[30px] lg:text-[30px] col-start-1 col-span-1 md:col-start-2 md:col-span-1 font-mono font-light w-full justify-between sm:flex "
             >
               <div
                 className="w-full "
@@ -231,7 +238,7 @@ const Home = () => {
                 }}
               >
                 <div
-                  className="font-title font-mono font-bold w-full text-right"
+                  className="font-mono font-bold w-full text-right"
                   style={{
                     opacity,
                     transform: `scale(${scale})`,
@@ -248,18 +255,30 @@ const Home = () => {
 
             {/* Location and Local Time */}
             <motion.div
-              className="absolute bottom-3 left-0 right-0 px-[5%] md:px-[10%] font-title text-[15px] sm:text-[22px] md:text-[22px] lg:text-[22px] font-mono font-light flex justify-between text-white z-40"
+              className="absolute bottom-3 left-0 right-0 px-[5%] md:px-[10%] font-mono text-[15px] sm:text-[22px] md:text-[22px] lg:text-[22px] font-light flex justify-between text-white z-40"
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              style={{
+              // style={{
+              //   opacity,
+              //   transform: `scale(${scale})`,
+              //   transition: "all 0.3s ease-out",
+              // }}
+            >
+              <div style={{
                 opacity,
                 transform: `scale(${scale})`,
                 transition: "all 0.3s ease-out",
-              }}
-            >
-              <div>38.7439° N, 77.2405° W</div>
-              <div>{localTime}</div>
+              }}>
+                38.7439° N, 77.2405° W
+              </div>
+              <div style={{
+                opacity,
+                transform: `scale(${scale})`,
+                transition: "all 0.3s ease-out",
+              }}>
+                {localTime}
+              </div>
             </motion.div>
           </div>
         </div>
