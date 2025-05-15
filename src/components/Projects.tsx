@@ -1,9 +1,16 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
+import ProjectImage from "@/components/ProjectImage";
+import ProjectInfo from "@/components/ProjectInfo";
+
+
+
 
 const Project = () => {
+
+
   const projects = [
     {
       title: "Web-Portfolio",
@@ -17,25 +24,32 @@ const Project = () => {
         "Framer Motion",
       ],
       gitHub: "https://github.com/tadiday/Website-Portfolio",
+      website: "https://peter-cao.com",
       description: `
-          Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
+                Built a personal portfolio website using React.js and Tailwind CSS to showcase projects, experiences, and research.`,
       image: "/assets/gif/webport.mp4",
       tags: ["Web-App", "GitHub", "2025"],
-      type: "Website Application",
-      backg: "/assets/background/background4.jpg",
+      type: "Website Application - 2025",
+      // backg: "/assets/background/background4.jpg",
+      backg: "/assets/background/bg7.webp",
+      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
     },
     {
       title: "Simplisplit",
       date: "2023",
       tech: ["React-Native", "Tailwind CSS", "Python", "Flask"],
       gitHub: "Private",
+      website: "Private",
       description: `
           A mobile application that allows user to scan their bills and split the cost with their friends seamlessly.
           Available through the App Store.`,
       image: "/assets/gif/simplisplit.mp4",
       tags: ["Mobile", "Private", "2023"],
-      type: "Mobile Application",
-      backg: "/assets/background/background3.jpg",
+      type: "Mobile Application - 2023",
+      // backg: "/assets/background/background1.jpg",
+      backg: "/assets/background/bg8.png",
+      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
+
     },
     {
       title: "Food Swipe",
@@ -48,15 +62,20 @@ const Project = () => {
         "Node.js",
         "Google Map",
         "Framer Motion",
+        // "Firebase",
+        // "Swift",
       ],
-      gitHub: "http://github.com/kmsungporant/food_swipe",
+      gitHub: "https://github.com/tadiday/Food-Swipe",
+      website: "Private",
       description: `
           Developed a Tinder-inspired restaurant discovery app designed to help users find the perfect dining spot.
           The app allows users to swipe right for more details on local restaurants tailored to their location.`,
       image: "/assets/gif/foodswipe.mp4",
-      tags: ["Web-App", "GitHub", "2022"],
-      type: "Website and Mobile Application",
-      backg: "/assets/background/background5.jpg",
+      tags: ["Web", "Mobile", "GitHub", "2022"],
+      type: "Website Application - 2022",
+      // backg: "/assets/background/background5.jpg",
+      backg: "/assets/background/bg9.png",
+      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
     },
   ];
 
@@ -76,10 +95,20 @@ const Project = () => {
 
   const sectionTitle = "SELECTED PROJECTS";
 
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"] // from when bottom hits viewport to when top hits top
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1.7, 1]);
+
+
   return (
     <section
       id="projects"
-      className="h-full min-h-[500px] max-w-screen  bg-[#080807] p-4 flex flex-col items-center z-30 text-[#bebebe]"
+      className="h-full min-h-[500px] max-w-screen  bg-[#080807] flex flex-col items-center z-30 text-[#bebebe]"
     >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full">
@@ -90,7 +119,7 @@ const Project = () => {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }} // Ensures animation only triggers when in view
               className="relative block overflow-hidden whitespace-nowrap col-span-12 col-start-1 md:col-span-20 md:col-start-2 w-full
-              text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-bold justify-center"
+                            text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-bold justify-center"
             >
               <div>
                 {/* Place Holder */}
@@ -245,211 +274,35 @@ const Project = () => {
           </div>
         </div>
 
-        {/* With Motion and Button*/}
-        <motion.div
-          className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen"
-          initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
-          whileInView={{ opacity: 1 }} // Fade to full opacity (visible)
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 3.5, ease: "easeInOut" }}
-        >
+        <div className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="flex flex-col justify-between gap-y-16 border-t border-[#524D47]">
-              {/* Portfolio */}
-              <div className="sticky top-0 bg-[#080807] pb-[10em]">
-                <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-12">
-                  <div className="h-full flex col-span-full col-start-1 w-full items-center">
-                    <motion.div
-                      className="w-full origin-left"
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-                    />
-                  </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 border-t border-[#524D47]">
+              <div className="relative col-span-5 px-[5%]">
 
-                  {/* Title (Animated) */}
-                  <AnimatePresence mode="wait">
-                    <motion.h3
-                      key={title}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="col-span-5 col-start-1 font-semibold py-4 2xl:py-3 text-[3.5rem] "
-                    >
-                      {title}
-                      {/* <GoArrowUpRight className='inline-block text-[#644f3e]' /> */}
-                    </motion.h3>
-                  </AnimatePresence>
+                {projects.map((project, index) => (
+                  <ProjectInfo key={index} project={project} />
+                ))}
+              </div>
 
-                  {/* Animated Tags */}
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={tags.join(",")}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="flex items-center gap-x-[10px] col-span-6 col-end-[-1] h-full text-[20px] justify-self-end " // start from the end
-                    >
-                      {tags.map((tag, index) =>
-                        tag.toLowerCase() === "github" ? (
-                          <a
-                            key={index}
-                            href={gitHub}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="border rounded-full border-[#524D47] bg-button flex px-3 py-1 transition-transform duration-250 ease-in-out hover:scale-110 active:scale-90 hover:bg-[#847A6F]"
-                          >
-                            {tag}
-                          </a>
-                        ) : (
-                          <span
-                            key={index}
-                            className="border rounded-full bg-button border-[#524D47] flex px-3 py-1 justify-center items-center"
-                          >
-                            {tag}
-                          </span>
-                        ),
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
 
-                  {/* Content Section */}
-                  <div className="flex flex-col w-full h-full col-span-5 col-start-1 text-heading gap-y-4">
-                    {/* Animated Description */}
-                    <AnimatePresence mode="wait">
-                      <motion.p
-                        key={description}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 1, ease: "easeInOut" }}
-                        className="font-thin text-balance text-[1.25rem] pt-4 "
-                      >
-                        {description}
-                      </motion.p>
-                    </AnimatePresence>
+              {/* Project Image */}
+              <div className="relative col-span-7 rounded-xl">
+                {projects.map((project, index) => (
+                  <ProjectImage key={index} project={project} />
+                ))}
 
-                    {/* Animated Tech Stack */}
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={tech.join(",")} // Ensure key changes properly
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 50 }} // Keep exit y-movement smaller
-                        transition={{ duration: 1, ease: "easeInOut" }} // Make it faster for a smoother effect
-                        className="pt-4  bg-line relative min-h-[50px]" // Stabilize height
-                      >
-                        <div className="flex flex-wrap gap-x-3 gap-y-3">
-                          {tech.map((item, index) => (
-                            <span
-                              className="flex px-3 py-1 rounded-full bg-border bg-button"
-                              key={index}
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
-                      </motion.div>
-                    </AnimatePresence>
-
-                    {/* Buttons Positioned Bottom-Left */}
-                    <div className="flex items-end justify-between h-full mt-auto gap-x-3">
-                      <div className="flex items-end justify-start h-full mt-auto gap-x-3">
-                        <button
-                          onClick={handlePrevious}
-                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
-                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full
-                          before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 active:scale-90 overflow-hidden"
-                        >
-                          <span className="relative z-10">Prev</span>
-                        </button>
-
-                        <button
-                          onClick={handleNext}
-                          className="relative bg-border bg-button text-[18px] flex px-7 py-1 rounded-full shadow-md cursor-pointer
-                          transition-transform duration-[0.35s] ease-in-out before:absolute before:inset-0 before:bg-[#847A6F] before:rounded-full
-                          before:scale-x-0 before:origin-right before:transition-transform before:duration-[0.35s] hover:before:scale-x-100 active:scale-90 overflow-hidden"
-                        >
-                          <span className="relative z-10">Next</span>
-                        </button>
-
-                      </div>
-                      <div className="relative flex items-center order-first h-fit gap-x-2 overflow-clip text-[18px] text-heading-4 leading-tighter">
-                        Page
-                        <span className="h-[2px] w-6 rounded-full bg-button"></span>
-                        <AnimatePresence mode="wait">
-                          <span className="relative block h-[24px] w-[24px]">
-                            {" "}
-                            {/* Ensure stable layout */}
-                            <motion.span
-                              key={currentIndex} // Ensure this changes
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              exit={{ opacity: 0, y: -10 }} // Reduce y-movement for smoother transition
-                              transition={{ duration: 1, ease: "easeInOut" }} // Shorter duration
-                              className="absolute left-0 right-0"
-                            >
-                              {currentIndex + 1}
-                            </motion.span>
-                          </span>
-                        </AnimatePresence>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Image Section */}
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={title} // <--- this makes it animate on change
-                      className="relative flex items-center justify-center w-full col-span-7 col-start-6 aspect-square overflow-hidden max-h-[600px]"
-                      initial={{ opacity: 0, y: 0 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -5 }}
-                      transition={{ duration: 1 }}
-                    >
-                      <Image
-                        className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125 grayscale"
-                        src={backg}
-                        alt="backg"
-                        fill
-                        style={{ objectFit: "cover" }}
-                      />
-                      <motion.div
-                        initial={{ opacity: 0, y: 0 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -5 }}
-                        transition={{ duration: 1 }}
-                        className={`z-10 w-5/6 space-y-4 rounded-lg overflow-clip ${title === "Simplisplit"
-                          ? "border-[#524D47] shadow-xl w-[30%] max-w-[250px] rounded-xl object-fit"
-                          : ""
-                          }`}
-                      >
-                        <video
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
-                        >
-                          <source src={image} type="video/mp4"/>
-                          Your browser does not support the video tag.
-                        </video>
-                      </motion.div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
               </div>
             </div>
+
           </div>
 
+
           {/* Button Section */}
+
           <div
-            className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
-                    font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
-                    hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title "
+            className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[10%]
+                          font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
+                          hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title w-full "
           >
             <a
               href="https://github.com/tadiday"
@@ -461,7 +314,7 @@ const Project = () => {
               </span>
               <GoArrowUpRight
                 className="inline-block text-[#745f4e] group-hover/title:text-[#967A54]
-                          transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
+                                transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
               />
               <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
                 <div className="flex flex-col h-full -mb-5">
@@ -473,11 +326,10 @@ const Project = () => {
               </div>
             </a>
           </div>
-        </motion.div>
 
+        </div>
 
-
-        {/* Mobile Version 2*/}
+        {/* Mobile Section */}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
             <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
@@ -495,14 +347,17 @@ const Project = () => {
                       viewport={{ once: true }}
                       transition={{ duration: 1 }}
                     >
-                      <Image
-                        className="absolute object-cover w-full h-full rounded-xl brightness-75 contrast-125"
-                        src={project.backg}
-                        alt="background"
-                        fill
-                        priority // only first project
-                        style={{ objectFit: "cover" }}
-                      />
+                      <div className="absolute inset-0 z-0 rounded-md overflow-hidden">
+                        <Image
+                          className="object-cover w-full h-full brightness-100 contrast-90 "
+                          src={project.backg}
+                          alt="background"
+                          fill
+                          priority
+                          style={{ objectFit: "cover" }}
+                        />
+                        <div className="absolute inset-0 bg-striped-lines opacity-5"></div>
+                      </div>
 
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -556,7 +411,7 @@ const Project = () => {
                       <div className="flex flex-wrap gap-x-2 gap-y-3 pt-3">
                         {project.tech.map((item, index) => (
                           <span
-                            className="flex px-2 py-0.5 rounded-full bg-border bg-button text-[0.75rem]"
+                            className="flex px-2 py-0.5 rounded-full bg-border text-[0.75rem]"
                             key={index}
                           >
                             {item}

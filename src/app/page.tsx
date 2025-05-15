@@ -53,6 +53,8 @@ export default function Main() {
     <div className="relative w-full max-w-screen text-white ">
 
       <div id="noise-overlay"></div>
+      {/* <div className="bg-striped-lines z-[1000] fixed inset-0 opacity-5"></div> */}
+
       {/* NavBar */}
       <motion.div
         className="fixed sm:top-0 bottom-0 sm:left-0 z-60 flex flex-row sm:flex-col items-end justify-center w-[100%] sm:w-[10%] sm:max-w-[60px] sm:h-full"
