@@ -300,7 +300,7 @@ const Project = () => {
 
         <div className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 border-t border-[#524D47]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 border-t border-[#524D47] p-5">
               <div className="relative col-span-5 px-[5%]">
 
                 {projects.map((project, index) => (
@@ -352,6 +352,8 @@ const Project = () => {
           </div>
 
         </div>
+
+
 
         {/* Mobile Section */}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">

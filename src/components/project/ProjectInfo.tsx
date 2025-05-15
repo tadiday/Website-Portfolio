@@ -4,7 +4,6 @@ import { GoArrowUpRight } from "react-icons/go";
 import { FaGithub } from "react-icons/fa6";
 import { IoIosGlobe } from "react-icons/io";
 
-
 interface Project {
     title: string;
     date: string;
@@ -18,33 +17,29 @@ interface Project {
     website: string;
 }
 
+
 const ProjectInfo = ({ project }: { project: Project }) => {
 
-
-    const isSimplisplit = project.title === "Simplisplit";
 
     return (
 
         <div className="flex flex-col lg:h-screen pt-10">
 
             <h3
-                className="font-normal font-dm text-[20px] w-full font-mono text-[#7e7e7e] "
+                className="font-normal text-[18px] w-full font-mono text-[#8b8b8b] "
             >
-                {project.type}
+                [{project.type}]
             </h3>
             <h3
-                className="font-semibold font-dm text-[60px] w-full -mt-1"
+                className="font-semibold font-mono text-[50px] w-full -mt-1"
             >
                 {project.title}
             </h3>
 
-            <p className="font-normal text-[1.25rem] py-4">
+            <p className="font-normal font-mono text-[18px] py-4">
                 {project.description}
             </p>
 
-            <p className="font-normal text-[1.25rem] flex items-center gap-2 pb-4">
-
-            </p>
             <motion.div
                 key={project.tech.join(",")} // Ensure key changes properly
                 initial={{ opacity: 0, y: 50 }}
@@ -56,7 +51,7 @@ const ProjectInfo = ({ project }: { project: Project }) => {
                 <div className="flex flex-wrap gap-x-3 gap-y-3">
                     {project.tech.map((item, index) => (
                         <span
-                            className="flex px-3 py-1 rounded-full bg-border"
+                            className="flex px-3 py-1 rounded-full bg-border font-mono text-[#8b8b8b] font-medium"
                             key={index}
                         >
                             {item}
