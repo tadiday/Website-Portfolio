@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
 import ProjectImage from "@/components/project/ProjectImage";
@@ -30,9 +29,7 @@ const Project = () => {
       image: "/assets/gif/webport.mp4",
       tags: ["Web-App", "GitHub", "2025"],
       type: "Website Application - 2025",
-      // backg: "/assets/background/background4.jpg",
       backg: "/assets/background/bg7.webp",
-      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
     },
     {
       title: "Traffic Dashboard",
@@ -54,9 +51,7 @@ const Project = () => {
       image: "/assets/gif/traffic.mp4",
       tags: ["Web-App", "GitHub", "2025"],
       type: "Website Application - 2025",
-      // backg: "/assets/background/background4.jpg",
       backg: "/assets/background/bg6.webp",
-      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
     },
     {
       title: "Simplisplit",
@@ -70,10 +65,7 @@ const Project = () => {
       image: "/assets/gif/simplisplit.mp4",
       tags: ["Mobile", "Private", "2023"],
       type: "Mobile Application - 2023",
-      // backg: "/assets/background/background1.jpg",
       backg: "/assets/background/bg8.png",
-      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
-
     },
     {
       title: "Food Swipe",
@@ -86,8 +78,6 @@ const Project = () => {
         "Node.js",
         "Google Map",
         "Framer Motion",
-        // "Firebase",
-        // "Swift",
       ],
       gitHub: "https://github.com/tadiday/Food-Swipe",
       website: "Private",
@@ -97,37 +87,12 @@ const Project = () => {
       image: "/assets/gif/foodswipe.mp4",
       tags: ["Web", "Mobile", "GitHub", "2022"],
       type: "Website Application - 2022",
-      // backg: "/assets/background/background5.jpg",
       backg: "/assets/background/bg9.png",
-      theme: "from-[#6e4230] via-[#411d13] to-[#260701]",
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { title, description, tech, image, gitHub, tags, backg } =
-    projects[currentIndex];
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-  };
-
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? projects.length - 1 : prevIndex - 1,
-    );
-  };
 
   const sectionTitle = "SELECTED PROJECTS";
-
-
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "start start"] // from when bottom hits viewport to when top hits top
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [1.7, 1]);
-
 
   return (
     <section

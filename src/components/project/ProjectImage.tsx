@@ -2,9 +2,21 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
+interface Project {
+    title: string;
+    date: string;
+    tech: string[];
+    gitHub: string;
+    description: string;
+    image: string;
+    tags: string[];
+    type: string;
+    backg: string;
+    website: string;
+}
 
 
-const ProjectItem = ({ project }: { project: any }) => {
+const ProjectItem = ({ project }: { project: Project }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -12,12 +24,9 @@ const ProjectItem = ({ project }: { project: any }) => {
     });
 
     const blurValue = useTransform(scrollYProgress, [0, 0.5], [50, 0]);
-    const scale = useTransform(scrollYProgress, [0, 1], [1.7, 1]);
 
     const [filter, setFilter] = useState("blur(50px)");
     const [hasCleared, setHasCleared] = useState(false);
-    const [hasReachedTop, setHasReachedTop] = useState(false);
-
 
     useEffect(() => {
         const unsubscribe = blurValue.on("change", (val) => {

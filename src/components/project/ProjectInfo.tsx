@@ -1,8 +1,4 @@
-import { useRef, useEffect, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { GoArrowUpRight } from "react-icons/go";
-import { FaGithub } from "react-icons/fa6";
-import { IoIosGlobe } from "react-icons/io";
+import { motion } from "framer-motion";
 
 interface Project {
     title: string;

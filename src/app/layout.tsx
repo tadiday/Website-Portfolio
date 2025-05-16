@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Orbitron } from "next/font/google";
@@ -20,11 +20,6 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-const dmSans = DM_Sans({
-  weight: ["400", "700", "900"],
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-});
 
 export const metadata: Metadata = {
   title: "Peter Cao - Software Engineer",
