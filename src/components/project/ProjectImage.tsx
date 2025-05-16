@@ -2,6 +2,8 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
+
+
 const ProjectItem = ({ project }: { project: any }) => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -33,22 +35,44 @@ const ProjectItem = ({ project }: { project: any }) => {
 
     const isSimplisplit = project.title === "Simplisplit";
 
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setMousePos({
+            x: e.clientX - rect.left + 50,
+            y: e.clientY - rect.top + 25,
+        });
+    };
+
+
+
     return (
         <div
             ref={ref}
             className="flex h-screen w-full items-center justify-center overflow-clip py-5"
         >
-            <div className={`relative w-full h-full overflow-clip rounded-md `}>
+            <div
+                className={`relative w-full h-full overflow-clip rounded-md`}
+                onMouseMove={handleMouseMove}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
 
 
-                <motion.div
-                    // style={{ scale, filter }}
+
+                <motion.a
+                    style={{filter}}
+                    href={project.gitHub}
                     className="relative flex items-center justify-center w-full h-full "
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
                 >
+
+
 
                     <div className="absolute inset-0 z-0 rounded-md overflow-hidden">
                         <Image
@@ -63,7 +87,7 @@ const ProjectItem = ({ project }: { project: any }) => {
                     </div>
 
                     <div
-                        className={`z-10 m-2 p-3 space-y-4 w-full rounded-xl overflow-clip bg-white/60 backdrop-blur-sm ${isSimplisplit
+                        className={`z-10 m-2 p-3 space-y-4 w-full rounded-xl overflow-clip bg-white/50 backdrop-blur-sm ${isSimplisplit
                             ? "w-[60%] max-w-[375px] rounded-xl object-fit"
                             : ""
                             }`}
@@ -78,7 +102,26 @@ const ProjectItem = ({ project }: { project: any }) => {
                             <source src={project.image} type="video/mp4" />
                         </video>
                     </div>
-                </motion.div>
+
+                    {isHovered &&(
+                        <div
+                            className="absolute z-10 transition-transform duration-150"
+                            style={{
+                                top: mousePos.y,
+                                left: mousePos.x,
+                                transform: "translate(-50%, -50%)",
+                                pointerEvents: "none",
+                            }}
+                        >
+                            <button className="flex items-center space-x-2 bg-[#868674]/70 backdrop-blur-sm px-4 py-2 rounded-md text-black shadow-md">
+                                <div className="flex items-center justify-center w-8 h-8 rounded-md bg-[#bcbcb8]/50">
+                                    ↳
+                                </div>
+                                <span className="text-sm font-medium">{project.gitHub !== "Private" ? <span>GitHub</span> :  <span>Private</span>}</span>
+                            </button>
+                        </div>
+                    )}
+                </motion.a>
             </div>
         </div>
     );
