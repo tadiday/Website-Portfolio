@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@config "../../tailwind.config.mjs"; /* or .ts or .mjs depending on your setup */
+@config "../../tailwind.config.mjs";
+/* or .ts or .mjs depending on your setup */
 @tailwind utilities;
 
 :root {
@@ -57,15 +58,15 @@ code {
   color: #bebebe;
 }
 
-.bg-line{
+.bg-line {
   border-top: 1px solid #524D47;
 }
 
-.bg-button{
+.bg-button {
   background-color: #524D47;
 }
 
-.bg-button-hover{
+.bg-button-hover {
   background-color: white;
 }
 
@@ -75,27 +76,81 @@ code {
 
 
 #noise-overlay {
-  pointer-events: none; /* Prevents interaction issues */
+  pointer-events: none;
+  /* Prevents interaction issues */
   content: "";
   background-color: transparent;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 750px;
-  opacity: 0.12; /* Adjust noise intensity */
-  position: fixed; /* Covers the whole screen */
+  opacity: 0.12;
+  /* Adjust noise intensity */
+  position: fixed;
+  /* Covers the whole screen */
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 50; /* Ensures noise is on top */
-  pointer-events: none; /* Ensures elements are clickable */
+  z-index: 50;
+  /* Ensures noise is on top */
+  pointer-events: none;
+  /* Ensures elements are clickable */
 }
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 }
+
+
+
+
+@keyframes grain {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-5%, 5%);
+  }
+
+  50% {
+    transform: translate(5%, -5%);
+  }
+
+  75% {
+    transform: translate(-5%, -5%);
+  }
+}
+
+.noise {
+  background-image: url('/path/to/noise.png');
+  /* or generated CSS noise */
+  animation: grain 8s steps(10) infinite;
+  mix-blend-mode: overlay;
+}
+
 
 /* Home Page CSS */
 
+
+@keyframes scrollLinesUp {
+  0% {
+    background-position-y: 100%;
+  }
+
+  100% {
+    background-position-y: 0%;
+  }
+}
+
+.bg-striped-lines {
+  background: linear-gradient(#fbf6c0, #fbf6c0 3px, transparent 0, transparent 9px);
+  background-size: 100% 7px;  /*Explanation below*/
+  animation: scrollLinesUp 20s linear infinite;
+}
 
 
