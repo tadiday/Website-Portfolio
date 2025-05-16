@@ -74,11 +74,11 @@ const Home = () => {
 
   return (
     <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0 px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-center bg-no-repeat z-0"
-    style={{
-      opacity,
-      transform: `scale(${scale})`,
-      transition: "all 0.3s ease-out",
-    }}
+      style={{
+        opacity: opacity === 0 ? 0 : opacity,
+        // transform: `scale(${scale})`,
+        transition: "all 0.3s ease-out",
+      }}
     >
       {/* Starry Background Canvas */}
       <canvas
@@ -94,7 +94,7 @@ const Home = () => {
 
       {/* Animated background overlay */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full bg-[#524D47] z-0"
+        className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_#726c64_0%,_#2c2926_100%)] z-0"
         initial={{ y: "100%", borderRadius: "100%" }}
         animate={{ y: "0%", borderRadius: "0%" }}
         transition={{ duration: 1.5, ease: [0.25, 0.8, 0.25, 1] }}
@@ -259,11 +259,11 @@ const Home = () => {
               initial={{ opacity: 0, y: 10, z: 10 }}
               animate={{ opacity: 1, y: 0, z: 10 }}
               transition={{ delay: 1.25, duration: 1, ease: "easeOut" }}
-              // style={{
-              //   opacity,
-              //   transform: `scale(${scale})`,
-              //   transition: "all 0.3s ease-out",
-              // }}
+            // style={{
+            //   opacity,
+            //   transform: `scale(${scale})`,
+            //   transition: "all 0.3s ease-out",
+            // }}
             >
               <div style={{
                 opacity,
