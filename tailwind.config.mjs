@@ -13,6 +13,9 @@ const config = {
         title: ['Major Mono Display', 'Montserrat Subrayada', 'Fjalla One', 'sans-serif'],
         header: ['Montserrat Subrayada', 'Fjalla One', 'sans-serif'],
         rale: ['Raleway', 'sans-serif'],
+        orbitron: 'var(--font-orbitron)',
+        dm: 'var(--font-dm-sans)',
+
       },
       gridTemplateColumns: {
         '25': 'repeat(25, 1fr)',
