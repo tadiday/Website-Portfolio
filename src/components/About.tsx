@@ -144,17 +144,22 @@ const Home = () => {
                   animate={{ opacity: 1 }}  // Fade in the container
                   transition={{ duration: 1 }} // Fade-in duration
                 >
-                  <motion.img
-                    className="object-contain w-full border-gray-700 rounded-2xl shadow-md"
-                    src="../assets/me/me2.avif"
-                    alt="LA Peter"
-                    initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    whileInView={{ clipPath: "inset(0 0 0 0)" }}  // Always animate when in view
-                    viewport={{ once: true }}  // Trigger animation once when image is in view
-                    width={500}  // Specify width
-                    height={500}  // Specify height
-                  />
+                  <div className="relative">
+                    <motion.img
+                      className="object-contain w-full border-gray-700 rounded-2xl shadow-md contrast-125"
+                      src="../assets/me/me2.avif"
+                      alt="LA Peter"
+                      initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      whileInView={{ clipPath: "inset(0 0 0 0)" }}  // Always animate when in view
+                      viewport={{ once: true }}  // Trigger animation once when image is in view
+                      width={500}  // Specify width
+                      height={500}  // Specify height
+                    />
+
+                    <div className="absolute py-4 pl-2 rounded-2xl inset-0 bg-striped-lines opacity-5"></div>
+                  </div>
+
                 </motion.div>
 
                 {/* Text Section */}
@@ -166,7 +171,7 @@ const Home = () => {
                   transition={{ duration: 1.5, ease: "easeOut" }}>
 
                   {/* Introduction Section */}
-                  <p className="hidden sm:flex text-[16px] sm:text-[30px] md:text-[30px] lg:text-[30px] sm:text-balance font-light">
+                  <p className="hidden sm:flex text-[16px] sm:text-[30px] md:text-[30px] lg:text-[25px] font-mono font-medium">
                     With a passion for full-stack development, I specialize in creating user-friendly front-end designs and
                     integrating them with robust back-end systems—combining creativity and technical expertise to deliver impactful user experiences.
                   </p>
@@ -176,9 +181,10 @@ const Home = () => {
                     <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                       <span className="h-full text-nowrap">(About Me)</span>
                     </span>
-                    <p className="sm:max-w-[40ch] sm:text-balance font-normal">
-                      I&apos;m a Computer Science student at Virginia Tech, graduating in May 2025. I&apos;ve contributed to projects involving system optimization,
-                      automation tools, and user interface development, allowing me to build well-rounded solutions while collaborating across different areas of development.
+                    <p className="max-w-[50ch] font-normal font-mono">
+                      I&apos;m a graduate student at Virginia Tech. I&apos;ve contributed to projects involving system optimization,
+                      automation tools, and user interface development. Currently looking for full-time opportunities.
+                      
                     </p>
                   </div>
 
@@ -186,7 +192,7 @@ const Home = () => {
                     <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                       <span className="h-full text-nowrap">(About Me)</span>
                     </span>
-                    <p className="sm:max-w-[40ch] sm:text-balance font-normal">
+                    <p className="sm:max-w-[40ch] sm:text-balance font-normal ">
                       I&apos;m a Computer Science student at Virginia Tech, graduating in May 2025. I&apos;ve worked on projects involving system optimization,
                       automation tools, and user interface development.
                     </p>
@@ -197,7 +203,7 @@ const Home = () => {
                     <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                       <span className="h-full text-nowrap ">(Hobbies)</span>
                     </span>
-                    <p className="sm:max-w-[40ch] sm:text-balance font-normal">
+                    <p className="sm:max-w-[50ch] font-normal font-mono">
                       When I&apos;m not coding, I enjoy playing games and watching anime. I also love cooking, trying new restaurants, and traveling.
                       Currently, my travel bucket list includes Seattle, Miami, Austin, and Las Vegas.
 
