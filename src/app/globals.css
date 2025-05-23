@@ -104,39 +104,7 @@ code {
 }
 
 
-
-
-@keyframes grain {
-
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-
-  25% {
-    transform: translate(-5%, 5%);
-  }
-
-  50% {
-    transform: translate(5%, -5%);
-  }
-
-  75% {
-    transform: translate(-5%, -5%);
-  }
-}
-
-.noise {
-  background-image: url('/path/to/noise.png');
-  /* or generated CSS noise */
-  animation: grain 8s steps(10) infinite;
-  mix-blend-mode: overlay;
-}
-
-
 /* Home Page CSS */
-
-
 @keyframes scrollLinesUp {
   0% {
     background-position-y: 100%;
