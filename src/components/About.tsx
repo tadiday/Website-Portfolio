@@ -157,7 +157,13 @@ const Home = () => {
                       height={500}  // Specify height
                     />
 
-                    <div className="absolute py-4 pl-2 rounded-2xl inset-0 bg-striped-lines opacity-5"></div>
+                    <motion.div className="absolute py-4 pl-2 rounded-2xl inset-0 bg-striped-lines opacity-5"
+                      initial={{ clipPath: "inset(0 0 100% 0)" }}  // Initially, hide the image by clipping it from the bottom
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      whileInView={{ clipPath: "inset(0 0 0 0)" }}  // Always animate when in view
+                      viewport={{ once: true }}  // Trigger animation once when image is in view
+                      >
+                    </motion.div>
                   </div>
 
                 </motion.div>
