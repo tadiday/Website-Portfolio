@@ -37,8 +37,8 @@ const Project = () => {
       tech: [
         "React.js",
         "Charts.js",
-        "Node.js",
         "Express.js",
+        "Node.js", 
         "Docker",
         "MySQL",
       ],
@@ -76,7 +76,7 @@ const Project = () => {
         "Tailwind",
         "Next.js",
         "Node.js",
-        "Google Map",
+        "Google Maps API",
         "Framer Motion",
       ],
       gitHub: "https://github.com/tadiday/Food-Swipe",
@@ -402,7 +402,7 @@ const Project = () => {
                       <div className="flex flex-wrap gap-x-2 gap-y-3 pt-3">
                         {project.tech.map((item, index) => (
                           <span
-                            className="flex px-2 py-0.5 rounded-full bg-border text-[0.75rem]"
+                            className="flex px-2 py-0.5 rounded-full bg-border text-[0.80rem] font-mono font-medium"
                             key={index}
                           >
                             {item}
