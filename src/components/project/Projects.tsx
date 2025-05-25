@@ -355,15 +355,15 @@ const Project = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 2 }}
-                        className={`z-10 w-8/9 space-y-4 rounded-lg overflow-clip
-                      ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-xl object-fit" : ""}`}
+                        className={`z-10 m-2 p-1 space-y-4 rounded-md overflow-clip bg-white/50 backdrop-blur-sm
+                      ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-md object-fit" : ""}`}
                       >
                         <video
                           autoPlay
                           muted
                           loop
                           playsInline
-                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-lg shadow-md"
+                          className="object-contain w-full h-auto max-w-full max-h-full border-gray-700 rounded-sm shadow-md"
                         >
                           <source src={project.image} type="video/mp4" />
                           Your browser does not support the video tag.
