@@ -33,7 +33,7 @@ const Experience = () => {
     professional: [
       {
         company: "Virginia Tech",
-        date: "May 2023 - Present",
+        date: "May 2023 - May 2025",
         title: "Undergraduate Teaching Assistant",
         link: "https://cs.vt.edu/",
         location: "Blacksburg, VA",
@@ -86,7 +86,7 @@ const Experience = () => {
       },
       {
         company: "Virginia Tech IDPro",
-        date: "Sep - Nov 2023",
+        date: "Sep - Dec 2023",
         title: "SMART Research",
         link: "https://idpro.enge.vt.edu/",
         location: "Blacksburg, VA",
@@ -296,8 +296,8 @@ const Experience = () => {
               {experiences.professional.map((job, index) => (
                 <div key={"profession" + index} className="">
                   <div
-                    className="border-[#524D47] justify-start gap-x-2 text-left text-[19px] md:text-[25px] sm:p-[2%]
-                    font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
+                    className="border-[#524D47] justify-start gap-x-2 text-left text-[14px] md:text-[25px] sm:p-[2%]
+                    font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4 
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 "
                   >
                     <span className="sm:col-span-3 sm:col-start-1 gap-x-5 sm:py-4">
@@ -306,9 +306,14 @@ const Experience = () => {
                         whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
                         viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5"
+                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5 font-mono justify-between sm:justify-start sm:items-center group/title"
                       >
-                        <span className="hidden sm:flex">
+
+                        <span className="block sm:hidden  group-hover/title:text-[#967A54]">
+                          {job.company}
+                        </span>
+
+                        <span className="hidden sm:flex ">
                           {job.image && (
                             <job.image className="text-[#866A44]" />
                           )}
@@ -325,17 +330,17 @@ const Experience = () => {
                       className="sm:col-span-7 sm:col-start-4 sm:py-4 sm:pl-10"
                     >
                       <a
-                        className="space-x-2 group/link group/title"
+                        className="space-x-2 group/link group/title font-mono"
                         href={job.link}
                         target="_blank"
                       >
-                        <span className="inline-block group-hover/title:text-[#967A54] ">
+                        <span className="inline-block group-hover/title:text-[#967A54]">
                           {job.title}
                         </span>
                         <span className="hidden sm:inline-block group-hover/title:text-[#967A54]">
                           @
                         </span>
-                        <span className="block sm:inline-block  group-hover/title:text-[#967A54]">
+                        <span className="hidden sm:inline-block  group-hover/title:text-[#967A54]">
                           {job.company}
                           <GoArrowUpRight
                             className="inline-block text-[#745f4e] group-hover/title:text-[#967A54]
@@ -344,10 +349,10 @@ const Experience = () => {
                         </span>
                       </a>
                       <div className="flex flex-col w-full col-span-6 col-start-6 text-lg sm:gap-y-4">
-                        <p className="hidden sm:flex font-thin text-[1rem] sm:text-[18px]">
+                        <p className="hidden sm:flex font-thin font-mono text-[1rem] sm:text-[18px]">
                           {job.description}
                         </p>
-                        <ul className="flex flex-col sm:hidden font-thin text-[1rem] sm:text-[18px] list-disc pl-4 gap-y-2">
+                        <ul className="flex flex-col sm:hidden font-thin text-[14px] sm:text-[18px] list-disc pl-4 gap-y-2">
                           {job.mobile_description.map((item, index) => (
                             <li key={index}>{item}</li>
                           ))}
@@ -357,7 +362,7 @@ const Experience = () => {
                             {job.skills.map((tech, index) => (
                               <span
                                 key={index}
-                                className="flex justify-center rounded-full bg-[#524D47] px-2 py-0.5 sm:px-3 sm:py-1 min-w-[3em] text-[0.75rem] sm:text-[18px]"
+                                className="flex justify-center rounded-full bg-border font-mono text-[#8b8b8b] px-2 py-0.5 sm:px-3 sm:py-1 min-w-[3em] text-[0.75rem] sm:text-[18px]"
                               >
                                 <span className="w-full text-center">
                                   {tech}

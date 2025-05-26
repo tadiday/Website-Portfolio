@@ -194,18 +194,18 @@ const Home = () => {
                     </p>
                   </div>
 
-                  <div className="flex sm:hidden flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[16px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
+                  <div className="flex sm:hidden flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[14px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
                     <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                       <span className="h-full text-nowrap">(About Me)</span>
                     </span>
-                    <p className="sm:max-w-[40ch] sm:text-balance font-normal ">
+                    <p className="sm:max-w-[40ch] sm:text-balance font-normal font-mono ">
                       I&apos;m a Computer Science student at Virginia Tech, graduating in May 2025. I&apos;ve worked on projects involving system optimization,
                       automation tools, and user interface development.
                     </p>
                   </div>
 
                   {/* Hobbies Section */}
-                  <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[16px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
+                  <div className="flex flex-col gap-x-10 gap-y-space-sm lg:flex-row text-[14px] sm:text-[20px] md:text-[20px] lg:text-[20px]">
                     <span className='flex h-fit font-mono font-bold tracking-mono flex-grow max-w-[150px]'>
                       <span className="h-full text-nowrap ">(Hobbies)</span>
                     </span>
