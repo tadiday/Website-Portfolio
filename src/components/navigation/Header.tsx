@@ -13,12 +13,12 @@ const Header = () => {
                 animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
                 transition={{ delay: 1.25, duration: 1, ease: "easeOut" }} // Delayed fade-in
             >
-                <FaRegCopyright className="flex mr-2 mt-1" /> 2025 Peter Cao
+                <FaRegCopyright className="flex mr-2" /> 2025 Peter Cao
             </motion.div>
 
             {/* Right Side: Navigation Links */}
             <motion.ul
-                className=" hidden col-end-23 col-span-6 text-[22px] sm:flex space-x-6 font-light text-right font-mono"
+                className=" hidden col-end-24 col-span-6 text-[22px] sm:flex space-x-6 font-light text-right font-mono"
                 initial={{ opacity: 0, y: 10, z: 10 }} // Start with invisible text
                 animate={{ opacity: 1, y: 0, z: 10 }} // Fade-in after delay
                 transition={{ delay: 1.25, duration: 1, ease: "easeOut" }} // Delayed fade-in
