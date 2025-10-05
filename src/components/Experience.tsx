@@ -292,11 +292,11 @@ const Experience = () => {
 
         <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-color-section ">
           <div className="w-full pt-16 ">
-            <div className="top-0 flex py-5 flex-col bg-section border-t border-[#524D47] gap-y-10 sm:gap-y-4 group">
+            <div className="top-0 flex py-5 flex-col bg-section border-t border-[color:var(--color-primary)] gap-y-10 sm:gap-y-4 group">
               {experiences.professional.map((job, index) => (
                 <div key={"profession" + index} className="">
                   <div
-                    className="border-[#524D47] justify-start gap-x-2 text-left text-[14px] md:text-[25px] sm:p-[2%]
+                    className="justify-start gap-x-2 text-left text-[14px] md:text-[25px] sm:p-[2%]
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4 
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 "
                   >
@@ -379,14 +379,14 @@ const Experience = () => {
                       whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
                       viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                       transition={{ duration: 1, ease: "easeOut" }}
-                      className="flex flex-col w-full col-span-6 col-start-6 pl-10 text-lg border-l border-[#524D47] gap-y-4"
+                      className="flex flex-col w-full col-span-6 col-start-6 pl-10 text-lg gap-y-4"
                     ></motion.div>
                   </div>
                 </div>
               ))}
 
               <div
-                className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
+                className="flex justify-start gap-x-2 text-left text-[25px] p-[2%]
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title "
               >
