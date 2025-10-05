@@ -42,7 +42,7 @@ const ProjectInfo = ({ project }: { project: Project }) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 50 }} // Keep exit y-movement smaller
                 transition={{ duration: 1, ease: "easeInOut" }} // Make it faster for a smoother effect
-                className="pt-4 bg-line relative min-h-[50px]" // Stabilize height
+                className="pt-4 color-line relative min-h-[50px]" // Stabilize height
             >
                 <div className="flex flex-wrap gap-x-3 gap-y-3">
                     {project.tech.map((item, index) => (

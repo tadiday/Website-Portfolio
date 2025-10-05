@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="max-w-screen bg-[#524D47]">
+    <html lang="en" className="max-w-screen bg-home">
       <head>
         <link rel="icon" type="image/png" href="/assets/logo/logo.png" />
       </head>

@@ -73,7 +73,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0 px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-home bg-black bg-center bg-no-repeat z-0"
+    <section className="h-[100svh] sm:h-screen max-w-screen sticky top-0 px-[5%] pt-[35%] md:px-[10%] md:pt-[10%] pb-20 text-color-section bg-black bg-center bg-no-repeat z-0"
       style={{
         opacity: opacity === 0 ? 0 : opacity,
         // transform: `scale(${scale})`,

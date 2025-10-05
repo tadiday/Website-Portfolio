@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="pb-25 sm:pb-0 grid gap-x-4 gap-y-5 sm:gap-y-20 grid-cols-2 sm:grid-cols-[repeat(20,minmax(0,1fr))] md:grid md:grid-cols-14 text-[#80776d] pt-16 text-[14px] sm:text-[16px]">
       <div className="w-full col-start-1 col-span-2 sm:col-span-6 font-mono">
         <h3 className="font-bold mb-2">Information</h3>
-        <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
+        <div className="h-[1px] w-full color-line mt-2 mb-2"></div>
         <ul className="space-y-1">
           <li className="">{localTime} Fairfax, VA</li>
 
@@ -30,7 +30,7 @@ const Footer = () => {
       {/* Socials Section */}
       <div className="w-full col-start-1 col-span-1 sm:col-start-7 sm:col-span-4 font-mono">
         <h3 className="font-bold mb-2">Socials</h3>
-        <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
+        <div className="h-[1px] w-full color-line mt-2 mb-2"></div>
         <ul className="space-y-1">
           <li>
             <a
@@ -40,7 +40,7 @@ const Footer = () => {
               style={{ pointerEvents: "none" }} // Disables interaction on empty space
             >
               <span
-                className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
+                className="hover:text-[var(--footer-text-hover)] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
                 style={{ pointerEvents: "auto" }} // Enables interaction on the text
               >
                 Linkedin
@@ -55,7 +55,7 @@ const Footer = () => {
               style={{ pointerEvents: "none" }}
             >
               <span
-                className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
+                className="hover:text-[var(--footer-text-hover)] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
                 style={{ pointerEvents: "auto" }}
               >
                 Instagram
@@ -70,7 +70,7 @@ const Footer = () => {
               style={{ pointerEvents: "none" }}
             >
               <span
-                className="hover:text-[#967A54] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
+                className="hover:text-[var(--footer-text-hover)] hover:scale-105 hover:translate-x-1 transition-transform duration-300 inline-block"
                 style={{ pointerEvents: "auto" }}
               >
                 GitHub
@@ -83,13 +83,13 @@ const Footer = () => {
       {/* Resources Section */}
       <div className="w-full col-start-2 col-span-1 sm:col-start-11 sm:col-span-4 font-mono">
         <h3 className="font-bold mb-2">Resources</h3>
-        <div className="h-[1px] w-full bg-[#524D47] mt-2 mb-2"></div>
+        <div className="h-[1px] w-full color-line mt-2 mb-2"></div>
         <ul className="space-y-1">
           <li>
             <a
               href="/assets/documents/resume.pdf"
               target="_blank"
-              className="hover:text-[#967A54] flex items-center gap-2 transition-transform duration-300 hover:scale-105 hover:translate-x-1 origin-left"
+              className="hover:text-[var(--footer-text-hover)] flex items-center gap-2 transition-transform duration-300 hover:scale-105 hover:translate-x-1 origin-left"
             >
               Résumé
             </a>
