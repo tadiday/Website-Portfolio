@@ -29,6 +29,7 @@
   --contact-button: #866a44; 
   --contact-button-hover: #524D47; /* button hover */
   --contact-button-hover-rgb: 82 77 71;
+  --contact-border: #524D47;
 
 
   --footer-text-hover: #967A54;   /* hover / highlight */
@@ -128,6 +129,10 @@ code {
 
 .contact-button-hover{
   background-color: var(--contact-button-hover);
+}
+
+.contact-border{
+  border: 1px solid var(--contact-border);
 }
 
 .footer-text-hover {

@@ -265,7 +265,7 @@ const Project = () => {
 
         <div className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 border-t border-[#524D47] p-5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 color-line p-5">
               <div className="relative col-span-5 px-[5%]">
 
                 {projects.map((project, index) => (
@@ -289,7 +289,7 @@ const Project = () => {
           {/* Button Section */}
 
           <div
-            className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[10%]
+            className="flex justify-start gap-x-2 text-left text-[25px] p-[10%]
                           font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                           hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title w-full "
           >
@@ -323,7 +323,7 @@ const Project = () => {
         {/* Mobile Section */}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
+            <div className="flex flex-col justify-between gap-y-10 color-line py-5">
               {/* Portfolio */}
               <div className="sticky top-0 bg-section pb-[2em] flex flex-row flex-wrap gap-y-14">
                 {projects.map((project, index) => (
@@ -356,7 +356,7 @@ const Project = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 2 }}
                         className={`z-10 m-2 p-1 space-y-4 rounded-md overflow-clip bg-white/50 backdrop-blur-sm
-                      ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-md object-fit" : ""}`}
+                      ${project.title === "Simplisplit" ? "shadow-xl w-[40%] max-w-[250px] rounded-md object-fit" : ""}`}
                       >
                         <video
                           autoPlay
@@ -416,7 +416,7 @@ const Project = () => {
                 {/* Button Section */}
 
                 <div
-                  className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
+                  className="flex justify-start gap-x-2 text-left text-[25px] p-[2%]
                           font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                           hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title w-full "
                 >
