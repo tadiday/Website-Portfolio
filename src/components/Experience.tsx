@@ -292,7 +292,7 @@ const Experience = () => {
 
         <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen experience-text ">
           <div className="w-full pt-16 ">
-            <div className="top-0 flex py-5 flex-col bg-section border-t border-[color:var(--color-primary)] gap-y-10 sm:gap-y-4 group">
+            <div className="top-0 flex py-5 flex-col bg-section border-t border-[var(--color-primary)] gap-y-10 sm:gap-y-4 group">
               {experiences.professional.map((job, index) => (
                 <div key={"profession" + index} className="">
                   <div
@@ -321,7 +321,7 @@ const Experience = () => {
                         <span className="block sm:hidden experience-mobile-text">
                           {job.date}
                         </span>
-                        <span className="experience-text">
+                        <span className="hidden sm:block experience-text">
                           {job.date}
                         </span>
                       </motion.div>
