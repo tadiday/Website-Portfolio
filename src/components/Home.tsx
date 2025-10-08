@@ -186,9 +186,9 @@ const Home = () => {
                       transition: "all 0.3s ease-out",
                     }}
                   >
-                    <p className="font-light">AVAILABLE FOR HIRE</p>
+                    <p className="font-light">ACTIVELY SEEKING FOR</p>
                     <div className="text-[30px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">
-                      MAY 2025
+                      FULL-TIME
                     </div>
                   </div>
                 </div>
@@ -245,9 +245,9 @@ const Home = () => {
                     transition: "all 0.3s ease-out",
                   }}
                 >
-                  <p className="font-light">AVAILABLE FOR HIRE</p>
+                  <p className="font-light">ACTIVELY SEEKING FOR</p>
                   <div className="text-[34px] sm:text-[70px] md:text-[70px] lg:text-[70px] ]">
-                    MAY 2025
+                    FULL-TIME
                   </div>
                 </div>
               </div>
