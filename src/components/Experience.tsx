@@ -127,11 +127,11 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="h-full min-h-[500px] max-w-screen  bg-[#080807] rounded-b-3xl p-4 flex flex-col items-center z-30 text-[#bebebe]"
+      className="h-full min-h-[500px] max-w-screen  bg-section rounded-b-3xl p-4 flex flex-col items-center z-30 text-color-section"
     >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
-          <div className="mx-5 sm:mx-0 grid grid-cols-12 sm:gap-x-2 md:grid md:grid-cols-20 text-home">
+          <div className="mx-5 sm:mx-0 grid grid-cols-12 sm:gap-x-2 md:grid md:grid-cols-20 text-color-section">
             {/* Section Title*/}
             <motion.h2
               initial="initial"
@@ -211,7 +211,7 @@ const Experience = () => {
             </motion.h2>
 
             <motion.span
-              className="hidden sm:flex text-[25px] font-thin text-home col-span-6 col-start-9"
+              className="hidden sm:flex text-[25px] font-thin text-color-section col-span-6 col-start-9"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -221,7 +221,7 @@ const Experience = () => {
             </motion.span>
             <div className="h-full hidden sm:flex col-span-3 col-start-15 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right"
+                className="h-[1px] color-line w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -230,7 +230,7 @@ const Experience = () => {
             </div>
             <div className="hidden sm:flex h-full col-span-3 col-start-9 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left"
+                className="h-[1px] color-line w-full origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -238,7 +238,7 @@ const Experience = () => {
               />
             </div>
             <motion.span
-              className="hidden sm:flex text-[25px] font-thin text-home col-span-7 col-start-12"
+              className="hidden sm:flex text-[25px] font-thin text-color-section col-span-7 col-start-12"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -249,7 +249,7 @@ const Experience = () => {
 
             <div className="h-full hidden sm:flex col-span-2 col-start-9 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left"
+                className="h-[1px] color-line w-full origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -257,7 +257,7 @@ const Experience = () => {
               />
             </div>
             <motion.span
-              className="hidden sm:flex text-[25px] font-thin text-home col-span-4 col-start-11 justify-center"
+              className="hidden sm:flex text-[25px] font-thin text-color-section col-span-4 col-start-11 justify-center"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -268,7 +268,7 @@ const Experience = () => {
 
             <div className="h-full hidden sm:flex col-span-3 col-start-15 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right"
+                className="h-[1px] color-line w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -278,7 +278,7 @@ const Experience = () => {
 
             {/*Mobile Quotes*/}
             <motion.span
-              className="flex flex-rows flex-wrap sm:hidden text-[16px] font-normal text-home col-span-12 col-start-1 pt-10"
+              className="flex flex-rows flex-wrap sm:hidden text-[16px] font-normal text-color-section col-span-12 col-start-1 pt-10"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -290,13 +290,13 @@ const Experience = () => {
           </div>
         </div>
 
-        <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-home ">
+        <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen experience-text ">
           <div className="w-full pt-16 ">
-            <div className="top-0 flex py-5 flex-col bg-[#080807] border-t border-[#524D47] gap-y-10 sm:gap-y-4 group">
+            <div className="top-0 flex py-5 flex-col bg-section border-t border-[color:var(--color-primary)] gap-y-10 sm:gap-y-4 group">
               {experiences.professional.map((job, index) => (
                 <div key={"profession" + index} className="">
                   <div
-                    className="border-[#524D47] justify-start gap-x-2 text-left text-[14px] md:text-[25px] sm:p-[2%]
+                    className="justify-start gap-x-2 text-left text-[14px] md:text-[25px] sm:p-[2%]
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4 
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 "
                   >
@@ -306,19 +306,24 @@ const Experience = () => {
                         whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
                         viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5 font-mono justify-between sm:justify-start sm:items-center group/title"
+                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5 font-mono justify-between sm:justify-start sm:items-center group/title  "
                       >
 
-                        <span className="block sm:hidden  group-hover/title:text-[#967A54]">
+                        <span className="block sm:hidden text-[#967A54]">
                           {job.company}
                         </span>
 
                         <span className="hidden sm:flex ">
                           {job.image && (
-                            <job.image className="text-[#866A44]" />
+                            <job.image className="experience-symbol" />
                           )}
                         </span>
-                        {job.date}
+                        <span className="block sm:hidden experience-mobile-text">
+                          {job.date}
+                        </span>
+                        <span className="experience-text">
+                          {job.date}
+                        </span>
                       </motion.div>
                     </span>
 
@@ -379,14 +384,14 @@ const Experience = () => {
                       whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
                       viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                       transition={{ duration: 1, ease: "easeOut" }}
-                      className="flex flex-col w-full col-span-6 col-start-6 pl-10 text-lg border-l border-[#524D47] gap-y-4"
+                      className="flex flex-col w-full col-span-6 col-start-6 pl-10 text-lg gap-y-4"
                     ></motion.div>
                   </div>
                 </div>
               ))}
 
               <div
-                className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
+                className="flex justify-start gap-x-2 text-left text-[25px] p-[2%]
                     font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                     hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title "
               >
@@ -402,14 +407,14 @@ const Experience = () => {
                     className="inline-block text-[#745f4e] group-hover/title:text-[#967A54]
                           transition-transform duration-300 ease-in-out group-hover/link:-translate-y-1 group-hover/link:translate-x-1"
                   />
-                  <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
-                    <div className="flex flex-col h-full -mb-5">
-                      <div className=" w-[80%] h-[2px] bg-home"></div>
+                    <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
+                      <div className="flex flex-col h-full -mb-5">
+                        <div className="w-[80%] h-[2px] color-line-2"></div>
+                      </div>
+                      <div className="flex flex-col h-full">
+                        <div className=" w-[50%] h-[2px] color-line-2"></div>
+                      </div>
                     </div>
-                    <div className="flex flex-col h-full">
-                      <div className=" w-[50%] h-[2px] bg-home"></div>
-                    </div>
-                  </div>
                 </a>
               </div>
             </div>

@@ -97,11 +97,11 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className="h-full min-h-[500px] max-w-screen  bg-[#080807] flex flex-col items-center z-30 text-[#bebebe]"
+      className="h-full min-h-[500px] max-w-screen  bg-section flex flex-col items-center z-30 text-color-section"
     >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full">
-          <div className="mx-5 sm:mx-0 grid grid-cols-12 sm:gap-x-2 md:grid md:grid-cols-20 text-home">
+          <div className="mx-5 sm:mx-0 grid grid-cols-12 sm:gap-x-2 md:grid md:grid-cols-20 text-color-section">
             {/* Section Title*/}
             <motion.h2
               initial="initial"
@@ -182,7 +182,7 @@ const Project = () => {
 
             {/* Quotes Section */}
             <motion.span
-              className="hidden sm:flex font-thin text-home col-span-6 col-start-9 text-[25px]"
+              className="hidden sm:flex font-thin text-color-section col-span-6 col-start-9 text-[25px]"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -192,7 +192,7 @@ const Project = () => {
             </motion.span>
             <div className="hiddenh-full flex col-span-3 col-start-15 w-full items-center">
               <motion.div
-                className="hidden sm:flex h-[1px] bg-[#524D47] w-full origin-right"
+                className="hidden sm:flex h-[1px] color-line w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -201,7 +201,7 @@ const Project = () => {
             </div>
             <div className="h-full hidden sm:flex col-span-3 col-start-9 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left"
+                className="h-[1px] color-line w-full origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -209,7 +209,7 @@ const Project = () => {
               />
             </div>
             <motion.span
-              className="hidden sm:flex text-[25px] font-thin text-home col-span-6 col-start-12 justify-center"
+              className="hidden sm:flex text-[25px] font-thin text-color-section col-span-6 col-start-12 justify-center"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -220,7 +220,7 @@ const Project = () => {
 
             <div className="h-full hidden sm:flex col-span-1 col-start-9 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left"
+                className="h-[1px] color-line w-full origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -229,7 +229,7 @@ const Project = () => {
             </div>
 
             <motion.span
-              className="hidden sm:flex text-[25px] font-thin text-home col-span-7 col-start-10 justify-center"
+              className="hidden sm:flex text-[25px] font-thin text-color-section col-span-7 col-start-10 justify-center"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -241,7 +241,7 @@ const Project = () => {
 
             <div className="hidden h-full sm:flex col-span-1 col-start-17 w-full items-center">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right"
+                className="h-[1px] color-line w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -251,7 +251,7 @@ const Project = () => {
 
             {/*Mobile Quotes*/}
             <motion.span
-              className="flex sm:hidden text-[16px] font-normal text-home col-span-12 col-start-1 justify-center text-balance pt-10"
+              className="flex sm:hidden text-[16px] font-normal text-color-section col-span-12 col-start-1 justify-center text-balance pt-10"
               initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -265,7 +265,7 @@ const Project = () => {
 
         <div className="hidden sm:block pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 border-t border-[#524D47] p-5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-10 color-line p-5">
               <div className="relative col-span-5 px-[5%]">
 
                 {projects.map((project, index) => (
@@ -289,7 +289,7 @@ const Project = () => {
           {/* Button Section */}
 
           <div
-            className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[10%]
+            className="flex justify-start gap-x-2 text-left text-[25px] p-[10%]
                           font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                           hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title w-full "
           >
@@ -307,10 +307,10 @@ const Project = () => {
               />
               <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
                 <div className="flex flex-col h-full -mb-5">
-                  <div className=" w-[80%] h-[2px] bg-home"></div>
+                  <div className=" w-[80%] h-[2px] color-line-2"></div>
                 </div>
                 <div className="flex flex-col h-full">
-                  <div className=" w-[50%] h-[2px] bg-home"></div>
+                  <div className=" w-[50%] h-[2px] color-line-2"></div>
                 </div>
               </div>
             </a>
@@ -323,9 +323,9 @@ const Project = () => {
         {/* Mobile Section */}
         <div className="block sm:hidden pr-[5%] pb-[5%] pl-[5%] rounded-t-3xl min-h-screen">
           <div className="w-full pt-16">
-            <div className="flex flex-col justify-between gap-y-10 sm:border-t sm:border-[#524D47]">
+            <div className="flex flex-col justify-between gap-y-10 color-line py-5">
               {/* Portfolio */}
-              <div className="sticky top-0 bg-[#080807] pb-[2em] flex flex-row flex-wrap gap-y-14">
+              <div className="sticky top-0 bg-section pb-[2em] flex flex-row flex-wrap gap-y-14">
                 {projects.map((project, index) => (
                   <div
                     key={`mobile-${index}`}
@@ -356,7 +356,7 @@ const Project = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 2 }}
                         className={`z-10 m-2 p-1 space-y-4 rounded-md overflow-clip bg-white/50 backdrop-blur-sm
-                      ${project.title === "Simplisplit" ? "border-[#524D47] shadow-xl w-[40%] max-w-[250px] rounded-md object-fit" : ""}`}
+                      ${project.title === "Simplisplit" ? "shadow-xl w-[40%] max-w-[250px] rounded-md object-fit" : ""}`}
                       >
                         <video
                           autoPlay
@@ -416,7 +416,7 @@ const Project = () => {
                 {/* Button Section */}
 
                 <div
-                  className="flex border-[#524D47] justify-start gap-x-2 text-left text-[25px] p-[2%]
+                  className="flex justify-start gap-x-2 text-left text-[25px] p-[2%]
                           font-semibold md:grid md:grid-cols-12 md:justify-between md:gap-x-4
                           hover:shadow-md transition-all duration-300 ease-in-out hover:opacity-100 group/link group/title w-full "
                 >
@@ -434,10 +434,10 @@ const Project = () => {
                     />
                     <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
                       <div className="flex flex-col h-full -mb-5">
-                        <div className=" w-[80%] h-[2px] bg-home"></div>
+                        <div className=" w-[80%] h-[2px] color-line-2"></div>
                       </div>
                       <div className="flex flex-col h-full">
-                        <div className=" w-[50%] h-[2px] bg-home"></div>
+                        <div className=" w-[50%] h-[2px] color-line-2"></div>
                       </div>
                     </div>
                   </a>

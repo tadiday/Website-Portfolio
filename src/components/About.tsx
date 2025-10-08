@@ -8,11 +8,11 @@ const Home = () => {
   return (
     <section
       id="about"
-      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-[#080807] p-4 z-30 text-[#bebebe] bg-fixed"
+      className="min-h-screen  sm:h-full max-w-screen rounded-t-3xl bg-section p-4 z-30 text-color-section bg-fixed"
     >
-      <div className="relative z-20 w-full bg-[#080807] ">
+      <div className="relative z-20 w-full bg-section ">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
-          <div className='mx-5 sm:mx-0 grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-home'>            {/* Section Title*/}
+          <div className='mx-5 sm:mx-0 grid sm:gap-x-2 grid-cols-4 md:grid md:grid-cols-20 text-color-section'>            {/* Section Title*/}
             <motion.h2
               initial="initial"
               whileInView="visible"
@@ -53,7 +53,7 @@ const Home = () => {
 
             {/* Quotes Section */}
             <motion.span
-              className="text-[18px] font-thin text-home col-span-2 col-start-1 
+              className="text-[18px] font-thin text-color-section col-span-2 col-start-1 
                          sm:col-span-2 sm:col-start-10 hidden sm:flex sm:text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
@@ -66,7 +66,7 @@ const Home = () => {
                             sm:col-span-3 sm:col-start-12"
             >
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right"
+                className="h-[1px] color-line w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -77,7 +77,7 @@ const Home = () => {
 
             <div className="h-full col-span-2 col-start-1 hidden sm:flex w-full items-center sm:col-span-3 sm:col-start-10">
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-left"
+                className="h-[1px] color-line w-full origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -85,7 +85,7 @@ const Home = () => {
               />
             </div>
             <motion.span
-              className="hidden sm:flex text-[18px] col-span-2 col-start-3 font-thin text-home justify-end
+              className="hidden sm:flex text-[18px] col-span-2 col-start-3 font-thin text-color-section justify-end
                          sm:justify-center sm:text-[25px] sm:col-span-2 sm:col-start-13"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
@@ -96,7 +96,7 @@ const Home = () => {
             </motion.span>
 
             <motion.span
-              className="text-[18px] font-thin text-home col-span-2 col-start-1 
+              className="text-[18px] font-thin text-color-section col-span-2 col-start-1 
                          sm:col-span-2 sm:col-start-10 hidden sm:flex sm:text-[25px]"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
@@ -109,7 +109,7 @@ const Home = () => {
                             sm:col-span-3 sm:col-start-12"
             >
               <motion.div
-                className="h-[1px] bg-[#524D47] w-full origin-right"
+                className="h-[1px] color-line w-full origin-right"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true, amount: 0.1 }}
@@ -118,7 +118,7 @@ const Home = () => {
             </div>
 
             <motion.span
-              className="flex sm:hidden text-[16px] font-normal text-home col-span-12 col-start-1 justify-center pt-10 text-balance"
+              className="flex sm:hidden text-[16px] font-normal text-color-section col-span-12 col-start-1 justify-center pt-10 text-balance"
               initial={{ opacity: 0, y: 10 }}  // Start offscreen to the right
               whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
               viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
@@ -132,9 +132,9 @@ const Home = () => {
         </div>
 
         {/* Content Section */}
-        <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-screen text-home '>
+        <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-screen text-color-section '>
           <div className="w-full pt-16">
-            <div className="flex flex-col justify-between gap-y-16 sm:border-t sm:border-[#524D47]">
+            <div className="flex flex-col justify-between gap-y-16 sm:border-t sm:border-[color:var(--color-line)] sm:p-5 ">
               <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-16 ">
 
                 {/* Image Section: TODO: Animation*/}
@@ -237,11 +237,11 @@ const Home = () => {
               {/* Animated underline */}
               {/* <div className="flex flex-col h-full mt-2 col-span-2 col-start-6">
                   <div className="flex flex-col h-full -mb-5">
-                    <div className=" w-[80%] h-[2px] bg-home">
+                    <div className=" w-[80%] h-[2px] color-line">
                     </div>
                   </div>
                   <div className="flex flex-col h-full">
-                    <div className=" w-[50%] h-[2px] bg-home">
+                    <div className=" w-[50%] h-[2px] color-line">
                     </div>
                   </div>
                 </div> */}

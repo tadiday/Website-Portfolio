@@ -122,8 +122,8 @@ const ProjectItem = ({ project }: { project: Project }) => {
                                 pointerEvents: "none",
                             }}
                         >
-                            <button className="flex items-center space-x-2 bg-[#868674]/70 backdrop-blur-sm px-4 py-2 rounded-md text-black shadow-md">
-                                <div className="flex items-center justify-center w-8 h-8 rounded-md bg-[#bcbcb8]/50">
+                            <button className="flex items-center space-x-2 project-button-hover backdrop-blur-sm px-4 py-2 rounded-md text-black shadow-md">
+                                <div className="flex items-center justify-center w-8 h-8 rounded-md project-button-hover-2">
                                     ↳
                                 </div>
                                 <span className="text-sm font-medium">{project.gitHub !== "Private" ? <span>GitHub</span> :  <span>Private</span>}</span>
