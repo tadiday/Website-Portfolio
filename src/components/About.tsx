@@ -188,7 +188,7 @@ const Home = () => {
                       <span className="h-full text-nowrap">(About Me)</span>
                     </span>
                     <p className="max-w-[50ch] font-normal font-mono">
-                      I&apos;m a graduate student at Virginia Tech. I&apos;ve contributed to projects involving system optimization,
+                      I recently graduated from Virginia Tech, where I contributed to projects involving system optimization,
                       automation tools, and user interface development. Currently looking for full-time opportunities.
                       
                     </p>
@@ -199,7 +199,7 @@ const Home = () => {
                       <span className="h-full text-nowrap">(About Me)</span>
                     </span>
                     <p className="sm:max-w-[40ch] sm:text-balance font-normal font-mono ">
-                      I&apos;m a Computer Science student at Virginia Tech, graduating in May 2025. I&apos;ve worked on projects involving system optimization,
+                      I recently graduated from Virginia Tech. I&apos;ve worked on projects involving system optimization,
                       automation tools, and user interface development.
                     </p>
                   </div>
