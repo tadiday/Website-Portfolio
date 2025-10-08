@@ -290,7 +290,7 @@ const Experience = () => {
           </div>
         </div>
 
-        <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen text-color-section ">
+        <div className="pr-[5%] pb-[10%] pl-[5%] rounded-b-3xl min-h-screen experience-text ">
           <div className="w-full pt-16 ">
             <div className="top-0 flex py-5 flex-col bg-section border-t border-[color:var(--color-primary)] gap-y-10 sm:gap-y-4 group">
               {experiences.professional.map((job, index) => (
@@ -306,19 +306,24 @@ const Experience = () => {
                         whileInView={{ opacity: 1, x: 0 }} // Animate when in viewport
                         viewport={{ once: true, amount: 0.2 }} // Only animates once, triggers at 20% visibility
                         transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5 font-mono justify-between sm:justify-start sm:items-center group/title"
+                        className="top-0 flex items-center col-span-5 col-start-1 gap-x-5 font-mono justify-between sm:justify-start sm:items-center group/title  "
                       >
 
-                        <span className="block sm:hidden  group-hover/title:text-[#967A54]">
+                        <span className="block sm:hidden text-[#967A54]">
                           {job.company}
                         </span>
 
                         <span className="hidden sm:flex ">
                           {job.image && (
-                            <job.image className="text-[#866A44]" />
+                            <job.image className="experience-symbol" />
                           )}
                         </span>
-                        {job.date}
+                        <span className="block sm:hidden experience-mobile-text">
+                          {job.date}
+                        </span>
+                        <span className="experience-text">
+                          {job.date}
+                        </span>
                       </motion.div>
                     </span>
 

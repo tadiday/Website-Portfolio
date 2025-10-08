@@ -134,7 +134,7 @@ const Home = () => {
         {/* Content Section */}
         <div className='pr-[5%] pb-[5%] pl-[5%] rounded-b-3xl min-h-screen text-color-section '>
           <div className="w-full pt-16">
-            <div className="flex flex-col justify-between gap-y-16 sm:border-t sm:border-[color:var(--color-primary)]">
+            <div className="flex flex-col justify-between gap-y-16 sm:border-t sm:border-[color:var(--color-line)] sm:p-5 ">
               <div className="grid gap-x-8 relative h-full min-h-[30vh] flex-col place-items-start pt-1 md:grid md:min-h-[40vh] md:grid-cols-16 ">
 
                 {/* Image Section: TODO: Animation*/}

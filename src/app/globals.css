@@ -26,12 +26,21 @@
   --project-button-hover-2: #bcbcb8; /* button hover */
   --project-button-hover-2-rgb: 188 188 184;
 
+
+  --experience-symbol: #967A54; 
+  --experience-text: #bebebe; 
+  --experience-mobile-text: #967A54; 
+
+
+  --contact-bg: #524D47; /* button hover */
+  --contact-bg-2: #080807; /* button hover */
   --contact-button: #866a44; 
   --contact-button-hover: #524D47; /* button hover */
   --contact-button-hover-rgb: 82 77 71;
   --contact-border: #524D47;
+  --contact-border-focus: #967A54;
 
-
+  --footer-text: #80776d;   /* footer text */
   --footer-text-hover: #967A54;   /* hover / highlight */
   --color-white: #ffffff;
 
@@ -85,8 +94,7 @@ code {
     monospace;
 }
 
-/* COLOR */
-/* #fdf0d5 967A54*/
+/* colors */
 .bg-home{
   background-color: var(--color-primary);
 }
@@ -123,6 +131,16 @@ code {
   background-color: rgb(var(--project-button-hover-2-rgb) / 0.5);
 }
 
+.experience-symbol {
+  color: var(--experience-symbol);
+}
+.experience-text {
+  color: var(--experience-text);
+}
+.experience-mobile-text {
+  color: var(--experience-mobile-text);
+}
+
 .contact-button {
   background-color: var(--contact-button);
 }
@@ -135,6 +153,13 @@ code {
   border: 1px solid var(--contact-border);
 }
 
+.contact-border-focus{
+  border: 1px solid var(--contact-border-focus);
+}
+
+.footer-text {
+  color: var(--footer-text);
+}
 .footer-text-hover {
   color: var(--footer-text-hover);
 }

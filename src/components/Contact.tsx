@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-[#524D47] max-w-screen to-[#080807] min-h-screen z-20 pb-[5%]"
+      className="bg-gradient-to-b from-[var(--contact-bg)] max-w-screen to-[var(--contact-bg-2)] min-h-screen z-20 pb-[5%]"
     >
       <div className="relative z-20 w-full overflow-x-clip">
         <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
@@ -92,7 +92,7 @@ const Contact = () => {
               id="contact-container"
               className="w-full sm:col-span-18 sm:col-start-2 text-black overflow-hidden pt-16"
             >
-              <div className="grid sm:gap-x-4 sm:gap-y-20 grid-cols-1 sm:grid-cols-[repeat(20,minmax(0,1fr))] text-[#80776d] px-6 pt-8 sm:px-0 sm:pt-16">
+              <div className="grid sm:gap-x-4 sm:gap-y-20 grid-cols-1 sm:grid-cols-[repeat(20,minmax(0,1fr))] px-6 pt-8 sm:px-0 sm:pt-16">
                 <div className="flex flex-col col-start-1 col-span-1 sm:col-start-4 sm:col-span-14 gap-6 w-full h-full p-8 bg-section rounded-3xl text-color-section shadow-lg">
                   <span className="w-full font-bold items-center justify-center flex">
                     DROP ME A MESSAGE!
@@ -118,7 +118,7 @@ const Contact = () => {
                         placeholder="Your Name"
                         // value={formData.name}
                         // onChange={handleChange}
-                        className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                        className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                         required
                       />
                       <input
@@ -127,7 +127,7 @@ const Contact = () => {
                         placeholder="Your Email"
                         // value={formData.email}
                         // onChange={handleChange}
-                        className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                        className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                         required
                       />
                     </div>
@@ -139,7 +139,7 @@ const Contact = () => {
                       placeholder="Subject"
                       // value={formData.subject}
                       // onChange={handleChange}
-                      className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                      className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                       required
                     />
 
@@ -149,7 +149,7 @@ const Contact = () => {
                       placeholder="Your Message"
                       // value={formData.message}
                       // onChange={handleChange}
-                      className="p-2 sm:p-4 w-full h-40 rounded-lg contact-border focus:outline-none focus:border-[#967A54] focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
+                      className="p-2 sm:p-4 w-full h-40 rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
                       required
                     ></textarea>
 
