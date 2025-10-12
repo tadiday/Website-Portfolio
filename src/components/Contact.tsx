@@ -132,6 +132,7 @@ const Contact = () => {
               className="w-full max-w-lg border border-gray-600 rounded-lg bg-gray-900 overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3),0_0_100px_rgba(59,130,246,0.1)]"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               {/* Chat Header */}
@@ -192,6 +193,7 @@ const Contact = () => {
               className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <p className="font-mono text-xs text-gray-500 tracking-widest">LOCATION</p>
@@ -220,6 +222,7 @@ const Contact = () => {
               className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <p className="font-mono text-xs text-gray-500 tracking-widest">EMAIL</p>
@@ -235,6 +238,7 @@ const Contact = () => {
               className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p className="font-mono text-xs text-gray-500 tracking-widest">PHONE</p>
