@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Orbitron } from "next/font/google";
+import { Orbitron, Space_Grotesk } from "next/font/google";
 
 
 const geistSans = Geist({
@@ -18,6 +18,11 @@ const geistMono = Geist_Mono({
 const orbitron = Orbitron({
   subsets: ["latin"],
   variable: "--font-orbitron",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
 
@@ -38,7 +43,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/assets/logo/logo.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable}  antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} ${spaceGrotesk.variable} antialiased`}
       >
         {children}
         <SpeedInsights />

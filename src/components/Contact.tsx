@@ -1,179 +1,274 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
+import { FaArrowRight, FaArrowUp } from "react-icons/fa";
 
 const Contact = () => {
-  const [result, setResult] = useState("");
+  const [currentTime, setCurrentTime] = useState('');
 
-  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setResult("Sending....");
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const estTime = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      }).format(now);
+      setCurrentTime(estTime);
+    };
 
-    const form = event.currentTarget; // TypeScript now recognizes it as an HTMLFormElement
-    const formData = new FormData(form);
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
 
-    formData.append("access_key", "be249f55-0454-44a6-b6ab-d35527daa8db");
+    return () => clearInterval(interval);
+  }, []);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
     });
-
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("I WILL GET IN TOUCH SOON!");
-      form.reset(); // Now TypeScript allows calling reset()
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
   };
 
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-[var(--contact-bg)] max-w-screen to-[var(--contact-bg-2)] min-h-screen z-20 pb-[5%]"
+      className="bg-black text-white min-h-screen w-full flex flex-col font-sans"
     >
-      <div className="relative z-20 w-full overflow-x-clip">
-        <div className="flex flex-col w-full gap-y-space-lg md:gap-y-space-2xl">
-          <div className="grid gap-x-2 grid-cols-1 md:grid md:grid-cols-20 text-color-section">
-            <motion.h2
-              className="col-start-1 sm:col-span-12 sm:col-start-5  text-center text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] font-semibold text-color-section justify-center items-center flex"
-              initial={{ opacity: 0, y: 50 }} // Start offscreen to the right
-              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.6, delay: 0 }}
+      {/* Header with Contact Title and Social Links */}
+      <div className="w-full px-8 pt-8">
+        <div className="w-full flex justify-between items-center pb-8 border-b border-gray-800">
+          {/* Left side - Contact Title */}
+          <div className="flex flex-col">
+            <h1 className="text-sm font-mono font-space-grotesk font-bold leading-none tracking-wider">
+              <span>{"< CONTACT >"}</span>
+            </h1>
+          </div>
+
+          {/* Center - Social Links */}
+          <div className="hidden md:flex space-x-8 text-sm font-mono">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
             >
-              LET&apos;S CONNECT
-            </motion.h2>
-
-            <div className="hidden h-full sm:flex col-start-1 sm:col-span-2 sm:col-start-6 w-full items-center">
-              <motion.div
-                className="h-[1px] bg-section w-full origin-left"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
-              />
-            </div>
-
-            <motion.span
-              className="flex text-[16px] sm:text-[25px] font-normal sm:font-thin text-color-section sm:col-span-6 sm:col-start-8 justify-center"
-              initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
-              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 0 }}
+              <span>INSTAGRAM</span>
+              <FaArrowRight className="transform -rotate-45 text-xs" />
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
             >
-              &quot;Great connections spark endless possibilities.&quot;
-            </motion.span>
-
-            <div className="hidden h-full sm:flex sm:col-span-2 sm:col-start-14 w-full items-center">
-              <motion.div
-                className="h-[1px] bg-section w-full origin-right"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.6, delay: 0, ease: "easeOut" }}
-              />
-            </div>
-
-            <motion.span
-              className="flex text-[16px] sm:text-[25px] font-normal sm:font-thin text-color-section sm:col-span-6 sm:col-start-8 justify-center"
-              initial={{ opacity: 0, y: 10 }} // Start offscreen to the right
-              whileInView={{ opacity: 1, y: 0 }} // Animate when in viewport
-              viewport={{ once: true, amount: 0.1 }} // Only animates once, triggers at 20% visibility
-              transition={{ duration: 0.75, delay: 0.75 }}
+              <span>GITHUB</span>
+              <FaArrowRight className="transform -rotate-45 text-xs" />
+            </a>
+            <a
+              href="https://linkedin.com" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
             >
-              &quot;Collaboration is the key to innovation.&quot;
-            </motion.span>
+              <span>LINKEDIN</span>
+              <FaArrowRight className="transform -rotate-45 text-xs" />
+            </a>
+          </div>
 
-            <div
-              id="contact-container"
-              className="w-full sm:col-span-18 sm:col-start-2 text-black overflow-hidden pt-16"
+          {/* Right side - Back to Top */}
+          <button
+            onClick={scrollToTop}
+            className="text-sm font-mono flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
+          >
+            <span>{"< BACK TO TOP >"}</span>
+            <FaArrowUp className="text-xs" />
+          </button>
+        </div>
+        
+        {/* Mobile Social Links */}
+        <div className="md:hidden flex justify-center space-x-6 text-sm font-mono pt-4 pb-4">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
+          >
+            <span>INSTAGRAM</span>
+            <FaArrowRight className="transform -rotate-45 text-xs" />
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
+          >
+            <span>GITHUB</span>
+            <FaArrowRight className="transform -rotate-45 text-xs" />
+          </a>
+          <a
+            href="https://linkedin.com" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 hover:text-gray-400 transition-colors duration-300"
+          >
+            <span>LINKEDIN</span>
+            <FaArrowRight className="transform -rotate-45 text-xs" />
+          </a>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-grow flex items-center justify-center w-full py-16">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-16">
+
+
+
+          {/* Left Side: AI Agent Chat Panel */}
+          <div className="flex items-center justify-center">
+            <motion.div
+              className="w-full max-w-lg border border-gray-600 rounded-lg bg-gray-900 overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3),0_0_100px_rgba(59,130,246,0.1)]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="grid sm:gap-x-4 sm:gap-y-20 grid-cols-1 sm:grid-cols-[repeat(20,minmax(0,1fr))] px-6 pt-8 sm:px-0 sm:pt-16">
-                <div className="flex flex-col col-start-1 col-span-1 sm:col-start-4 sm:col-span-14 gap-6 w-full h-full p-8 bg-section rounded-3xl text-color-section shadow-lg">
-                  <span className="w-full font-bold items-center justify-center flex">
-                    DROP ME A MESSAGE!
-                  </span>
-
-                  {/* Form Section */}
-                  <form
-                    onSubmit={onSubmit}
-                    className="flex flex-col gap-4 sm:gap-6"
-                    action="https://api.web3forms.com/submit"
-                    method="POST"
-                  >
-                    {/* Name & Email on the Same Row */}
-                    <input
-                      type="hidden"
-                      name="access_key"
-                      value="be249f55-0454-44a6-b6ab-d35527daa8db"
-                    />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        // value={formData.name}
-                        // onChange={handleChange}
-                        className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
-                        required
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        // value={formData.email}
-                        // onChange={handleChange}
-                        className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
-                        required
-                      />
-                    </div>
-
-                    {/* Subject Input */}
-                    <input
-                      type="text"
-                      name="subject"
-                      placeholder="Subject"
-                      // value={formData.subject}
-                      // onChange={handleChange}
-                      className="p-2 sm:p-4 w-full rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
-                      required
-                    />
-
-                    {/* Message Textarea */}
-                    <textarea
-                      name="message"
-                      placeholder="Your Message"
-                      // value={formData.message}
-                      // onChange={handleChange}
-                      className="p-2 sm:p-4 w-full h-40 rounded-lg contact-border focus:outline-none focus:contact-border-focus focus:ring-2 focus:ring-[#967A54] focus:ring-offset-0 text-lg"
-                      required
-                    ></textarea>
-
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      className="contact-button py-4 rounded-lg font-semibold text-xl hover:bg-[var(--contact-button-hover)] transition-all duration-300 shadow-md cursor-pointer"
-                    >
-                      Send Message
-                    </button>
-                  </form>
-                  <span className="w-full font-bold items-center justify-center flex">
-                    {result}
-                  </span>
-                </div>
-
-                <div className="col-start-1 col-span-20">
-                  <Footer />
+              {/* Chat Header */}
+                <div className="bg-gray-800 px-4 py-3 border-b border-gray-600">
+                <div className="flex items-center space-x-3">
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <span className="text-white font-space-grotesk font-semibold">TAD Agent</span>
+                  <span className="text-xs text-gray-400 font-mono">Online</span>
                 </div>
               </div>
-            </div>
+
+              {/* Chat Messages */}
+              <div className="p-4 space-y-4 h-64 overflow-y-auto">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">AI</span>
+                  </div>
+                  <div className="bg-gray-700 rounded-lg p-3 max-w-xs">
+                    <p className="text-gray-200 text-sm font-space-grotesk">
+                      Hello! I'm here to help with your projects and answer any questions you might have.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">AI</span>
+                  </div>
+                  <div className="bg-gray-700 rounded-lg p-3 max-w-xs">
+                    <p className="text-gray-200 text-sm font-space-grotesk">
+                      Feel free to reach out using the contact information on the right!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Input */}
+              <div className="border-t border-gray-600 p-4">
+                <div className="flex space-x-2">
+                  <input
+                    type="text"
+                    placeholder="Type your message..."
+                    className="flex-1 bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-white text-sm placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    disabled
+                  />
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium disabled:opacity-50" disabled>
+                    Send
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Side: Contact Info */}
+          <div className="flex flex-col space-y-8">
+            {/* Current Location */}
+            <motion.div
+              className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <p className="font-mono text-xs text-gray-500 tracking-widest">LOCATION</p>
+              <div className="text-right">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-space-grotesk font-light text-white">
+                  Washington, DC
+                </p>
+                <p className="text-xs font-mono text-gray-400">
+                 
+                </p>
+              </div>
+            </motion.div>
+
+            {/* <motion.div
+              className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <p className="font-mono text-xs text-gray-500 tracking-widest">SOCIAL</p>
+
+            </motion.div> */}
+
+
+            <motion.div
+              className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <p className="font-mono text-xs text-gray-500 tracking-widest">EMAIL</p>
+              <a
+                href="mailto:petercao49@gmail.com"
+                className="text-2xl md:text-3xl lg:text-4xl font-space-grotesk font-light hover:text-gray-300 transition-colors"
+              >
+                petercao49@gmail.com
+              </a>
+            </motion.div>
+
+            <motion.div
+              className="flex items-center justify-between border-t border-gray-700 pt-6 px-4 h-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <p className="font-mono text-xs text-gray-500 tracking-widest">PHONE</p>
+              <a
+                href="tel:5715947597"
+                className="text-2xl md:text-3xl lg:text-4xl font-space-grotesk font-light hover:text-gray-300 transition-colors"
+              >
+               +1 5715947597
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="w-full p-8">
+        <div className="border-t border-gray-800 pt-4 grid grid-cols-1 lg:grid-cols-3 gap-4 items-end">
+          <div className="text-center lg:text-left">
+            <p className="font-mono text-xs text-gray-500">
+              © Design & Build by Peter Cao
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <p className="font-mono text-sm text-white">
+              {currentTime} EST
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center lg:items-end">
+            <p className="font-mono text-lg">©2025</p>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 };

@@ -18,8 +18,7 @@ const Footer = () => {
           <li className="">{localTime} Fairfax, VA</li>
 
           <li className="flex items-center font-bold">
-            <FaRegCopyright className="" /> &nbsp;2025 Peter Cao. All rights
-            reserved.
+            <FaRegCopyright className="" /> &nbsp;Design & Build by Peter Cao
           </li>
           <li className="">
             Built with Next.js and Tailwind CSS, deployed with Vercel.
